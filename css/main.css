@@ -264,7 +264,7 @@ button{
     font-size-adjust:auto;
 }
 
-.inlinespan{
+#item-list .inlinespan{
     font-weight: 400;
     display: inline-block;
     margin-right: 3px;
