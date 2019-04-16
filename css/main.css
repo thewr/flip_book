@@ -54,17 +54,16 @@ h1{
 }
 
 .sidebar > .content{
-    background-color: #f2f2f2;
-    widt: 100%;
-    margin: 6px;
+    width: 100%;
     display: flex;
-    padding:  2px 3px;
+    margin: 0;
+    padding:  0;
 }
 
 .sidebar > .content .label {
   text-transform: uppercase;
   position: relative;
-    display: block;
+  display: block;
 }
 
 
