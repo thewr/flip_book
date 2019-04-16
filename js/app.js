@@ -31,7 +31,7 @@ function renderCafe(doc){
   //li.appendChild( document.createTextNode( '\u00A0\u00A0' ) ); //blank space
   li.appendChild( document.createTextNode( 'TEST HERE' ) ); //blank space
 
-  name.style.cssText = "padding: 2px; display: text-size: 8px; block; background: white; border-bottom: 1px solid black"";
+  name.style.cssText = "padding: 2px; display: block; background: white; border-bottom: 1px solid black"";
   li.appendChild(name);
   
   label2.textContent = "WORDS";
