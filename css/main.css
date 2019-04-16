@@ -82,11 +82,12 @@ html>.container, body>.container {
 }
 
 .sidebar{
- width: 100px;
- min-width: 100px;
+ width: 350px;
+ min-width: 350px;
  position: flex;
  height: 100%;
  flex-direction: column;
+ background-color: #101112;
 
 }
 
