@@ -243,9 +243,9 @@ button{
 
 #item-list li{
     padding-left: 16px;
-    padding: 8px 8px;
+    padding: 0;
     background: #daece1;
-    margin: 8px 16px 8px 16px;
+    margin: 0;//8px 16px 8px 16px;
     max-width: 280px;
     max-height: 120px;
     position: relative;
