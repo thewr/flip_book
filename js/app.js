@@ -13,8 +13,8 @@ function renderCafe(doc){
   let wordsB = document.createElement('span');
   let wordsC = document.createElement('span');
   let subject = document.createElement('span');
-  let label = document.createElement('inlinespan');
-  let label2 = document.createElement('inlinespan');
+  let label = document.createElement('span');
+  let label2 = document.createElement('span');
 
   name.textContent = doc.data().name;
   wordsA.textContent = doc.data().wordsA;
@@ -24,14 +24,14 @@ function renderCafe(doc){
 
   // append list
 	
-  label.textContent = "Name:";
- // label.style.display = "inline-block"; 
-  //label.style.marginright = "6px"; 
-	li.appendChild(label);	
+  label.textContent = "Name:_";
+  label.style.display = "inline-block"; 
+  label.style.marginright = "6px"; 
+  li.appendChild(label);	
 
   name.style.display = "inline-block"; li.appendChild(name);
    
-  label2.textContent = "Words:";
+  label2.textContent = "Words:_";
   label2.style.display = "inline-block";
   li.appendChild(label2);
 	
