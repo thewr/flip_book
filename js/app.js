@@ -29,7 +29,8 @@ function renderCafe(doc){
   label.style.cssText = "padding: 2px; display: inline-block; block; background: white"; //border: 1px solid black"; 
   li.appendChild(label);	
   //li.appendChild( document.createTextNode( '\u00A0\u00A0' ) ); //blank space
-	
+  li.appendChild( document.createTextNode( 'TEST HERE' ) ); //blank space
+
   name.style.cssText = "padding: 2px; display: text-size: 8px; block; background: white; border-bottom: 1px solid black"";
   li.appendChild(name);
   
