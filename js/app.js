@@ -28,14 +28,14 @@ function renderCafe(doc){
   label.style.display = "inline-block"; 
   label.style.marginright = "6px"; 
   li.appendChild(label);	
-  li.appendChild( document.createTextNode( '\u00A0\u00A0' ) ); //blank space
+  li.appendChild( document.createTextNode( '\u00A0\u00A0\u00A0' ) ); //blank space
 	
   name.style.display = "inline-block"; li.appendChild(name);
    
   label2.textContent = "Words:";
   label2.style.display = "block";
   li.appendChild(label2);
-  li.appendChild( document.createTextNode( '\u00A0\u00A0' ) ); //blank space
+  li.appendChild( document.createTextNode( '\u00A0\u00A0\u00A0' ) ); //blank space
 
   wordsA.style.display = "inline-block"; 
 	
