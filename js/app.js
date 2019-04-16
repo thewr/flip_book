@@ -24,7 +24,8 @@ function renderCafe(doc){
 
   // append list
 	
-  label.textContent = "Name:_";
+  label.textContent = "Name:";
+	div.innerHTML += ' ';
   label.style.display = "inline-block"; 
   label.style.marginright = "6px"; 
   li.appendChild(label);	
