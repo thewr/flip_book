@@ -4,32 +4,55 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="/flip_book/css/main.css">
 		<link rel="stylesheet" type="http://code.jquery.com/jquery-1.7.2.min.js">
+		<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
   	</head>
-        
-	<body>
+	<h1>Code Scratch</h1>	
+	<button id = "add_item_button">Add Item</button>
+	<div class="content">
+            <form id = "add-item-form">
+		<label for="iname">Name</label>
+                <input type="text" name="name">
+		<label for="iname">Amount</label>
+                <input type="text" name="amount">
+		<label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                <input id = "item_submit" type="submit" value="Submit">
+            </form>    
+	</div>
+	<div class="content">
+	    <form id = "add-trade-form">
+		    <select name="cars">
+			    <option value="volvo">Volvo</option>
+			    <option value="saab">Saab</option>
+			    <option value="fiat">Fiat</option>
+			    <option value="audi">Audi</option>
+		    </select>
+		    <button>Submit</button>
+		</form>
+	</div>
 
-        <div id="flipbook">
-		<div class="hard"> Turn.js </div>
-		<div class="hard"></div>
-		<div> Page 1 </div>
-		<div> Page 2 </div>
-		<div> Page 3 </div>
-		<div> Page 4 </div>
-		<div class="hard"></div>
-		<div class="hard"></div>
-		
-	<script type="text/javascript">
-		$("#flipbook").turn({
-		  width: 400,
-		  height: 300,
-		  autoCenter: true
-        });
-      	</script>
-      	</div>
-    </body>
+	<ul id="item-list" />
+<script>
+// Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCntSwrxBash6pXzL9yaGCnQh0gQZPclG0",
+    authDomain: "sales-91e4c.firebaseapp.com",
+    databaseURL: "https://sales-91e4c.firebaseio.com",
+    projectId: "sales-91e4c",
+    storageBucket: "sales-91e4c.appspot.com",
+    messagingSenderId: "533687143173"
+  };
+firebase.initializeApp(config);
+	
+const db = firebase.firestore();
+db.settings({ timestampsInSnapshots: true }); 
+</script>
+<script src="/flip-book/js/app.js"></script>	
+</body>	
+</html>
 
-    </html>
-      
+
       
 
       
