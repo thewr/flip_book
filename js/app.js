@@ -25,11 +25,11 @@ function renderCafe(doc){
   // append list
 	
   label.textContent = "Name:";
-	div.innerHTML += ' ';
+	
   label.style.display = "inline-block"; 
   label.style.marginright = "6px"; 
   li.appendChild(label);	
-
+  li.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
   name.style.display = "inline-block"; li.appendChild(name);
    
   label2.textContent = "Words:_";
