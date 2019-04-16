@@ -77,9 +77,11 @@ html>.container, body>.container {
     justify-content: space-between;
     background: #101112;
     padding: 0 1rem;
+    text-size: 10rem;
     height: 54px;
     z-index: 1000;
 }
+
 
 .sidebar{
  width: 350px;
