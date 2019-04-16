@@ -29,8 +29,6 @@ function renderCafe(doc){
   label.style.marginright = "6px"; 
   li.appendChild(label);	
   li.appendChild( document.createTextNode( '\u00A0\u00A0' ) ); //blank space
-  li.appendChild( document.innerHTML( '&nbsp' ) ); //blank space
-
 	
   name.style.display = "inline-block"; li.appendChild(name);
    
