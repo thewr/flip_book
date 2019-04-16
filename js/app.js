@@ -26,6 +26,7 @@ function renderCafe(doc){
 	
   label.textContent = "NAME"; //&nbsp;
   label.style.display = "block"; 
+  label.style.cssText = "color: blue; border: 1px solid black"; 
   li.appendChild(label);	
   li.appendChild( document.createTextNode( '\u00A0\u00A0' ) ); //blank space
 	
