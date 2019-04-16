@@ -150,6 +150,12 @@ html>.container, body>.container {
   text-decoration: none;
 }
 
+.options #label
+{
+   color: white;
+   background-color: "";
+}
+
 
 li.active {
   background-color: #white;
