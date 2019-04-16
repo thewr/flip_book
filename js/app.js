@@ -25,7 +25,7 @@ function renderCafe(doc){
   // append list
 	
   label.textContent = "NAME"; //&nbsp;
-  label.style.cssText = "padding: 6px; display: inline-block; background: #daece1"; //border: 1px solid black"; 
+  label.style.cssText = "padding: 6px; display: inline-block; background: #daece1; width: 50%;"; //border: 1px solid black"; 
   li.appendChild(label);	
   //li.appendChild( document.createTextNode( '\u00A0\u00A0' ) ); //blank space
  // li.appendChild( document.createTextNode( 'TEST HERE' ) ); //blank space
