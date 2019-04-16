@@ -195,6 +195,7 @@ button{
     background: #daece1;
     margin: 8px 16px 8px 16px;
     max-width: 280px;
+    max-height: 120px;
     position: relative;
     height: 100%;
     border: 3px solid #2f3f2e;
