@@ -177,9 +177,10 @@ button{
 }
 
 #item-list li{
-    padding: 2px;
+    padding-left: 16px;
+    padding: 8px 8px;
     background: #f6f6f6;
-    color: #555;
+
     //max-width: 740px;
     position: relative;
     //height: 100%;
@@ -188,12 +189,12 @@ button{
     cursor: pointer;
 }
 
-#item-list li span{
+#item-list li span{    
+    color: black;
     display: block;
     font-size: 14px;
-    margin-top: 3px;
+    margin-top: 0;
     font-size-adjust:auto;
-    color: #999;
 }
 
 li div{
