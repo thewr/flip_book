@@ -16,8 +16,8 @@ function renderCafe(doc){
 
   name.textContent = doc.data().name;
   wordsA.textContent = doc.data().wordsA;
-	wordsA.textContent = doc.data().wordsB;
-	wordsA.textContent = doc.data().wordsC;
+	wordsB.textContent = doc.data().wordsB;
+	wordsC.textContent = doc.data().wordsC;
   subject.textContent = doc.data().subject;
 
   // append list
