@@ -6,6 +6,12 @@ body {
   box-sizing: border-box;
 }
 
+.container .sidebar{
+ width: 100px;
+ position: flex;
+ height: 100%;
+ flex-orientation: column;
+}
 
 
 h1{
