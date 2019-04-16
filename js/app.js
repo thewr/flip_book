@@ -26,11 +26,10 @@ function renderCafe(doc){
 	
   label.textContent = "NAME"; //&nbsp;
   //label.style.display = "block"; 
-  label.style.cssText = "padding: 2px; display: text-size: 8px; block; background: white"; //border: 1px solid black"; 
+  label.style.cssText = "padding: 2px; display: inline-block; text-size: 8px; block; background: white"; //border: 1px solid black"; 
   li.appendChild(label);	
   //li.appendChild( document.createTextNode( '\u00A0\u00A0' ) ); //blank space
 	
-  name.style.display = "inline-block"; 
   name.style.cssText = "padding: 2px; display: text-size: 8px; block; background: white; border-bottom: 1px solid black"";
   li.appendChild(name);
   
