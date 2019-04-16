@@ -9,16 +9,22 @@ function renderCafe(doc){
   let li = document.createElement('li');
   li.setAttribute('data-id', doc.id);  //Each document gets an id.
   let name = document.createElement('span');
-  let amount = document.createElement('span');
+  let wordsA = document.createElement('span');
+	let wordsB = document.createElement('span');
+	let wordsC = document.createElement('span');
   let subject = document.createElement('span');
 
   name.textContent = doc.data().name;
-  amount.textContent = doc.data().amount;
+  wordsA.textContent = doc.data().wordsA;
+	wordsA.textContent = doc.data().wordsB;
+	wordsA.textContent = doc.data().wordsC;
   subject.textContent = doc.data().subject;
 
   // append list
   li.appendChild(name);
-  li.appendChild(amount);
+  li.appendChild(wordsA);
+  li.appendChild(wordsB);
+  li.appendChild(wordsC);
   li.appendChild(subject);
 
 
@@ -27,7 +33,7 @@ function renderCafe(doc){
 }
 
 // getting data
-db.collection('items').get().then(snapshot => {
+db.collection('spells').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
         renderCafe(doc);
     });
@@ -36,13 +42,17 @@ db.collection('items').get().then(snapshot => {
 // saving data
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    db.collection('items').add({
+    db.collection('spells').add({
         name: form.name.value,
-        amount: form.amount.value,
+        wordsA: form.amount.value,
+	    wordsB: form.amount.value,
+	    wordsC: form.amount.value,
         subject: form.subject.value
     });
       form.name.value = '';
-      form.amount.value = '';
+      form.wordsA.value = '';
+	form.wordsB.value = '';
+	form.wordsC.value = '';
       form.subject.value = '';
 });
 
