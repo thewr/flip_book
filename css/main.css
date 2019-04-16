@@ -89,6 +89,7 @@ html>.container, body>.container {
  position: flex;
  height: 100%;
  flex-direction: column;
+ padding: 6px;
  background-color: #101112;
 
 }
