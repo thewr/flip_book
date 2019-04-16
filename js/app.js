@@ -80,7 +80,7 @@ $(function(){
 
 	$('.max').hide();
 	$('#close_app').hide();
-//	$("#menutag").html("Menu");
+	$("#label").html("Menu");
 
 
 	// Animate slide for create new form
@@ -90,7 +90,7 @@ $(function(){
 	    	 $('.sidebar').animate({width: '350px'});
 	         $(".max").hide().fadeIn(500);
 
-		// $("#menutag").html("Add Entry");
+		$("#label").html("Add Entry");
 	  	 $('#close_app').show();
 	}
 
@@ -103,11 +103,11 @@ $(function(){
 // Animate slide for edit form
 /*
 function display_edit(){
-  $("#options").hide();
-	 $('.leftmenu').animate({width: '350px'});
- $(".content").hide().fadeIn(500);
-   $( ".feedback" ).toggleClass('blur-me');
-	  $("#menutag").html("Edit Entry");
+  $('.min').hide();
+	 $('.sidebar').animate({width: '350px'});
+ $(".max").hide().fadeIn(500);
+   $( ".docs" ).toggleClass('blur-me');
+	  $("#label").html("Edit Entry");
 	  $('#close_app').show();
 }
 */
