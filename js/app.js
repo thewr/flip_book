@@ -26,7 +26,6 @@ function renderCafe(doc){
 	
   label.textContent = "NAME"; //&nbsp;
   label.style.display = "block"; 
-  label.style.marginright = "6px"; 
   li.appendChild(label);	
   li.appendChild( document.createTextNode( '\u00A0\u00A0' ) ); //blank space
 	
@@ -34,6 +33,7 @@ function renderCafe(doc){
    
   label2.textContent = "WORDS";
   label2.style.display = "block";
+
   li.appendChild(label2);
   li.appendChild( document.createTextNode( '\u00A0\u00A0' ) ); //blank space
 
