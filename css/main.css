@@ -115,6 +115,16 @@ button{
     color: black;
 }
 
+.docs {
+    -webkit-box-flex: 8;
+    flex: 8 800px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-flow: column;
+}
+
 #item-list{
     list-style-type: none;
     padding: 0;
