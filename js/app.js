@@ -44,9 +44,9 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     db.collection('spells').add({
         name: form.name.value,
-        wordsA: form.amount.value,
-	    wordsB: form.amount.value,
-	    wordsC: form.amount.value,
+        wordsA: form.wordsA.value,
+	wordsB: form.wordsB.value,
+	wordsC: form.wordsC.value,
         subject: form.subject.value
     });
       form.name.value = '';
