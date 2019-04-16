@@ -26,7 +26,8 @@ function renderCafe(doc){
   label.textContent = "Name: ";
   label.style.display = "inline-block"; li.appendChild(label);	
 
-  li.appendChild(name);
+  name.style.display = "inline-block"; li.appendChild(name);
+
   li.appendChild(wordsA);
   li.appendChild(wordsB);
   li.appendChild(wordsC);
