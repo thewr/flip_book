@@ -34,7 +34,7 @@ function renderCafe(doc){
 	
   name.style.display = "inline-block"; li.appendChild(name);
    
-  label2.textContent = "Words:_";
+  label2.textContent = "Words:";
   label2.style.display = "block";
   li.appendChild(label2);
   li.appendChild( document.createTextNode( '\u00A0\u00A0' ) ); //blank space
