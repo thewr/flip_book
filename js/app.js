@@ -24,20 +24,20 @@ function renderCafe(doc){
 
   // append list
 	
-  label.textContent = "Name:"; //&nbsp;
-  label.style.display = "inline-block"; 
+  label.textContent = "NAME"; //&nbsp;
+  label.style.display = "block"; 
   label.style.marginright = "6px"; 
   li.appendChild(label);	
-  li.appendChild( document.createTextNode( '\u00A0\u00A0\u00A0' ) ); //blank space
+  li.appendChild( document.createTextNode( '\u00A0\u00A0' ) ); //blank space
 	
   name.style.display = "inline-block"; li.appendChild(name);
    
-  label2.textContent = "Words:";
+  label2.textContent = "WORDS";
   label2.style.display = "block";
   li.appendChild(label2);
-  li.appendChild( document.createTextNode( '\u00A0\u00A0\u00A0' ) ); //blank space
+  li.appendChild( document.createTextNode( '\u00A0\u00A0' ) ); //blank space
 
-  wordsA.style.display = "inline-block"; 
+  wordsA.style.display = "block"; 
 	
   li.appendChild(wordsA);
   li.appendChild(wordsB);
