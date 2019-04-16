@@ -89,7 +89,7 @@ html>.container, body>.container {
  position: flex;
  height: 100%;
  flex-direction: column;
- padding: 6px;
+ padding: 23px;
  background-color: #101112;
 
 }
@@ -111,13 +111,13 @@ html>.container, body>.container {
 form:after{
     content: '';
     clear: both;
-    display: block;
+    display: flex;
+    flex-direction: row;
 }
 
 input[type=text],
 select,
 textarea {
-  width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -127,6 +127,19 @@ textarea {
   resize: vertical;
 }
 
+input[type=text],
+select {
+  width: 50%;
+  box-sizing:content-box;
+  display: block;
+
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 
 input[type=submit]{
   background-color: #4285F4;
@@ -134,7 +147,7 @@ input[type=submit]{
   display:inline-block;
   border: 1px solid rgba(27, 31, 35, 0.2);
   color: white;
-  padding: 3px 6px 3px 6px;
+  padding: 7px 11px 7px 11px;
   border-radius: 3px;
   float: bottom-left;
   font-weight: 400;
@@ -174,27 +187,27 @@ button{
 #item-list{
     list-style-type: none;
     padding: 0;
-    magin:0;
 }
 
 #item-list li{
     padding-left: 16px;
     padding: 8px 8px;
-    background: #f6f6f6;
-
-    //max-width: 740px;
+    background: #daece1;
+    margin: 8px 16px 8px 16px;
+    max-width: 280px;
     position: relative;
-    //height: 100%;
-    border: 1px solid #282b2d;
-    border-bottom: 16px solid #282b2d;
+    height: 100%;
+    border: 3px solid #2f3f2e;
+    border-radius: 0px 8px;
     cursor: pointer;
 }
 
-#item-list li span{    
-    color: black;
+#item-list li span{
+    color:#3c1231;
+    font-weight: 400;
     display: block;
     font-size: 14px;
-    margin-top: 0;
+
     font-size-adjust:auto;
 }
 
@@ -206,6 +219,6 @@ li div{
     //width: 100px;
     text-align: center;
     padding: 6px 6px;
-    font-weight:  400;
+    font-weight:  600;
     cursor:  pointer;
 }
