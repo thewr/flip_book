@@ -9,32 +9,22 @@
   	</head>
 	<h1>Code Scratch</h1>	
 	<button id = "add_item_button">Add Item</button>
-	<div class="content">
-            <form id = "add-item-form">
-		<label for="iname">Name</label>
-                <input type="text" name="name">
-		<label for="iname">Amount</label>
-                <input type="text" name="amount">
-		<label for="subject">Subject</label>
-                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-                <input id = "item_submit" type="submit" value="Submit">
-            </form>    
-	</div>
-	<div class="sidebar">
+
+	<div class="sidebar">	
 		<div class="content">
-		    <form id = "add-trade-form">
-			    <select name="cars">
-				    <option value="volvo">Volvo</option>
-				    <option value="saab">Saab</option>
-				    <option value="fiat">Fiat</option>
-				    <option value="audi">Audi</option>
-			    </select>
-			    <button>Submit</button>
-			</form>
+			<form id = "add-item-form">
+				<label for="iname">Name</label>
+                		<input type="text" name="name">
+				<label for="iname">Amount</label>
+                		<input type="text" name="amount">
+				<label for="subject">Subject</label>
+                		<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                		<input id = "item_submit" type="submit" value="Submit">
+            		</form>    
 		</div>
 	</div>
 
-	<ul id="item-list" />
+	<ul id="item-list"></ul>
 <script>
 // Initialize Firebase
   var config = {
