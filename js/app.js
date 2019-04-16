@@ -123,9 +123,9 @@ function hover(a){
   if(a=='on')
   {
     $('li').hover(function(){
-      $(this).addClass('selected');//$(this).css("background-color", "yellow");
+      $(this).css("background-color", "yellow");
       }, function(){
-      $(this).removeClass('selected');//$(this).css("background-color", "");
+      $(this).css("background-color", "");
     });
   }
   else {
@@ -143,7 +143,7 @@ $('#item-list').on('click','li',function() {
 
 	if($(this).hasClass('selected'))
 	{
-    hover('off');
+    	hover('off');
 		//show available options
 		//$("#edit_item").show();
 		//$("#del_item").show();
