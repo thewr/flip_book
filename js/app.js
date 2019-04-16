@@ -10,10 +10,10 @@ function renderCafe(doc){
   li.setAttribute('data-id', doc.id);  //Each document gets an id.
   let name = document.createElement('span');
   let wordsA = document.createElement('span');
-	let wordsB = document.createElement('span');
-	let wordsC = document.createElement('span');
+  let wordsB = document.createElement('span');
+  let wordsC = document.createElement('span');
   let subject = document.createElement('span');
-  let label = document.createElement('span');
+  let label = document.createElement('inlinespan');
 
   name.textContent = doc.data().name;
   wordsA.textContent = doc.data().wordsA;
@@ -24,8 +24,9 @@ function renderCafe(doc){
   // append list
 	
   label.textContent = "Name:";
-  label.style.display = "inline-block"; 
-  label.style.marginright = "6px"; li.appendChild(label);	
+ // label.style.display = "inline-block"; 
+  //label.style.marginright = "6px"; 
+	li.appendChild(label);	
 
   name.style.display = "inline-block"; li.appendChild(name);
    
