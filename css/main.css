@@ -264,6 +264,15 @@ button{
     font-size-adjust:auto;
 }
 
+.inlinespan{
+    color:#3c1231;
+    font-weight: 400;
+    display: inline-block;
+    margin-right: 3px;
+    font-size: 14px;
+    font-size-adjust:auto;
+}
+
 li div{
     position: absolute;
     top: 0;
