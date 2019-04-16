@@ -41,14 +41,14 @@ h1{
     text-shadow: 2px 2px 2px black;
 }
 
-.leftmenu>.content{
+.sidebar > .content{
     background-color: #f2f2f2;
     widt: 100%;
     margin: 6px;
     padding:  2px 3px;
 }
 
-form label {
+.sidebar > .content .label {
   text-transform: uppercase;
   position: relative;
     display: block;
