@@ -19,11 +19,13 @@ html {
     display: block;
 }
 
-.container .sidebar{
+.sidebar{
  width: 100px;
+ min-width: 100px;
  position: flex;
  height: 100%;
- flex-orientation: column;
+ flex-direction: column;
+
 }
 
 
@@ -53,27 +55,6 @@ form label {
     display: block;
 }
 
-
-/*
-form input{
-    float: left;
-    width: 50%;
-    margin: 0;
-    border: 0;
-    border-bottom: 1px solid #eee;
-    padding: 20px;
-    display: block;
-    box-sizing: border-box;
-    font-size: 18px;
-}
-
-form input:focus{
-    outline: none;
-    border-bottom: 3px solid #88236f;
-    padding-bottom: 8px;
-    transition: all ease 0.2s;
-}
-*/
 
 form:after{
     content: '';
