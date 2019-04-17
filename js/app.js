@@ -81,6 +81,7 @@ $(function(){
 	$('.max').hide();
 	$('#close_app').hide();
 	$("#label").html("Menu");
+	$('.sidebar').hide();
 
 
 	// Animate slide for create new form
