@@ -88,6 +88,7 @@ $(function(){
 	function display_add(){
 		 $( ".docs" ).toggleClass('blur-me');
 		 $(".min").hide();
+	         $('.sidebar').show();
 	    	 $('.sidebar').animate({width: '350px'});
 	         $(".max").hide().fadeIn(500);
 
