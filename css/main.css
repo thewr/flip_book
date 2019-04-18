@@ -89,7 +89,7 @@ html>.container, body>.container {
     background: #101112;
     padding: 0 1rem;
     text-size: 10rem;
-    height: 54px;
+    height: 50px;
     z-index: 1000;
 }
 
@@ -137,7 +137,7 @@ html>.container, body>.container {
     padding: 3rem 3rem;
     text-size: 10rem;
     text-align: center;
-    height: 32px;
+    height: 16px;
     border-top: 1px solid #e0e0eb;
     z-index: 1000;
 }
