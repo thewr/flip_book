@@ -138,7 +138,7 @@ html>.container, body>.container {
     padding: 0 1rem;
     text-size: 10rem;
     text-align: center;
-    height: 24px;
+    height: 32px;
     border-top: 2px solid #b7bcc0;
     z-index: 1000;
 }
