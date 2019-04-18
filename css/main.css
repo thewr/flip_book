@@ -139,7 +139,7 @@ html>.container, body>.container {
     text-size: 10rem;
     text-align: center;
     height: 24px;
-    border-top: 1px solid #e0e0eb;
+    border-top: 2px solid #b7bcc0;
     z-index: 1000;
 }
 
