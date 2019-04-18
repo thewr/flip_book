@@ -131,7 +131,7 @@ html>.container, body>.container {
     display: inline-block;
   margin: 0;
   padding: 0;
-  height: 50px;
+  height: 100%;
   overflow: hidden; 
 }
 
