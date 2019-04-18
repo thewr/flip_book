@@ -145,10 +145,10 @@ html>.container, body>.container {
 
 .options {
   list-style-type: none;
-    display: inline-block;
+  display: inline-block;
   margin: 0;
   padding: 0;
-  height: 66.7%;
+  //height: 66.7%;
   overflow: hidden; 
 }
 
@@ -156,7 +156,7 @@ html>.container, body>.container {
   float: left;
   display: inline-block;
   color: #000;
-  padding: 5px 7px;
+  padding: 3px;
   background-color: white;
   border-radius: 32px;
   text-align: center;
