@@ -127,8 +127,17 @@ html>.container, body>.container {
 }
 
 .min{ 
-    margin-left: 16px;
-    float: right;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    background: #101112;
+    padding: 0 1rem;
+    text-size: 10rem;
+    height: 54px;
+    z-index: 1000;
 }
 
 .options {
