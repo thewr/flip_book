@@ -126,7 +126,7 @@ html>.container, body>.container {
  cursor: pointer;
 }
 
-.min{ 
+.container .min{ 
     display: -webkit-box;
     display: flex;
     -webkit-box-align: center;
