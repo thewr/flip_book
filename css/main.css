@@ -134,7 +134,8 @@ html>.container, body>.container {
     -webkit-box-pack: justify;
     justify-content: space-between;
     background: #101112;
-    padding: 0 1rem;
+    magin: 0;
+    padding: 0;
     text-size: 10rem;
     text-align: center;
     height: 24px;
