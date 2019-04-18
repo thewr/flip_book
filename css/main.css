@@ -127,7 +127,8 @@ html>.container, body>.container {
 }
 
 .min{ 
-    margin-right: 16px;
+    margin-left: 16px;
+    float: right;
 }
 
 .options {
