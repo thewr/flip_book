@@ -146,8 +146,8 @@ html>.container, body>.container {
 .options {
   list-style-type: none;
   display: inline-block;
-  margin: 0;
   padding: 0;
+  white-space: nowrap;
   //height: 66.7%;
   overflow: hidden; 
 }
