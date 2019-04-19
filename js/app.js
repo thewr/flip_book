@@ -85,7 +85,7 @@ $(function(){
 
 	$('.max').hide();
 	$('#close_app').hide();
-	$("#label").html("Menu");
+	//$("#label").html("Menu");
 	$('.sidebar').hide();
 
 
