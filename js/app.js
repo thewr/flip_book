@@ -109,12 +109,14 @@ $(function(){
 
 	// Animate slide for edit form
 	function display_edit(){
-  		//$('.min').hide();
-		$('.sidebar').animate({width: '350px'});
- 		$(".max").hide().fadeIn(500);
-   		$( ".docs" ).toggleClass('blur-me');
-		//$("#label").html("Edit Entry");
-		$('#close_app').show();
+		 $( ".docs" ).toggleClass('blur-me');
+		 $(".min").hide();
+	         $('.sidebar').show();
+	    	 $('.sidebar').animate({width: '350px'});
+	         $(".max").hide().fadeIn(500);
+
+		//$("#label").html("Add Entry");
+	  	 $('#close_app').show();
 	}
 
 //Edit new document button show
