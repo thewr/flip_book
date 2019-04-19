@@ -1,7 +1,5 @@
 // creates a <table> element and a <tbody> element
 var itemList = document.querySelector('#item-list');
-itemList.addEventListener('click', myFunc, false);
-itemList.id = target.attr('data-id');
 
 // create form element
 var form = document.querySelector('#add-item-form');
@@ -54,7 +52,7 @@ function renderCafe(doc){
 	
 
 	//add to list only if not empty
-if(subject.style.cssText != ""){
+if(subject.style.cssText){
   	li.appendChild(label_subject);
   	li.appendChild(subject);
   }
