@@ -4,10 +4,11 @@ var itemList = document.querySelector('#item-list');
 var form = document.querySelector('#add-item-form');
 
 itemList.addEventListener('click', myFunc, false);
-itemList.myParam = 'This is my parameter';
+//itemList.myParam = 'This is my parameter';
 function myFunc(evt)
 {
-  window.alert( evt.target.myParam );
+	evt.target.css("background-color", "yellow");
+	window.alert( evt.target.myParam );
 }
 
 // create element & render cafe
@@ -174,7 +175,7 @@ $(function(){
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
 			
-			$(this).css("background-color", "yellow");
+			//$(this).css("background-color", "yellow");
 			
 			var tableData = $(this).children("span").map(function(){return $(this).text();}).get();
 			var id = $(this).attr('data-id');
