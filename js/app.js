@@ -5,8 +5,27 @@ itemList.myParam = 'This is my parameter';
 function myFunc(evt)
 {
 	let id = evt.target.parentElement.getAttribute('data-id');
-	//var x = 1;
   	window.alert(id);
+	let tableData = $(this).children("span").map(function(){return $(this).text();}).get();
+
+	form.addEventListener('click','append', (e) => {
+    					e.preventDefault();
+					db.collection("spells").doc(id).update({
+						name: form.name.value,
+						wordsA: form.wordsA.value,
+						wordsB: form.wordsB.value,
+						wordsC: form.wordsC.value,
+						subject: form.subject.value});
+					});
+						// put data on form
+						form.name.value =  tableData[1];
+						form.wordsA.value = tableData[3];
+						form.wordsB.value = tableData[4];
+						form.wordsC.value = tableData[5];
+						form.subject.value = tableData[7];
+						console.log(tableData);
+
+					});
 }
 
 // create form element
@@ -188,13 +207,13 @@ $(function(){
 			//hover('off');
 			$(this).css("background-color", "yellow");
 			
-			var tableData = $(this).children("span").map(function(){return $(this).text();}).get();
+			let tableData = $(this).children("span").map(function(){return $(this).text();}).get();
 			var id = $(this).attr('data-id');
 			var docRef = db.collection("spells").doc(id);
 		
-
+/*
 			$('#edit_item').click(function(){
-				form.addEventListener('click','Append', (e) => {
+				form.addEventListener('click','append', (e) => {
     					e.preventDefault();
 					db.collection("spells").doc(id).update({
 						name: form.name.value,
@@ -212,6 +231,7 @@ $(function(){
 						console.log(tableData);
 
 					});
+*/
 		} else {
 			$(this).css("background-color", "");
 			//hover('on');
