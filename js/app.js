@@ -49,8 +49,12 @@ function renderCafe(doc){
   li.appendChild(wordsB);
   li.appendChild(wordsC);
 	
-  li.appendChild(label_subject);
-  li.appendChild(subject);
+
+	//add to list only if not empty
+if(subject.style.cssText != ""){
+  	li.appendChild(label_subject);
+  	li.appendChild(subject);
+  }
 
 
   // put the <tbody> in the <table>
