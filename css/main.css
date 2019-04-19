@@ -94,7 +94,7 @@ html>.container, body>.container {
 }
 
 .sidebar{
- border-top: #282b2d;
+ border-top: 1px solid #282b2d;
  width: 54px;
  min-width: 54px;
  position: flex;
