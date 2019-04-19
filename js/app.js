@@ -109,7 +109,7 @@ $(function(){
 
 	// Animate slide for edit form
 	function display_edit(){
-  		$('.min').hide();
+  		//$('.min').hide();
 		$('.sidebar').animate({width: '350px'});
  		$(".max").hide().fadeIn(500);
    		$( ".docs" ).toggleClass('blur-me');
