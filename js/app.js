@@ -82,13 +82,11 @@ form.addEventListener('submit', (e) => {
 
 
 $(function(){
-
-	$('.max').hide();
 	 $("#edit_item").hide();
 
 	//$('#close_app').hide();
 	//$("#label").html("Menu");
-	//$('.sidebar').hide();
+	$('.sidebar').hide();
 
 
 	// Animate slide for create new form
