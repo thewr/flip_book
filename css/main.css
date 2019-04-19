@@ -135,7 +135,7 @@ html>.container, body>.container {
     justify-content: space-between;
     background: #101112;
     magin: 0;
-    padding: 0 1rem;
+    padding: 2px 2px;
     text-size: 10rem;
     text-align: center;
     height: 32px;
