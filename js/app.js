@@ -174,11 +174,11 @@ $(function(){
     			form.wordsA.value = tableData[4];
     			form.subject.value = tableData[5];
 		
-			/*
 
 			$('#edit_item').click(function(){
 			form.addEventListener('submit', (e) => {
     			e.preventDefault();
+
     			db.collection('spells').doc(id).update({
             			name: form.name.value,
             			wordsA: form.wordsA.value,
@@ -186,8 +186,12 @@ $(function(){
 	          		wordsC: form.wordsC.value,
             			subject: form.subject.value});
 			});
-			*/
-
+				form.name.value = '';
+      				form.wordsA.value = '';
+				form.wordsB.value = '';
+				form.wordsC.value = '';
+      				form.subject.value = '';
+			});
 		} else {
 			$(this).css("background-color", "");
       			$("#edit_item").hide();
