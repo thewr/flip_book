@@ -108,6 +108,7 @@ $(function(){
 
 	// Add new document button show
 	$("#new_item").click(function(){
+		$("#item_submit").attr('value', 'Submit').attr('type','submit');
 		display_add();
 	});
 
@@ -125,6 +126,7 @@ $(function(){
 
 //Edit new document button show
   $("#edit_item").click(function(){
+	  $("#item_submit").attr('value', 'Append').attr('type','append');
 	  display_edit();
   });
 
@@ -170,8 +172,6 @@ $(function(){
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
 			//hover('off');
-			$("#item_submit").attr('value', 'Append').attr('type','append');
-
 			$(this).css("background-color", "yellow");
 			
 			var tableData = $(this).children("span").map(function(){return $(this).text();}).get();
@@ -180,7 +180,6 @@ $(function(){
 		
 
 			$('#edit_item').click(function(){
-
 				form.addEventListener('append', (e) => {
     					e.preventDefault();
 					db.collection("spells").doc(id).update({
