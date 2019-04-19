@@ -161,6 +161,7 @@ $(function(){
 	$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
+			
 			$(this).css("background-color", "yellow");
 			
 			//var tableData = $(this).children("span").map(function(){return $(this).text();}).get();
@@ -176,7 +177,13 @@ $(function(){
 		
 
 			$('#edit_item').click(function(){
-			form.addEventListener('submit', (e) => {
+				$( ".docs" ).toggleClass('blur-me');
+				 $(".min").hide();
+	         		$('.sidebar').show();
+	    	 		$('.sidebar').animate({width: '350px'});
+	        		 $(".max").hide().fadeIn(500);
+			
+				form.addEventListener('submit', (e) => {
     			e.preventDefault();
 
     			db.collection('spells').doc(id).update({
