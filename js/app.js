@@ -168,6 +168,27 @@ function display_edit(){
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
 			$(this).css("background-color", "yellow");
+			var tableData = $(this).children("span").map(function(){return $(this).text();}).get();
+			var id = $(this).attr('data-id');
+			var docRef = db.collection("spells").doc(id);
+
+			// put data on form
+			form.name.value =  tableData[1];//name;//docRef.get().doc.data().fname;//db.collection('items').get().snapshot.doc(id).doc.data().fname;
+			form.wordsA.value = tableData[1];//.wordsA;
+    			form.wordsA.value = tableData[3];
+    			form.wordsA.value = tableData[4];
+    			form.subject.value = tableData[5];
+
+			$('#edit_item').click(function(){
+			form.addEventListener('submit', (e) => {
+    			e.preventDefault();
+    			db.collection('spells').doc(id).update({
+            		name: form.name.value,
+            		wordsA: form.wordsA.value,
+	          	wordsB: form.wordsB.value,
+	          	wordsC: form.wordsC.value,
+            		subject: form.subject.value});
+			});
 
 		} else {
 			$(this).css("background-color", "");
