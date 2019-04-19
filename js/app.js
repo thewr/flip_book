@@ -145,85 +145,22 @@ function display_edit(){
 	     $('#close_app').hide();
   });
 
-function hover(a){
-  if(a=='on')
-  {
-    $('li').hover(function(){
-      $(this).css("background-color", "yellow");
-      }, function(){
-      $(this).css("background-color", "");
-    });
-  }
-  else {
-    $('li').hover(function(){
-      $(this).css("background-color", "");
-      }, function(){
-      $(this).css("background-color", "");
-    });
-  }
-}
-
-$('#item-list').on('click','li',function() {
-		//show available options
-    $(this).css("background-color", "yellow");
-
-		$("#edit_item").show();
-		//$("#del_item").show();
-
-
-		var tableData = $(this).children("span").map(function(){return $(this).text();}).get();
-		var id = $(this).attr('data-id');
-		var docRef = db.collection("spells").doc(id);
-
-/*
-		docRef.get().then(function(doc) {
-		    if (doc.exists) {
-			     var tableData = doc.data();
-		        	console.log("Document data:", tableData);
-		        } else {
-		      	// doc.data() will be undefined in this case
-		      	console.log("No such document!");
-		        }
-	        	}).catch(function(error) {
-		           console.log("Error getting document:", error);
-	     	});
-*/
-		//var refData = docRef.get().get().doc.data().fname;//map(function(){return $(this).text();}).get();
-
-		// put data on form
-		form.name.value =  tableData[1];//name;//docRef.get().doc.data().fname;//db.collection('items').get().snapshot.doc(id).doc.data().fname;
-		form.wordsA.value = tableData[1];//.wordsA;
-    form.wordsA.value = tableData[3];
-    form.wordsA.value = tableData[4];
-    form.subject.value = tableData[5];
-
-		//$('#edit_item').click(function(){
-		form.addEventListener('submit', (e) => {
-    			e.preventDefault();
-    			db.collection('spells').doc(id).update({
-            name: form.name.value,
-            wordsA: form.wordsA.value,
-	          wordsB: form.wordsB.value,
-	          wordsC: form.wordsC.value,
-            subject: form.subject.value
-			});
-			});
-
-      /*
-
-   		$('#del_item').on('click',function(){
-        alert("Deleteing!!!");
-        db.collection('items').doc(id).delete();
-      });
-      */
-
-		}
-  	else
-  	{
-      $(this).css("background-color", "");
-      $("#edit_item").hide();
-
-  	}
-  });
+	function hover(a){
+	  if(a=='on')
+	  {
+	    $('li').hover(function(){
+	      $(this).css("background-color", "yellow");
+	      }, function(){
+	      $(this).css("background-color", "");
+	    });
+	  }
+	  else {
+	    $('li').hover(function(){
+	      $(this).css("background-color", "");
+	      }, function(){
+	      $(this).css("background-color", "");
+	    });
+	  }
+	}
 
 });
