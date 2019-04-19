@@ -61,17 +61,17 @@ function renderCafe(doc){
   li.appendChild(wordsB);
   li.appendChild(wordsC);
   li.appendChild(cross);
-	
-
-	//add to list only if not empty
-if(subject.style.cssText){
-  	li.appendChild(label_subject);
-  	li.appendChild(subject);
-  }
 
 
   // put the <tbody> in the <table>
   itemList.appendChild(li);
+
+  // deleting data
+    cross.addEventListener('click', (e) => {
+        e.stopPropagation();
+        let id = e.target.parentElement.getAttribute('data-id');
+        db.collection('cafes').doc(id).delete();
+    });
 }
 
 // getting data
