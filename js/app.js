@@ -1,5 +1,11 @@
 // creates a <table> element and a <tbody> element
 var itemList = document.querySelector('#item-list');
+itemList.addEventListener('click', myFunc, false);
+itemList.myParam = 'This is my parameter';
+function myFunc(evt)
+{
+  window.alert( "Hello ", evt.target);
+}
 
 // create form element
 var form = document.querySelector('#add-item-form');
@@ -180,7 +186,7 @@ $(function(){
 		
 
 			$('#edit_item').click(function(){
-				form.addEventListener('append', (e) => {
+				form.addEventListener('click','Append', (e) => {
     					e.preventDefault();
 					db.collection("spells").doc(id).update({
 						name: form.name.value,
