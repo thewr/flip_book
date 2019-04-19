@@ -5,9 +5,10 @@ itemList.myParam = 'This is my parameter';
 function myFunc(evt)
 {
 	let id = evt.target.parentElement.getAttribute('data-id');
-  	window.alert(id);
-	let tableData = evt.target.children("span").map(function(){return evt.target.text();}).get();
+	let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
 
+  	window.alert(id + tableData);
+	let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
 	/*
 	form.addEventListener('click','append', (e) => {
     					e.preventDefault();
