@@ -15,7 +15,7 @@ function renderCafe(doc){
   let wordsB = document.createElement('span');
   wordsB.style.cssText = "padding: 3px 0px 6px 12px; font-size: 12px;";
   let wordsC = document.createElement('span');
-  wordsC.style.cssText = "font-family: Arial, Helvetica, sans-serif; padding: 3px 0px 6px 12px; display: block; border-bottom: 2px solid black";
+  wordsC.style.cssText = "font-family: Arial, Helvetica, sans-serif; font-size: 12px; padding: 3px 0px 6px 12px; display: block; border-bottom: 2px solid black";
 
   let subject = document.createElement('span');
   subject.style.cssText = "padding: 3px 0px 6px 12px; display: block;;";
