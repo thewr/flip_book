@@ -8,6 +8,7 @@ function myFunc(evt)
   	window.alert(id);
 	let tableData = evt.target.children("span").map(function(){return evt.target.text();}).get();
 
+	/*
 	form.addEventListener('click','append', (e) => {
     					e.preventDefault();
 					db.collection("spells").doc(id).update({
@@ -26,6 +27,7 @@ function myFunc(evt)
 						console.log(tableData);
 
 					});
+					*/
 }
 
 // create form element
