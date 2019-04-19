@@ -105,8 +105,9 @@ html>.container, body>.container {
 
 }
 
-.sidebar > .content{
+.sidebar > .min .content{
     width: 100%;
+    height: 80%;
     display: flex;
     margin: 0;
     padding:  0;
