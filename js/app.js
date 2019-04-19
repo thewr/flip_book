@@ -88,24 +88,6 @@ form.addEventListener('submit', (e) => {
       form.subject.value = '';
 });
 
-form.addEventListener('append', (e) => {
-    	e.preventDefault();
-	db.collection("spells").update({
-		name: form.name.value,
-		wordsA: form.wordsA.value,
-		wordsB: form.wordsB.value,
-		wordsC: form.wordsC.value,
-		subject: form.subject.value});
-	});
-		// put data on form
-		form.name.value =  tableData[1];
-		form.wordsA.value = tableData[3];
-		form.wordsB.value = tableData[4];
-		form.wordsC.value = tableData[5];
-		form.subject.value = tableData[7];
-		console.log(tableData);
-});
-
 $(function(){
 	 $("#edit_item").hide();
 
