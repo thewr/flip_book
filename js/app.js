@@ -204,14 +204,14 @@ $(function(){
 	$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
-			//hover('off');
+			hover('off');
 			$(this).css("background-color", "yellow");
 			
 			//let tableData = $(this).children("span").map(function(){return $(this).text();}).get();
 			var id = $(this).attr('data-id');
 			var docRef = db.collection("spells").doc(id);
 		
-
+/*
 			$('#edit_item').click(function(){
 						form.name.value =  tableData[1];
 						form.wordsA.value = tableData[3];
@@ -221,9 +221,10 @@ $(function(){
 						console.log(tableData);
 
 					});
+					*/
 		} else {
 			$(this).css("background-color", "");
-			//hover('on');
+			hover('on');
       			$("#edit_item").hide();
 		}
 	});
