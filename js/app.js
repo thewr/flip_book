@@ -161,7 +161,9 @@ $(function(){
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
 			$(this).css("background-color", "yellow");
-			var tableData = $(this).children("span").map(function(){return $(this).text();}).get();
+			
+			/*
+			//var tableData = $(this).children("span").map(function(){return $(this).text();}).get();
 			var id = $(this).attr('data-id');
 			var docRef = db.collection("spells").doc(id);
 
@@ -182,6 +184,7 @@ $(function(){
 	          		wordsC: form.wordsC.value,
             			subject: form.subject.value});
 			});
+			*/
 
 		} else {
 			$(this).css("background-color", "");
