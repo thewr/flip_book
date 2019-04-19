@@ -29,6 +29,9 @@ function renderCafe(doc){
   label_words.textContent = "WORDS";
   label_words.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
 
+  let label_subject = document.createElement('span');
+  label_subject.textContent = "LOG ENTRY";
+  label_subject.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
 
   // generate content for fields
   name.textContent = doc.data().name;
@@ -42,13 +45,11 @@ function renderCafe(doc){
   li.appendChild(name);
 
   li.appendChild(label_words);
- // li.appendChild( document.createTextNode( '\u00A0\u00A0' ) ); //blank space
-
-  wordsA.style.display = "block";
-
   li.appendChild(wordsA);
   li.appendChild(wordsB);
   li.appendChild(wordsC);
+	
+  li.appendChild(label_subject);
   li.appendChild(subject);
 
 
