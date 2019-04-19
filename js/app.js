@@ -2,13 +2,14 @@
 var itemList = document.querySelector('#item-list');
 itemList.addEventListener('click', myFunc, false);
 itemList.myParam = 'This is my parameter';
+Let tableData = "";
 function myFunc(evt)
 {
 	let id = evt.target.parentElement.getAttribute('data-id');
-	let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
+	//let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
 
-  	window.alert(tableData);
-	let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
+  	window.alert(id);
+	//let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
 	/*
 	form.addEventListener('click','append', (e) => {
     					e.preventDefault();
@@ -210,7 +211,7 @@ $(function(){
 			hover('off');
 			$(this).css("background-color", "yellow");
 			
-			let tableData = $(this).children("span").map(function(){return $(this).text();}).get();
+			tableData = $(this).children("span").map(function(){return $(this).text();}).get();
 			var id = $(this).attr('data-id');
 			var docRef = db.collection("spells").doc(id);
 		
