@@ -171,8 +171,8 @@ $(function(){
 			var docRef = db.collection("spells").doc(id);
 
 			// put data on form
-			form.name.value =  tableData[1];//name;//docRef.get().doc.data().fname;//db.collection('items').get().snapshot.doc(id).doc.data().fname;
-			form.wordsA.value = tableData[1];//.wordsA;
+			form.name.value =  tableData[1];
+			form.wordsA.value = tableData[1];
     			form.wordsA.value = tableData[3];
     			form.wordsA.value = tableData[4];
     			form.subject.value = tableData[5];
@@ -192,11 +192,12 @@ $(function(){
 	          		wordsC: form.wordsC.value,
             			subject: form.subject.value});
 			});
-				form.name.value = '';
-      				form.wordsA.value = '';
-				form.wordsB.value = '';
-				form.wordsC.value = '';
-      				form.subject.value = '';
+				// put data on form
+				form.name.value =  tableData[1];
+				form.wordsA.value = tableData[1];
+    				form.wordsA.value = tableData[3];
+    				form.wordsA.value = tableData[4];
+    				form.subject.value = tableData[5];
 			});
 		} else {
 			$(this).css("background-color", "");
