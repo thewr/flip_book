@@ -4,7 +4,8 @@ itemList.addEventListener('click', myFunc, false);
 itemList.myParam = 'This is my parameter';
 function myFunc(evt)
 {
-  window.alert( "Hello ", evt.target);
+	var x = 1;
+  window.alert( "Hello ", x);
 }
 
 // create form element
