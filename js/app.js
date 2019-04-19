@@ -5,17 +5,32 @@ const form = document.querySelector('#add-item-form');
 
 // create element & render cafe
 function renderCafe(doc){
-  // create list document object
+  // create list document elements
   let li = document.createElement('li');
   li.setAttribute('data-id', doc.id);  //Each document gets an id.
   let name = document.createElement('span');
+  name.style.cssText = "padding: 3px 0px 3px 12px; font-size: 12px; border-bottom: 2px solid black";
   let wordsA = document.createElement('span');
+  wordsA.style.cssText = "padding: 3px 0px 3px 12px; font-size: 12px;";
   let wordsB = document.createElement('span');
+  wordsB.style.cssText = "padding: 3px 0px 6px 12px; font-size: 12px;";
   let wordsC = document.createElement('span');
-  let subject = document.createElement('span');
-  let label = document.createElement('span');
-  let label2 = document.createElement('span');
+  wordsC.style.cssText = "padding: 3px 0px 6px 12px; display: block; border-bottom: 2px solid black";
 
+  let subject = document.createElement('span');
+  subject.style.cssText = "padding: 3px 0px 6px 12px; display: block;;";
+
+  // create elements for labels for each data to display
+  let label_name = document.createElement('span');
+  label_name.textContent = "NAME"; //&nbsp;
+  label_name.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
+
+  let label_words = document.createElement('span');
+  label_words.textContent = "WORDS";
+  label_words.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
+
+
+  // generate content for fields
   name.textContent = doc.data().name;
   wordsA.textContent = doc.data().wordsA;
   wordsB.textContent = doc.data().wordsB;
@@ -23,24 +38,14 @@ function renderCafe(doc){
   subject.textContent = doc.data().subject;
 
   // append list
-	
-  label.textContent = "NAME"; //&nbsp;
-  label.style.cssText = "padding: 6px; display: inline-block; background: #daece1; width: 50%;"; //border: 1px solid black"; 
-  li.appendChild(label);	
-  //li.appendChild( document.createTextNode( '\u00A0\u00A0' ) ); //blank space
- // li.appendChild( document.createTextNode( 'TEST HERE' ) ); //blank space
-
-  name.style.cssText = "padding: 2px; display: block; background: #daece1; border-bottom: 1px solid black";
+  li.appendChild(label_name);
   li.appendChild(name);
-  
-  label2.textContent = "WORDS";
-  label2.style.display = "block";
 
-  li.appendChild(label2);
+  li.appendChild(label_words);
  // li.appendChild( document.createTextNode( '\u00A0\u00A0' ) ); //blank space
 
-  wordsA.style.display = "block"; 
-	
+  wordsA.style.display = "block";
+
   li.appendChild(wordsA);
   li.appendChild(wordsB);
   li.appendChild(wordsC);
