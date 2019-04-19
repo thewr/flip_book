@@ -5,7 +5,7 @@ itemList.myParam = 'This is my parameter';
 function myFunc(evt)
 {
 	var x = 1;
-  window.alert(x);
+  	window.alert(x);
 }
 
 // create form element
@@ -71,7 +71,7 @@ function renderCafe(doc){
     cross.addEventListener('click', (e) => {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute('data-id');
-        db.collection('cafes').doc(id).delete();
+        db.collection('spells').doc(id).delete();
     });
 }
 
