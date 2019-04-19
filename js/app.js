@@ -176,8 +176,9 @@ $(function(){
 		
 
 			$('#edit_item').click(function(){
-			
-				form.addEventListener('submit', (e) => {
+				$("#item_submit").attr('value', 'Append').attr('type','append');
+
+				form.addEventListener('append', (e) => {
     					e.preventDefault();
 
     			docRef.update({
