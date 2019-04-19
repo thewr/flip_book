@@ -176,6 +176,7 @@ $(function(){
     			form.wordsA.value = tableData[3];
     			form.wordsA.value = tableData[4];
     			form.subject.value = tableData[5];
+			console.log(tableData);
 		
 		
 
