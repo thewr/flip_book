@@ -2,7 +2,7 @@
 var itemList = document.querySelector('#item-list');
 itemList.addEventListener('click', myFunc, false);
 itemList.myParam = 'This is my parameter';
-Let tableData = "";
+let tableData = "";
 function myFunc(evt)
 {
 	let id = evt.target.parentElement.getAttribute('data-id');
