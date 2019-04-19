@@ -7,7 +7,7 @@ function myFunc(evt)
 	let id = evt.target.parentElement.getAttribute('data-id');
 	let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
 
-  	window.alert(id + tableData);
+  	window.alert(tableData);
 	let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
 	/*
 	form.addEventListener('click','append', (e) => {
