@@ -5,7 +5,7 @@ itemList.myParam = 'This is my parameter';
 function myFunc(evt)
 {
 	var x = 1;
-  window.alert( "Hello ", x);
+  window.alert(x);
 }
 
 // create form element
