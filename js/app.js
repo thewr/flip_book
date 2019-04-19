@@ -27,6 +27,11 @@ function renderCafe(doc){
   let subject = document.createElement('span');
   subject.style.cssText = "padding: 3px 0px 6px 12px; display: block;;";
 
+  let cross = document.createElement('div');
+  cross.textContent = 'x';
+
+
+
   // create elements for labels for each data to display
   let label_name = document.createElement('span');
   label_name.textContent = "NAME"; //&nbsp;
@@ -55,6 +60,7 @@ function renderCafe(doc){
   li.appendChild(wordsA);
   li.appendChild(wordsB);
   li.appendChild(wordsC);
+  li.appendChild(cross);
 	
 
 	//add to list only if not empty
