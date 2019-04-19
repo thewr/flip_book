@@ -8,7 +8,7 @@ itemList.addEventListener('click', myFunc, false);
 function myFunc(evt)
 {
 	evt.target.css("background-color", "yellow");
-	window.alert( evt.target.myParam );
+	//window.alert( evt.target.myParam );
 }
 
 // create element & render cafe
