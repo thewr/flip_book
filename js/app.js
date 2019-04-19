@@ -131,7 +131,9 @@ $(function(){
     $(".content").hide();
 	  $('.sidebar').animate({width: '0'});
 	  //$("#menutag").html("Menu");
-	  	//$(".options").hide().fadeIn(2000);
+	  	//$(".options").hide().fadeIn(2000);    
+	  $(".min").show();
+
 	$( ".docs" ).toggleClass('blur-me');
 	     $('#close_app').hide();
   });
