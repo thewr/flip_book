@@ -171,7 +171,7 @@ $(function(){
 	$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
-			hover(off);
+			hover('off');
 			$("#item_submit").attr('value', 'Append').attr('type','append');
 
 			$(this).css("background-color", "yellow");
@@ -203,7 +203,7 @@ $(function(){
 					});
 		} else {
 			$(this).css("background-color", "");
-			hover(on);
+			hover('on');
       			$("#edit_item").hide();
 		}
 	});
