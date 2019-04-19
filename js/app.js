@@ -184,9 +184,14 @@ $(function(){
 	         		$('.sidebar').show();
 	    	 		$('.sidebar').animate({width: '350px'});
 	        		 $(".max").hide().fadeIn(500);
+							form.name.value =  tableData[1];//name;//docRef.get().doc.data().fname;//db.collection('items').get().snapshot.doc(id).doc.data().fname;
+			form.wordsA.value = tableData[1];//.wordsA;
+    			form.wordsA.value = tableData[3];
+    			form.wordsA.value = tableData[4];
+    			form.subject.value = tableData[5];
 			
 				form.addEventListener('submit', (e) => {
-    			e.preventDefault();
+    					e.preventDefault();
 
     			db.collection('spells').doc(id).update({
             			name: form.name.value,
