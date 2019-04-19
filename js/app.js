@@ -211,18 +211,8 @@ $(function(){
 			var id = $(this).attr('data-id');
 			var docRef = db.collection("spells").doc(id);
 		
-/*
+
 			$('#edit_item').click(function(){
-				form.addEventListener('click','append', (e) => {
-    					e.preventDefault();
-					db.collection("spells").doc(id).update({
-						name: form.name.value,
-						wordsA: form.wordsA.value,
-						wordsB: form.wordsB.value,
-						wordsC: form.wordsC.value,
-						subject: form.subject.value});
-					});
-						// put data on form
 						form.name.value =  tableData[1];
 						form.wordsA.value = tableData[3];
 						form.wordsB.value = tableData[4];
@@ -231,7 +221,6 @@ $(function(){
 						console.log(tableData);
 
 					});
-*/
 		} else {
 			$(this).css("background-color", "");
 			//hover('on');
