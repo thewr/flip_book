@@ -207,7 +207,7 @@ $(function(){
 			hover('off');
 			$(this).css("background-color", "yellow");
 			
-			//let tableData = $(this).children("span").map(function(){return $(this).text();}).get();
+			let tableData = $(this).children("span").map(function(){return $(this).text();}).get();
 			var id = $(this).attr('data-id');
 			var docRef = db.collection("spells").doc(id);
 		
