@@ -3,14 +3,6 @@ var itemList = document.querySelector('#item-list');
 // create form element
 var form = document.querySelector('#add-item-form');
 
-itemList.addEventListener('click', myFunc, false);
-//itemList.myParam = 'This is my parameter';
-function myFunc(evt)
-{
-	evt.target.css("background-color", "yellow");
-	//window.alert( evt.target.myParam );
-}
-
 // create element & render cafe
 function renderCafe(doc){
   // create list document elements
@@ -174,8 +166,9 @@ $(function(){
 	$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
-			
-			//$(this).css("background-color", "yellow");
+			$("#item_submit").attr('value', 'Append').attr('type','append');
+
+			$(this).css("background-color", "yellow");
 			
 			var tableData = $(this).children("span").map(function(){return $(this).text();}).get();
 			var id = $(this).attr('data-id');
@@ -183,7 +176,6 @@ $(function(){
 		
 
 			$('#edit_item').click(function(){
-				$("#item_submit").attr('value', 'Append').attr('type','append');
 
 				form.addEventListener('append', (e) => {
     					e.preventDefault();
