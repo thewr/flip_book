@@ -1,7 +1,14 @@
 // creates a <table> element and a <tbody> element
-const itemList = document.querySelector('#item-list');
+var itemList = document.querySelector('#item-list');
 // create form element
-const form = document.querySelector('#add-item-form');
+var form = document.querySelector('#add-item-form');
+
+itemList.addEventListener('click', myFunc, false);
+itemList.myParam = 'This is my parameter';
+function myFunc(evt)
+{
+  window.alert( evt.target.myParam );
+}
 
 // create element & render cafe
 function renderCafe(doc){
@@ -84,7 +91,6 @@ form.addEventListener('submit', (e) => {
 	form.wordsC.value = '';
       form.subject.value = '';
 });
-
 
 $(function(){
 	 $("#edit_item").hide();
@@ -181,22 +187,22 @@ $(function(){
 				form.addEventListener('append', (e) => {
     					e.preventDefault();
 
-    			docRef.update({
-            			name: form.name.value,
-            			wordsA: form.wordsA.value,
-	          		wordsB: form.wordsB.value,
-	          		wordsC: form.wordsC.value,
-            			subject: form.subject.value});
-			});
-				// put data on form
-				form.name.value =  tableData[1];
-				form.wordsA.value = tableData[3];
-    				form.wordsB.value = tableData[4];
-    				form.wordsC.value = tableData[5];
-    				form.subject.value = tableData[7];
-				console.log(tableData);
+					docRef.update({
+						name: form.name.value,
+						wordsA: form.wordsA.value,
+						wordsB: form.wordsB.value,
+						wordsC: form.wordsC.value,
+						subject: form.subject.value});
+					});
+						// put data on form
+						form.name.value =  tableData[1];
+						form.wordsA.value = tableData[3];
+						form.wordsB.value = tableData[4];
+						form.wordsC.value = tableData[5];
+						form.subject.value = tableData[7];
+						console.log(tableData);
 
-			});
+					});
 		} else {
 			$(this).css("background-color", "");
       			$("#edit_item").hide();
