@@ -50,7 +50,7 @@ html>.container, body>.container {
 }
 
 
-.selected {
+#item-list li .selected {
   color: #000;
   background-color: yellow;
 }
