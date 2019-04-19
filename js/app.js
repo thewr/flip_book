@@ -83,7 +83,9 @@ form.addEventListener('submit', (e) => {
 
 $(function(){
 
-	//$('.max').hide();
+	$('.max').hide();
+	 $("#edit_item").hide();
+
 	//$('#close_app').hide();
 	//$("#label").html("Menu");
 	//$('.sidebar').hide();
