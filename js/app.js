@@ -168,7 +168,7 @@ $(function(){
 	$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
-			$("#item_submit").attr('value', 'Append').attr('type','append');
+			//$("#item_submit").attr('value', 'Append').attr('type','append');
 
 			$(this).css("background-color", "yellow");
 			
@@ -179,7 +179,7 @@ $(function(){
 
 			$('#edit_item').click(function(){
 
-				form.addEventListener('append', (e) => {
+				form.addEventListener('submit', (e) => {
     					e.preventDefault();
 
 					db.collection("spells").doc(id).update({
