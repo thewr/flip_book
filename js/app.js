@@ -164,72 +164,65 @@ function hover(a){
 }
 
 $('#item-list').on('click','li',function() {
-	$(this).toggleClass('selected').siblings().removeClass('selected');
-	//$(this).toggleClass('active').siblings().removeClass('active');
-
-	if($(this).hasClass('selected'))
-	{
-    	hover('off');
 		//show available options
-		//$("#edit_item").show();
+    $(this).css("background-color", "yellow");
+
+		$("#edit_item").show();
 		//$("#del_item").show();
 
-/*
-		var tableData; //= $(this).children("span").map(function(){return $(this).text();}).get();
-		var id = $(this).attr('data-id');
-		var docRef = db.collection("items").doc(id);
 
+		var tableData = $(this).children("span").map(function(){return $(this).text();}).get();
+		var id = $(this).attr('data-id');
+		var docRef = db.collection("spells").doc(id);
+
+/*
 		docRef.get().then(function(doc) {
 		    if (doc.exists) {
-			var tableData = doc.data();
-			console.log("Document data:", tableData);
-		    } else {
-			// doc.data() will be undefined in this case
-			console.log("No such document!");
-		    }
-		}).catch(function(error) {
-		    console.log("Error getting document:", error);
-		});
-
-
+			     var tableData = doc.data();
+		        	console.log("Document data:", tableData);
+		        } else {
+		      	// doc.data() will be undefined in this case
+		      	console.log("No such document!");
+		        }
+	        	}).catch(function(error) {
+		           console.log("Error getting document:", error);
+	     	});
+*/
 		//var refData = docRef.get().get().doc.data().fname;//map(function(){return $(this).text();}).get();
 
 		// put data on form
-		form.fname.value =  tableData.fname;//docRef.get().doc.data().fname;//db.collection('items').get().snapshot.doc(id).doc.data().fname;
-		form.lname.value = tableData.lname;
-      		//form.email.value = tableData[3];
-      		//form.dob.value = tableData[4];
-      		//form.info.value = tableData[5];
+		form.name.value =  tableData[1];//name;//docRef.get().doc.data().fname;//db.collection('items').get().snapshot.doc(id).doc.data().fname;
+		form.wordsA.value = tableData[1];//.wordsA;
+    form.wordsA.value = tableData[3];
+    form.wordsA.value = tableData[4];
+    form.subject.value = tableData[5];
 
 		//$('#edit_item').click(function(){
 		form.addEventListener('submit', (e) => {
     			e.preventDefault();
-    			db.collection('items').doc(id).update({
-				date: todaysDate(),
-        			fname: form.fname.value,
-        			lname: form.lname.value,
-        			email: form.email.value,
-				dob: form.dob.value,
-        			info: form.info.value
+    			db.collection('spells').doc(id).update({
+            name: form.name.value,
+            wordsA: form.wordsA.value,
+	          wordsB: form.wordsB.value,
+	          wordsC: form.wordsC.value,
+            subject: form.subject.value
 			});
-				clearForm();
+			});
 
-			});
+      /*
 
    		$('#del_item').on('click',function(){
         alert("Deleteing!!!");
         db.collection('items').doc(id).delete();
       });
-
       */
 
 		}
   	else
   	{
-        hover('on');
-  		//	$("#edit_item").hide();
-  		//	$("#del_item").hide();
-  			clearForm();
+      $(this).css("background-color", "");
+      $("#edit_item").hide();
+
   	}
   });
 
