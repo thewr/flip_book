@@ -97,34 +97,29 @@ $(function(){
 	    	 $('.sidebar').animate({width: '350px'});
 	         $(".max").hide().fadeIn(500);
 
-		$("#label").html("Add Entry");
+		//$("#label").html("Add Entry");
 	  	 $('#close_app').show();
 	}
 
-// Add new document button show
+	// Add new document button show
 	$("#new_item").click(function(){
-		//$("#item_submit").attr('value', 'Submit').attr('type','submit');
 		display_add();
 	});
 
-// Animate slide for edit form
-/*
-function display_edit(){
-  $('.min').hide();
-	 $('.sidebar').animate({width: '350px'});
- $(".max").hide().fadeIn(500);
-   $( ".docs" ).toggleClass('blur-me');
-	  $("#label").html("Edit Entry");
-	  $('#close_app').show();
+	// Animate slide for edit form
+	function display_edit(){
+  	$('.min').hide();
+	$('.sidebar').animate({width: '350px'});
+ 	$(".max").hide().fadeIn(500);
+   	$( ".docs" ).toggleClass('blur-me');
+	//$("#label").html("Edit Entry");
+	$('#close_app').show();
 }
-*/
 
 //Edit new document button show
-/*
   $("#edit_item").click(function(){
 	  display_edit();
   });
-*/
 
   $('#item_submit').click(function(){
     $(".content").hide();
@@ -136,14 +131,12 @@ function display_edit(){
   });
 
 
-  $('#close_app').click(function(){
-    $(".content").hide();
-	   $('.sidebar').animate({width: '54px'});
-	//  $("#menutag").html("Menu");
-//	$(".options").hide().fadeIn(2000);
-	 $( ".docs" ).toggleClass('blur-me');
-	     $('#close_app').hide();
-  });
+  	$('#close_app').click(function(){
+    		$(".content").hide();
+	   	$('.sidebar').animate({width: '54px'});
+	 	$( ".docs" ).toggleClass('blur-me');
+	     	$('#close_app').hide();
+	});
 
 	function hover(a){
 	  if(a=='on')
