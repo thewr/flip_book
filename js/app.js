@@ -182,7 +182,7 @@ $(function(){
 				form.addEventListener('append', (e) => {
     					e.preventDefault();
 
-					docRef.update({
+					db.collection("spells").doc(id).update({
 						name: form.name.value,
 						wordsA: form.wordsA.value,
 						wordsB: form.wordsB.value,
