@@ -303,6 +303,7 @@ button{
 li div{
     position: absolute;
     top: 0;
+    color:#3c1231;
     right: 0px;
     //width: 100px;
     text-align: center;
