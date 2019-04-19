@@ -229,7 +229,11 @@ input[type=submit],input[type=append]{
   cursor: pointer;
 }
 
-input[type=append],input[type=submit]:hover {
+input[type=append]:hover {
+  background-color: #3F729B;
+}
+
+input[type=submit]:hover {
   background-color: #3F729B;
 }
 
