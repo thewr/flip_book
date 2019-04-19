@@ -6,7 +6,7 @@ function myFunc(evt)
 {
 	let id = evt.target.parentElement.getAttribute('data-id');
   	window.alert(id);
-	let tableData = $(this).children("span").map(function(){return $(this).text();}).get();
+	let tableData = evt.target.children("span").map(function(){return evt.target.text();}).get();
 
 	form.addEventListener('click','append', (e) => {
     					e.preventDefault();
