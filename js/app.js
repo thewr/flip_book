@@ -1,5 +1,8 @@
 // creates a <table> element and a <tbody> element
 var itemList = document.querySelector('#item-list');
+itemList.addEventListener('click', myFunc, false);
+itemList.id = target.attr('data-id');
+
 // create form element
 var form = document.querySelector('#add-item-form');
 
@@ -85,6 +88,24 @@ form.addEventListener('submit', (e) => {
       form.subject.value = '';
 });
 
+form.addEventListener('append', (e) => {
+    	e.preventDefault();
+	db.collection("spells").update({
+		name: form.name.value,
+		wordsA: form.wordsA.value,
+		wordsB: form.wordsB.value,
+		wordsC: form.wordsC.value,
+		subject: form.subject.value});
+	});
+		// put data on form
+		form.name.value =  tableData[1];
+		form.wordsA.value = tableData[3];
+		form.wordsB.value = tableData[4];
+		form.wordsC.value = tableData[5];
+		form.subject.value = tableData[7];
+		console.log(tableData);
+});
+
 $(function(){
 	 $("#edit_item").hide();
 
@@ -168,7 +189,7 @@ $(function(){
 	$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
-			//$("#item_submit").attr('value', 'Append').attr('type','append');
+			$("#item_submit").attr('value', 'Append').attr('type','append');
 
 			$(this).css("background-color", "yellow");
 			
@@ -179,9 +200,8 @@ $(function(){
 
 			$('#edit_item').click(function(){
 
-				form.addEventListener('submit', (e) => {
+				form.addEventListener('append', (e) => {
     					e.preventDefault();
-
 					db.collection("spells").doc(id).update({
 						name: form.name.value,
 						wordsA: form.wordsA.value,
