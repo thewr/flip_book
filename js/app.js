@@ -171,24 +171,14 @@ $(function(){
 			var docRef = db.collection("spells").doc(id);
 
 			// put data on form
-			form.name.value =  tableData[1];//name;//docRef.get().doc.data().fname;//db.collection('items').get().snapshot.doc(id).doc.data().fname;
-			form.wordsA.value = tableData[1];//.wordsA;
-    			form.wordsA.value = tableData[3];
-    			form.wordsA.value = tableData[4];
-    			form.subject.value = tableData[5];
+			form.name.value =  "test";//tableData[1];//name;//docRef.get().doc.data().fname;//db.collection('items').get().snapshot.doc(id).doc.data().fname;
+			//form.wordsA.value = tableData[1];//.wordsA;
+    			//form.wordsA.value = tableData[3];
+    			//form.wordsA.value = tableData[4];
+    			//form.subject.value = tableData[5];
 		
 
 			$('#edit_item').click(function(){
-				$( ".docs" ).toggleClass('blur-me');
-				 $(".min").hide();
-	         		$('.sidebar').show();
-	    	 		$('.sidebar').animate({width: '350px'});
-	        		 $(".max").hide().fadeIn(500);
-							form.name.value =  tableData[1];//name;//docRef.get().doc.data().fname;//db.collection('items').get().snapshot.doc(id).doc.data().fname;
-			form.wordsA.value = tableData[1];//.wordsA;
-    			form.wordsA.value = tableData[3];
-    			form.wordsA.value = tableData[4];
-    			form.subject.value = tableData[5];
 			
 				form.addEventListener('submit', (e) => {
     					e.preventDefault();
