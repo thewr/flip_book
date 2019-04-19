@@ -176,11 +176,11 @@ $(function(){
 			form.addEventListener('submit', (e) => {
     			e.preventDefault();
     			db.collection('spells').doc(id).update({
-            		name: form.name.value,
-            		wordsA: form.wordsA.value,
-	          	wordsB: form.wordsB.value,
-	          	wordsC: form.wordsC.value,
-            		subject: form.subject.value});
+            			name: form.name.value,
+            			wordsA: form.wordsA.value,
+	          		wordsB: form.wordsB.value,
+	          		wordsC: form.wordsC.value,
+            			subject: form.subject.value});
 			});
 
 		} else {
