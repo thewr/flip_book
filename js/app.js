@@ -165,7 +165,7 @@ function display_edit(){
 	
 	$('#item-list').on('click','li',function() {
 	$(this).toggleClass('selected').siblings().removeClass('selected');
-	$(this).css("background-color", "yellow");
+	//$(this).css("background-color", "yellow");
 
 	});
 
