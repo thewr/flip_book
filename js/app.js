@@ -4,8 +4,9 @@ itemList.addEventListener('click', myFunc, false);
 itemList.myParam = 'This is my parameter';
 function myFunc(evt)
 {
-	var x = 1;
-  	window.alert(x);
+	let id = evt.target.parentElement.getAttribute('data-id');
+	//var x = 1;
+  	window.alert(id);
 }
 
 // create form element
