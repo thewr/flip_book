@@ -129,7 +129,7 @@ $(function(){
 
   $('#item_submit').click(function(){
     $(".content").hide();
-	  $('.sidebar').animate({width: '0'});
+	  $('.sidebar').hide();
 	  //$("#menutag").html("Menu");
 	  	//$(".options").hide().fadeIn(2000);    
 	  $(".min").show();
