@@ -165,8 +165,14 @@ function display_edit(){
 	
 	$('#item-list').on('click','li',function() {
 	$(this).toggleClass('selected').siblings().removeClass('selected');
-	//$(this).css("background-color", "yellow");
+		if($(this).hasClass('selected')){
+			$("#edit_item").show();
+			$(this).css("background-color", "yellow");
 
+		} else {
+			$(this).css("background-color", "");
+      			$("#edit_item").hide();
+		}
 	});
 
 });
