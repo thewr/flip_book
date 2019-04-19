@@ -194,10 +194,10 @@ $(function(){
 			});
 				// put data on form
 				form.name.value =  tableData[1];
-				form.wordsA.value = tableData[1];
-    				form.wordsA.value = tableData[3];
+				form.wordsA.value = tableData[3];
     				form.wordsA.value = tableData[4];
-    				form.subject.value = tableData[5];
+    				form.wordsA.value = tableData[5];
+    				form.subject.value = tableData[7];
 			});
 		} else {
 			$(this).css("background-color", "");
