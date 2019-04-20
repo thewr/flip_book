@@ -104,6 +104,8 @@ function renderCafe(doc){
   li.appendChild(wordsA);
   li.appendChild(wordsB);
   li.appendChild(wordsC);
+	
+  li.appendChild(label_subject);
   li.appendChild(subject);
 
   li.appendChild(cross);
