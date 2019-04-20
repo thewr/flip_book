@@ -37,7 +37,7 @@ function myFunc(evt)
 	} catch (error) {
 	    res.send(error);
 	   }
-	});	
+	//});	
 		 
 				 
 				 
