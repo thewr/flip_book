@@ -173,6 +173,10 @@ html>.container, body>.container {
     background-color: 	#ffff66;
 }
 
+#delete_item {
+    background-color: 	#ff0000;
+}
+
 .options #label
 {
    color: white;
