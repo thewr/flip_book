@@ -21,7 +21,7 @@ function myFunc(evt)
 					wordsB: doc.data().wordsB,
 					wordsC: doc.data().wordsC,
 				        subject: doc.data().subject
-				};  window.alert(tableData.name + " " + tableData.subject);
+				};  //window.alert(tableData.name + " " + tableData.subject);
 			}
 		})
 	} catch (error) {
@@ -33,7 +33,7 @@ function myFunc(evt)
 						form.wordsB.value = tableData.wordsB;
 						form.wordsC.value = tableData.wordsC;
 						form.subject.value = tableData.subject;
-					};
+					});
 
 			/*	 
 	 		form.addEventListener('click','append', (e) => {
