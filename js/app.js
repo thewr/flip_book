@@ -1,3 +1,5 @@
+document.body.style.overflow = 'hidden';
+
 // creates a <table> element and a <tbody> element
 var itemList = document.querySelector('#item-list');
 itemList.addEventListener('click', myFunc, false);
