@@ -159,10 +159,18 @@ html>.container, body>.container {
   color: #000;
   padding: 3px;
   margin-right:16px;
-  background-color: white;
+  //background-color: white;
   border-radius: 3px;
   text-align: center;
   text-decoration: none;
+}
+
+#new_item {
+    background-color: 	#90EE90;
+}
+
+#edit_item {
+    background-color: 	#ffff66;
 }
 
 .options #label
