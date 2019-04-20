@@ -7,10 +7,10 @@ function myFunc(evt)
 {
 	let id = evt.target.parentElement.getAttribute('data-id');
 	var docRef = db.collection("spells").doc(id);
-	var out = docRef.get().doc.data().fname;
+	//var out = docRef.get().doc.data().fname;
 	//let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
 
-  	window.alert(out);
+  	window.alert(id);
 	let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
 	form.addEventListener('click','append', (e) => {
     					e.preventDefault();
