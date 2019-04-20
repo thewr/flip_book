@@ -43,7 +43,7 @@ function myFunc(evt)
 								wordsB: form.wordsB.value,
 								wordsC: form.wordsC.value,
 								subject: form.subject.value
-							});
+							});	location.reload();
 						});
 					});	
 			//});
