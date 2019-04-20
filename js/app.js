@@ -43,7 +43,7 @@ function myFunc(evt)
 								wordsB: form.wordsB.value,
 								wordsC: form.wordsC.value,
 								subject: form.subject.value
-							});	location.reload();
+							});	
 						});
 					});	
 			//});
@@ -55,7 +55,7 @@ function myFunc(evt)
 var form = document.querySelector('#add-item-form');
 
 // create element & render cafe
-function renderCafe(doc){
+function renderDB(doc){
   // create list document elements
   let li = document.createElement('li');
   li.setAttribute('data-id', doc.id);  //Each document gets an id.
@@ -125,7 +125,7 @@ function renderCafe(doc){
 // getting data
 db.collection('spells').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
-        renderCafe(doc);
+        renderDB(doc);
     });
 });
 
