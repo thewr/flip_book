@@ -6,11 +6,12 @@ let tableData = "";
 function myFunc(evt)
 {
 	let id = evt.target.parentElement.getAttribute('data-id');
+	var docRef = db.collection("spells").doc(id);
+	var out = docRef.get().doc.data().fname;
 	//let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
 
-  	window.alert(id);
-	//let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
-	/*
+  	window.alert(out);
+	let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
 	form.addEventListener('click','append', (e) => {
     					e.preventDefault();
 					db.collection("spells").doc(id).update({
@@ -29,7 +30,7 @@ function myFunc(evt)
 						console.log(tableData);
 
 					});
-					*/
+					
 }
 
 // create form element
