@@ -34,8 +34,9 @@ function myFunc(evt)
 						form.wordsC.value = tableData.wordsC;
 						form.subject.value = tableData.subject;
 						
-						form.addEventListener('click','append', (e) => {
-    							e.preventDefault();
+						('#item_submit').click(function() { 
+							//form.addEventListener('click','append', (e) => {
+    							//e.preventDefault();
 							db.collection("spells").doc(id).update({
 								name: form.name.value,
 								wordsA: form.wordsA.value,
