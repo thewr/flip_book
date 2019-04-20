@@ -93,6 +93,10 @@ html>.container, body>.container {
     z-index: 1000;
 }
 
+#top-container{
+    display: fixed;
+}
+
 .sidebar{
  border-top: 1px solid #282b2d;
  width: 54px;
