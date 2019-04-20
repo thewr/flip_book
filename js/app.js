@@ -45,7 +45,7 @@ function myFunc(evt)
 						form.wordsC.value = tableData.wordsC;
 						form.subject.value = tableData.subject;
 					});
-					*/
+					
 					
 }
 
