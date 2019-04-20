@@ -164,10 +164,7 @@ form.addEventListener('submit', (e) => {
 });
 
 $(function(){
-	 $("#edit_item").hide();
-
-	//$('#close_app').hide();
-	//$("#label").html("Menu");
+	$("#edit_item").hide();
 	$('.sidebar').hide();
 
 
@@ -201,7 +198,7 @@ $(function(){
 	  	 $('#close_app').show();
 	}
 
-//Edit new document button show
+	//Edit new document button show
   	$("#edit_item").click(function(){
 	  $("#item_submit").attr('value', 'Append').attr('type','append');
 	  display_edit();
@@ -210,12 +207,9 @@ $(function(){
   $('#item_submit').click(function(){
     $(".content").hide();
 	  $('.sidebar').hide();
-	  //$("#menutag").html("Menu");
-	  	//$(".options").hide().fadeIn(2000);    
 	  $(".min").show();
-
-	$( ".docs" ).toggleClass('blur-me');
-	     $('#close_app').hide();
+	  $( ".docs" ).toggleClass('blur-me');
+	  $('#close_app').hide();
   });
 
 
@@ -248,28 +242,15 @@ $(function(){
 	$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
+			$("#delete_item").show();
+
 			//hover('off');
 			$(this).css("background-color", "yellow");
-			
-			//tableData = $(this).children("span").map(function(){return $(this).text();}).get();
-			//var id = $(this).attr('data-id');
-			//var docRef = db.collection("spells").doc(id);
-		
-/*
-			$('#edit_item').click(function(){
-						form.name.value =  tableData[1];
-						form.wordsA.value = tableData[3];
-						form.wordsB.value = tableData[4];
-						form.wordsC.value = tableData[5];
-						form.subject.value = tableData[7];
-						console.log(tableData);
-
-					});
-					*/
 		} else {
 			$(this).css("background-color", "");
-			//hover('on');
       			$("#edit_item").hide();
+			$("#delete_item").hide();
+
 		}
 	});
 
