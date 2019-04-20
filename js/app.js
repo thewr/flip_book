@@ -2,18 +2,52 @@
 var itemList = document.querySelector('#item-list');
 itemList.addEventListener('click', myFunc, false);
 itemList.myParam = 'This is my parameter';
-let tableData = "";
 function myFunc(evt)
 {
 	let id = evt.target.parentElement.getAttribute('data-id');
 	var docRef = db.collection("spells").doc(id);
 	       
+	try {
+		var tableData = {};
+		docRef.get()
+		.then(doc => {
+			if(!doc.exists) {
+				window.alert("no such document");
+			} else {
+				tableData = {
+					doc: doc.data(),
+					name: doc.data().name
+				};
+				var promises = [];
+				data.data().comments.forEach((element, index) => {
+					promises.push(firestore.doc(element).get());
+				});
+				return Promise.all(promises);
+			}
+		})
+		//.then(results => {
+		//var comments = {};
+		//results.forEach((element, index) => {
+		//comments[index] = element.data().title  //Let's imagine a comment has a title property
+		//});
+		//tableData.comments = comments;
+		//res.render("campground", campground);
+	   // })
 
-	var out =  docRef.get().doc.data().name;
+	//} catch (error) {
+	   // res.send(error);
+	 //  }
+	});	
+		 
+				 
+				 
+				 
+				 
+				 
 	//let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
 
-  	window.alert(out);
-	let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
+  	//window.alert(out);
+	//let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
 	/*
 	form.addEventListener('click','append', (e) => {
     					e.preventDefault();
