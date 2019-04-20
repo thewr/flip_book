@@ -21,14 +21,14 @@ function myFunc(evt)
 					wordsB: doc.data().wordsB,
 					wordsC: doc.data().wordsC,
 				        subject: doc.data().subject
-				};  window.alert(tableData.name + " " + tableData.wordsA);
+				};  window.alert(tableData.name + " " + tableData.subject);
 			}
 		})
 	} catch (error) {
 	res.send(error);
 	}
 		 
-				 
+			/*	 
 	 		form.addEventListener('click','append', (e) => {
     					e.preventDefault();
 					db.collection("spells").doc(id).update({
@@ -44,9 +44,8 @@ function myFunc(evt)
 						form.wordsB.value = tableData.wordsB;
 						form.wordsC.value = tableData.wordsC;
 						form.subject.value = tableData.subject;
-					});
-					
-					
+					});	
+					*/
 }
 
 // create form element
