@@ -102,7 +102,7 @@ function renderDB(doc){
   label_name.textContent = "NAME"; //&nbsp;
   label_name.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
 
-  let label_addres = document.createElement('span');
+  let label_address = document.createElement('span');
   label_words.textContent = "ADDRESS";
   label_words.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
 
@@ -129,9 +129,13 @@ function renderDB(doc){
   li.appendChild(label_name);
   li.appendChild(name);
 
-  li.appendChild(label_words);
+  li.appendChild(label_address);
   li.appendChild(wordsA);
+	
+  li.appendChild(label_website);
   li.appendChild(wordsB);
+	
+  li.appendChild(label_phone);
   li.appendChild(wordsC);
 	
   li.appendChild(label_subject);
