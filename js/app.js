@@ -2,6 +2,14 @@
 var itemList = document.querySelector('#item-list');
 itemList.addEventListener('click', myFunc, false);
 itemList.myParam = 'This is my parameter';
+
+function refresh() {
+
+    setTimeout(function () {
+        location.reload()
+    }, 100);
+}
+
 function myFunc(evt)
 {
 	let id = evt.target.parentElement.getAttribute('data-id');
@@ -44,11 +52,20 @@ function myFunc(evt)
 								wordsC: form.wordsC.value,
 								subject: form.subject.value
 							});	
+							refresh();
+							// clear old list
+							//while (list.firstChild) {
+    						//		list.removeChild(list.firstChild);
+					//		}
+							
+							
+							/*
 							// getting data
 							db.collection('spells').get().then(snapshot => {
     							snapshot.docs.forEach(doc => {
         						renderDB(doc);
 							});
+							*/
 });
 						});
 					});	
