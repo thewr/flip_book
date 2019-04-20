@@ -160,7 +160,7 @@ html>.container, body>.container {
   padding: 3px;
   margin-right:16px;
   background-color: white;
-  border-radius: 16px;
+  border-radius: 3px;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
