@@ -3,12 +3,28 @@ var itemList = document.querySelector('#item-list');
 itemList.addEventListener('click', myFunc, false);
 itemList.myParam = 'This is my parameter';
 
+// refresh the console (needs work)
 function refresh() {
 
     setTimeout(function () {
         location.reload()
     }, 100);
 }
+
+////// code to keep top content
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("top-container");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+///////
 
 function myFunc(evt)
 {
