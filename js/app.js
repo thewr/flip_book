@@ -21,41 +21,15 @@ function myFunc(evt)
 					wordsB: doc.data().wordsB,
 					wordsC: doc.data().wordsC,
 				        subject: doc.data().subject
-				};
-				window.alert(tableData.name + " " + tableData.wordsA);
-
-				//var promises = [];
-				//data.data().comments.forEach((element, index) => {
-				//	promises.push(firestore.doc(element).get());
-				//});
-				//return Promise.all(promises);
+				};  window.alert(tableData.name + " " + tableData.wordsA);
 			}
 		})
-		//.then(results => {
-		//var comments = {};
-		//results.forEach((element, index) => {
-		//comments[index] = element.data().title  //Let's imagine a comment has a title property
-		//});
-		//tableData.comments = comments;
-		//res.render("campground", campground);
-	   // })
-
 	} catch (error) {
-	    res.send(error);
-	   }
-	//});	
+	res.send(error);
+	}
 		 
 				 
-				 
-				 
-				 
-				 
-	//let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
-
-  	//window.alert(out);
-	//let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
-	/*
-	form.addEventListener('click','append', (e) => {
+	 		form.addEventListener('click','append', (e) => {
     					e.preventDefault();
 					db.collection("spells").doc(id).update({
 						name: form.name.value,
@@ -65,13 +39,11 @@ function myFunc(evt)
 						subject: form.subject.value});
 					});
 						// put data on form
-						form.name.value =  tableData[1];
-						form.wordsA.value = tableData[3];
-						form.wordsB.value = tableData[4];
-						form.wordsC.value = tableData[5];
-						form.subject.value = tableData[7];
-						console.log(tableData);
-
+						form.name.value =  tableData.name;
+						form.wordsA.value = tableData.wordsA;
+						form.wordsB.value = tableData.wordsB;
+						form.wordsC.value = tableData.wordsC;
+						form.subject.value = tableData.subject;
 					});
 					*/
 					
@@ -256,9 +228,9 @@ $(function(){
 			hover('off');
 			$(this).css("background-color", "yellow");
 			
-			tableData = $(this).children("span").map(function(){return $(this).text();}).get();
-			var id = $(this).attr('data-id');
-			var docRef = db.collection("spells").doc(id);
+			//tableData = $(this).children("span").map(function(){return $(this).text();}).get();
+			//var id = $(this).attr('data-id');
+			//var docRef = db.collection("spells").doc(id);
 		
 /*
 			$('#edit_item').click(function(){
