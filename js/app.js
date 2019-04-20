@@ -53,25 +53,16 @@ function myFunc(evt)
 								subject: form.subject.value
 							});	
 							refresh();
-							// clear old list
-							//while (list.firstChild) {
-    						//		list.removeChild(list.firstChild);
-					//		}
-							
-							
-							/*
 							// getting data
+							/*
 							db.collection('spells').get().then(snapshot => {
     							snapshot.docs.forEach(doc => {
         						renderDB(doc);
-							});
+							});		
 							*/
-});
 						});
-					});	
-			//});
+					});							
 
-					
 }
 
 // create form element
