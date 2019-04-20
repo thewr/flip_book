@@ -103,16 +103,16 @@ function renderDB(doc){
   label_name.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
 
   let label_address = document.createElement('span');
-  label_words.textContent = "ADDRESS";
-  label_words.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
+  label_address.textContent = "ADDRESS";
+  label_address.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
 
   let label_website = document.createElement('span');
-  label_words.textContent = "WEBSITE";
-  label_words.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
+  label_website.textContent = "WEBSITE";
+  label_website.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
 
   let label_phone = document.createElement('span');
-  label_words.textContent = "PHONE";
-  label_words.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
+  label_phone.textContent = "PHONE";
+  label_phone.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
 	
   let label_subject = document.createElement('span');
   label_subject.textContent = "LOG ENTRY";
