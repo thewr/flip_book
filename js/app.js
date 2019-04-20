@@ -12,6 +12,7 @@ function refresh() {
 }
 
 ////// code to keep top content
+/*
 window.onscroll = function() {myFunction()};
 
 var header = document.getElementById("top-container");
@@ -24,6 +25,7 @@ function myFunction() {
     header.classList.remove("sticky");
   }
 }
+*/
 ///////
 
 function myFunc(evt)
