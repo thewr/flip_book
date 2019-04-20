@@ -9,7 +9,7 @@ function myFunc(evt)
 	var docRef = db.collection("spells").doc(id);
 	       
 
-	var out =  docRef.get().data().name;
+	var out =  docRef.get().doc.data().name;
 	//let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
 
   	window.alert(out);
