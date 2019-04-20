@@ -90,7 +90,7 @@ function renderDB(doc){
   wordsC.style.cssText = "font-family: Arial, Helvetica, sans-serif; font-size: 12px; padding: 3px 0px 6px 12px; display: block; border-bottom: 2px solid black";
 
   let subject = document.createElement('span');
-  subject.style.cssText = "padding: 3px 0px 6px 12px; display: block;;";
+  subject.style.cssText = "padding: 3px 0px 6px 12px; display: block;";
 
   let cross = document.createElement('div');
   cross.textContent = 'x';
@@ -102,10 +102,18 @@ function renderDB(doc){
   label_name.textContent = "NAME"; //&nbsp;
   label_name.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
 
-  let label_words = document.createElement('span');
-  label_words.textContent = "WORDS";
+  let label_addres = document.createElement('span');
+  label_words.textContent = "ADDRESS";
   label_words.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
 
+  let label_website = document.createElement('span');
+  label_words.textContent = "WEBSITE";
+  label_words.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
+
+  let label_phone = document.createElement('span');
+  label_words.textContent = "PHONE";
+  label_words.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
+	
   let label_subject = document.createElement('span');
   label_subject.textContent = "LOG ENTRY";
   label_subject.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
