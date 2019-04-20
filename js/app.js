@@ -60,8 +60,15 @@ function myFunc(evt)
         						renderDB(doc);
 							});		
 							*/
-						});
-					});							
+						});//end-of-item_submit
+					});//end-of-edit_item event
+	
+			 		$('#delete_item').click(function(){
+						docRef.delete();
+						refresh();
+					});//end-of-delete_item event
+
+	
 
 }
 
