@@ -158,6 +158,9 @@ form.addEventListener('submit', (e) => {
 	form.wordsB.value = '';
 	form.wordsC.value = '';
       form.subject.value = '';
+	
+	// generate new db
+	refresh();
 });
 
 $(function(){
