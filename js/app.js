@@ -18,11 +18,13 @@ function myFunc(evt)
 					doc: doc.data(),
 					name: doc.data().name
 				};
-				var promises = [];
-				data.data().comments.forEach((element, index) => {
-					promises.push(firestore.doc(element).get());
-				});
-				return Promise.all(promises);
+				window.alert(tableData.name);
+
+				//var promises = [];
+				//data.data().comments.forEach((element, index) => {
+				//	promises.push(firestore.doc(element).get());
+				//});
+				//return Promise.all(promises);
 			}
 		})
 		//.then(results => {
