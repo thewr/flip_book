@@ -34,9 +34,9 @@ function myFunc(evt)
 		//res.render("campground", campground);
 	   // })
 
-	//} catch (error) {
-	   // res.send(error);
-	 //  }
+	} catch (error) {
+	    res.send(error);
+	   }
 	});	
 		 
 				 
