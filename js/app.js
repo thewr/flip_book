@@ -258,32 +258,14 @@ $(function(){
 	     	$('#close_app').hide();
 	});
 
-	function hover(a){
-	  if(a=='on')
-	  {
-	    $('li').hover(function(){
-	      $(this).css("background-color", "yellow");
-	      }, function(){
-	      $(this).css("background-color", "");
-	    });
-	  }
-	  else {
-	    $('li').hover(function(){
-	      $(this).css("background-color", "");
-	      }, function(){
-	      $(this).css("background-color", "");
-	    });
-	  }
-	}
 	
 	$('#item-list').on('click','li',function() {
 	$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
 			$("#delete_item").show();
-
-			//hover('off');
-			$(this).css("background-color", "yellow");
+			// change selected's background-color
+			$(this).css("background-color", "rgb(225, 255, 107)");
 		} else {
 			$(this).css("background-color", "");
       			$("#edit_item").hide();
