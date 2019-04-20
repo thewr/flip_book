@@ -16,9 +16,13 @@ function myFunc(evt)
 			} else {
 				tableData = {
 					doc: doc.data(),
-					name: doc.data().name
+					name: doc.data().name,
+					wordsA: doc.data().wordsA,
+					wordsB: doc.data().wordsB,
+					wordsC: doc.data().wordsC,
+				        subject: doc.data().subject
 				};
-				window.alert(tableData.name);
+				window.alert(tableData.name + " " + tableData.wordsA);
 
 				//var promises = [];
 				//data.data().comments.forEach((element, index) => {
