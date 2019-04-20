@@ -44,6 +44,12 @@ function myFunc(evt)
 								wordsC: form.wordsC.value,
 								subject: form.subject.value
 							});	
+							// getting data
+							db.collection('spells').get().then(snapshot => {
+    							snapshot.docs.forEach(doc => {
+        						renderDB(doc);
+							});
+});
 						});
 					});	
 			//});
