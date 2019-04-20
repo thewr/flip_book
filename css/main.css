@@ -275,6 +275,7 @@ button{
 .docs {
     -webkit-box-flex: 8;
     flex: 8 800px;
+    top: 54px;
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
