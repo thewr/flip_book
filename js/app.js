@@ -33,26 +33,21 @@ function myFunc(evt)
 						form.wordsB.value = tableData.wordsB;
 						form.wordsC.value = tableData.wordsC;
 						form.subject.value = tableData.subject;
-					});
-
-			/*	 
-	 		form.addEventListener('click','append', (e) => {
-    					e.preventDefault();
-					db.collection("spells").doc(id).update({
-						name: form.name.value,
-						wordsA: form.wordsA.value,
-						wordsB: form.wordsB.value,
-						wordsC: form.wordsC.value,
-						subject: form.subject.value});
-					});
-						// put data on form
-						form.name.value =  tableData.name;
-						form.wordsA.value = tableData.wordsA;
-						form.wordsB.value = tableData.wordsB;
-						form.wordsC.value = tableData.wordsC;
-						form.subject.value = tableData.subject;
+						
+						form.addEventListener('click','append', (e) => {
+    							e.preventDefault();
+							db.collection("spells").doc(id).update({
+							name: form.name.value,
+							wordsA: form.wordsA.value,
+							wordsB: form.wordsB.value,
+							wordsC: form.wordsC.value,
+							subject: form.subject.value
+							});
+						});
 					});	
-					*/
+			//});
+
+					
 }
 
 // create form element
