@@ -93,8 +93,12 @@ html>.container, body>.container {
     z-index: 1000;
 }
 
-#top-container{
-    display: fixed;
+.top-container{
+   overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .sidebar{
