@@ -37,11 +37,11 @@ function myFunc(evt)
 						form.addEventListener('click','append', (e) => {
     							e.preventDefault();
 							db.collection("spells").doc(id).update({
-							name: form.name.value,
-							wordsA: form.wordsA.value,
-							wordsB: form.wordsB.value,
-							wordsC: form.wordsC.value,
-							subject: form.subject.value
+								name: form.name.value,
+								wordsA: form.wordsA.value,
+								wordsB: form.wordsB.value,
+								wordsC: form.wordsC.value,
+								subject: form.subject.value
 							});
 						});
 					});	
