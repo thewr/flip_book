@@ -7,7 +7,9 @@ function myFunc(evt)
 {
 	let id = evt.target.parentElement.getAttribute('data-id');
 	var docRef = db.collection("spells").doc(id);
-	var out = docRef.get().doc.data().name;
+	       
+
+	var out =  docRef.get().data().name;
 	//let tableData = evt.target.parentElement.children("span").map(function(){return evt.target.text();}).get();
 
   	window.alert(out);
