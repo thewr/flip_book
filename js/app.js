@@ -27,7 +27,14 @@ function myFunc(evt)
 	} catch (error) {
 	res.send(error);
 	}
-		 
+		 			$('#edit_item').click(function(){
+					        form.name.value =  tableData.name;
+						form.wordsA.value = tableData.wordsA;
+						form.wordsB.value = tableData.wordsB;
+						form.wordsC.value = tableData.wordsC;
+						form.subject.value = tableData.subject;
+					};
+
 			/*	 
 	 		form.addEventListener('click','append', (e) => {
     					e.preventDefault();
@@ -226,7 +233,7 @@ $(function(){
 	$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
-			hover('off');
+			//hover('off');
 			$(this).css("background-color", "yellow");
 			
 			//tableData = $(this).children("span").map(function(){return $(this).text();}).get();
@@ -246,7 +253,7 @@ $(function(){
 					*/
 		} else {
 			$(this).css("background-color", "");
-			hover('on');
+			//hover('on');
       			$("#edit_item").hide();
 		}
 	});
