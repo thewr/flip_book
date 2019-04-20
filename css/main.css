@@ -324,15 +324,14 @@ button{
 
 li div{
     position: absolute;
-    top: 0;
     color:#3c1231;
     right: 0px;
-    //width: 100px;
+    width: 12px;
     text-align: center;
-    padding: 6px 6px;
     font-weight:  600;
-    boder-width: 2px;
-    //border-radius: 30px;
+    border-radius: 2px;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
     cursor:  pointer;
 }
 
