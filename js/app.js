@@ -172,6 +172,7 @@ form.addEventListener('submit', (e) => {
 
 $(function(){
 	$("#edit_item").hide();
+	$("#delete_item").hide();
 	$('.sidebar').hide();
 
 
