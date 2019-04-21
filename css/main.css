@@ -105,6 +105,7 @@ html>.container, body>.container {
 .sidebar{
  border-top: 1px solid #282b2d;
  min-width: 250px;
+ margin-top: 76px;
  position: flex;
  height: 100%;
  flex-direction: column;
