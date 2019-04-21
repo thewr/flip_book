@@ -107,6 +107,7 @@ html>.container, body>.container {
  //min-width: 250px;
  margin-top: 44px;
  position: fixed;
+ display: flex;
  height: 100%;
  flex-direction: column;
  padding: 23px;
@@ -117,8 +118,8 @@ html>.container, body>.container {
 
 .sidebar > .max .content{
     width: 100%;
-    display: flex;
-    position: relative;
+   // display: flex;
+   // position: relative;
     margin: 0;
     padding:  0;
 }
