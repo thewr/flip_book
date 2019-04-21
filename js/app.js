@@ -201,6 +201,11 @@ form.addEventListener('submit', (e) => {
 	refresh();
 });
 
+form.addEventListener('cancel', (e) => {
+    e.preventDefault();
+	refresh();
+});
+
 
 $(function(){
 	$("#edit_item").hide();
@@ -253,7 +258,7 @@ $(function(){
   });
 	
 $('#item_cancel').click(function(){
- 	reload();	
+ 	refresh();	
 });
 
 
