@@ -104,7 +104,7 @@ html>.container, body>.container {
 
 .sidebar{
  border-top: 2px solid #b7bcc0;
- min-width: 250px;
+ //min-width: 250px;
  margin-top: 44px;
  position: flex;
  height: 100%;
