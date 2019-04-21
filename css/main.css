@@ -103,15 +103,21 @@ html>.container, body>.container {
 }
 
 .sidebar{
+ -webkit-box-flex: 1;
+ flex: 1 0 350px;   
  border-top: 2px solid #b7bcc0;
  //min-width: 250px;
  margin-top: 44px;
  position: absolute;
  display: flex;
- height: 100%;
+ -webkit-box-orient: vertical;
+ -webkit-box-direction: normal;
+ //height: 100%;
  flex-direction: column;
- padding: 23px;
+ //padding: 23px;
  background-color: #101112;
+ border-right: 1px solid #3a3e41;
+
 
 }
 
