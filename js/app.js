@@ -201,12 +201,6 @@ form.addEventListener('submit', (e) => {
 	refresh();
 });
 
-//cancel
-form.addEventListener('cancel', (e) => {
-    e.preventDefault();
-    refresh();
-});
-
 
 $(function(){
 	$("#edit_item").hide();
@@ -257,6 +251,10 @@ $(function(){
 	  $( ".docs" ).toggleClass('blur-me');
 	  $('#close_app').hide();
   });
+	
+$('#item_cancel').click(function(){
+ 	reload();	
+});
 
 
   	$('#close_app').click(function(){
