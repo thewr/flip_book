@@ -103,9 +103,9 @@ html>.container, body>.container {
 }
 
 .sidebar{
- border-top: 1px solid #282b2d;
+ border-top: 2px solid #b7bcc0;
  min-width: 250px;
- margin-top: 76px;
+ margin-top: 44px;
  position: flex;
  height: 100%;
  flex-direction: column;
