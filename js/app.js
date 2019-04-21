@@ -163,18 +163,20 @@ function renderDB(doc){
   li.appendChild(label_subject);
   li.appendChild(subject);
 
-  li.appendChild(cross);
+ // li.appendChild(cross);
 
 
   // put the <tbody> in the <table>
   itemList.appendChild(li);
 
   // deleting data
+  /*
     cross.addEventListener('click', (e) => {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute('data-id');
         db.collection('spells').doc(id).delete();
     });
+    */
 }
 
 // getting data
