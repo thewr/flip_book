@@ -52,7 +52,7 @@ html>.container, body>.container {
 
 #item-list li .selected {
   color: #000;
-  background-color: yellow;
+  background-color: rgb(112, 189, 144);
 }
 
 .blur-me {
@@ -96,7 +96,7 @@ html>.container, body>.container {
 .top{
   overflow: hidden;
   background-color: #333;
-  position: fixed;
+  //position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -104,8 +104,7 @@ html>.container, body>.container {
 
 .sidebar{
  border-top: 1px solid #282b2d;
- width: 54px;
- min-width: 54px;
+ min-width: 250px;
  position: flex;
  height: 100%;
  flex-direction: column;
@@ -114,10 +113,11 @@ html>.container, body>.container {
 
 }
 
-.sidebar > .min .content{
+/*
+.sidebar > .max .content{
     width: 100%;
-    height: 80%;
     display: flex;
+    position: relative;
     margin: 0;
     padding:  0;
 }
@@ -127,6 +127,7 @@ html>.container, body>.container {
   position: relative;
   display: block;
 }
+*/
 
 #close_app {
  background-color: transparent;
@@ -135,7 +136,7 @@ html>.container, body>.container {
  cursor: pointer;
 }
 
-.container .min{ 
+.container .min{
     display: -webkit-box;
     display: flex;
     -webkit-box-align: center;
@@ -158,11 +159,11 @@ html>.container, body>.container {
   padding: 0 3px 0 3px;
   white-space: nowrap;
   //height: 66.7%;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .options li{
-  float: left;      
+  float: left;
   cursor: pointer;
   display: inline-block;
   color: #000;
@@ -241,13 +242,31 @@ input[type=submit],input[type=append]{
   display:inline-block;
   border: 1px solid rgba(27, 31, 35, 0.2);
   color: white;
-  padding: 7px 11px 7px 11px;
+  padding: 7px 7px;
   border-radius: 3px;
+  width: 33%;
+  max-width: 66%;
   float: bottom-left;
   font-weight: 400;
-  line-height: 15px;
+  text-align: center;
+
   cursor: pointer;
 }
+
+
+input[type=cancel]{
+  background-color: #cbd6e9;
+  display:inline-block;
+  position: relative;
+  border: 1px solid rgba(27, 31, 35, 0.2);
+  color: red;
+  text-align: center;
+  padding: 7px 7px;
+  border-radius: 6px;
+  width: 33%;
+  cursor: pointer;
+}
+
 
 input[type=append]:hover {
   background-color: #3F729B;
@@ -277,7 +296,8 @@ button{
     flex: 8 800px;
     display: -webkit-box;
     display: flex;
-    top: 100px;  left: 32px;
+    top: 100px;
+    left: 32px;
     position: relative;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -333,4 +353,3 @@ li div{
     border-left: 1px solid black;
     cursor:  pointer;
 }
-
