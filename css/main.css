@@ -131,6 +131,7 @@ body>.container>.app>.sidebar {
  padding: 23px;
  background-color: #101112;
  border-right: 1px solid #3a3e41;
+ z-index: 1000;
 
 
 }
