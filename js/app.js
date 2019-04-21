@@ -13,7 +13,7 @@ function refresh() {
 }
 
 // for selections
-var $div = $("<div>"+"Delete"+"</div>");  //{id: "foo", "class": "a"});
+var $div = $("<div id='delete'>"+"Delete"+"</div>");  //{id: "foo", "class": "a"});
 
 ////// code to keep top content
 /*
