@@ -285,6 +285,7 @@ $('#item_cancel').click(function(){
 			$(this).css("background-color", "rgb(225, 255, 107)");
 		} else {
 			$(this).css("background-color", "");
+			 $div.remove();
       			$("#edit_item").hide();
 			$("#delete_item").hide();
 
