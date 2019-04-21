@@ -297,7 +297,7 @@ button{
     -webkit-box-flex: 8;
     flex: 8 800px;
     display: -webkit-box;
-    display: flex;
+    display: relative;
     top: 100px;
     left: 32px;
     position: flex;
