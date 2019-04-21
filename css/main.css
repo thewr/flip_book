@@ -122,13 +122,13 @@ body>.container>.app>.sidebar {
  border-top: 2px solid #b7bcc0;
  //min-width: 250px;
  margin-top: 44px;
- position: absolute;
+ position: fixed;
  display: flex;
  -webkit-box-orient: vertical;
  -webkit-box-direction: normal;
- //height: 100%;
+ height: 100%;
  flex-direction: column;
- //padding: 23px;
+ padding: 23px;
  background-color: #101112;
  border-right: 1px solid #3a3e41;
 
