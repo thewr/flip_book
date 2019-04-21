@@ -201,6 +201,13 @@ form.addEventListener('submit', (e) => {
 	refresh();
 });
 
+//cancel
+form.addEventListener('cancel', (e) => {
+    e.preventDefault();
+    refresh();
+});
+
+
 $(function(){
 	$("#edit_item").hide();
 	$("#delete_item").hide();
