@@ -313,7 +313,7 @@ button{
     color: black;
 }
 
-body>.container>.app>.doc {
+body>.container>.app>.docs {
     position: absolute;
     top: 0;
     bottom: 0;
