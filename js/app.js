@@ -12,6 +12,9 @@ function refresh() {
     }, 100);
 }
 
+// for selections
+var $div = $("<div>"+"Delete"+"</div>");  //{id: "foo", "class": "a"});
+
 ////// code to keep top content
 /*
 window.onscroll = function() {myFunction()};
@@ -273,6 +276,7 @@ $('#item_cancel').click(function(){
 	$('#item-list').on('click','li',function() {
 	$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
+			$(this).append($div);
 			$("#edit_item").show();
 			$("#delete_item").show();
 			// change selected's background-color
