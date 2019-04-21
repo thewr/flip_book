@@ -114,7 +114,7 @@ html>.container, body>.container {
 
 }
 
-/*
+
 .sidebar > .max .content{
     width: 100%;
     display: flex;
@@ -128,7 +128,7 @@ html>.container, body>.container {
   position: relative;
   display: block;
 }
-*/
+
 
 #close_app {
  background-color: transparent;
