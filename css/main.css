@@ -106,7 +106,7 @@ html>.container, body>.container {
  border-top: 2px solid #b7bcc0;
  //min-width: 250px;
  margin-top: 44px;
- //position: flex;
+ position: fixed;
  height: 100%;
  flex-direction: column;
  padding: 23px;
