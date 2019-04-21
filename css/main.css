@@ -293,13 +293,21 @@ button{
     color: black;
 }
 
+body>.container>.app>.doc {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    right: 0;    
+}
+
 .docs {
     -webkit-box-flex: 8;
     flex: 8 800px;
     display: -webkit-box;
     display: relative;
-    top: 100px;
-    left: 32px;
+   // top: 0;
+   // left: 50px;
     position: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
