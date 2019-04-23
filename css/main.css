@@ -298,7 +298,7 @@ input[type=append]:hover {
 input[type=submit]:hover {
   background-color: #3F729B;
 }
-
+/*
 button{
     border: 0;
     background-color: #fff;
@@ -313,6 +313,7 @@ button{
     letter-spacing: 1px;
     color: black;
 }
+*/
 
 body>.container>.app>.docs {
     position: absolute;
@@ -364,6 +365,7 @@ body>.container>.app>.docs {
     font-size-adjust:auto;
 }
 
+/*
 #item-list .inlinespan{
     font-weight: 400;
     display: inline-block;
@@ -371,6 +373,7 @@ body>.container>.app>.docs {
     font-size: 14px;
     font-size-adjust:auto;
 }
+*/
 
 li div{
     position: absolute;
