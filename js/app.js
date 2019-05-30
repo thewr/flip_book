@@ -207,7 +207,7 @@ $('#item_cancel').click(function(){
 	
 	
 	$('#delete_item').click(function(){
-		const id = $('#item-list').getElementsByClassName('selected').attr('data-id');
+		const id = document.getElementsByClassName('selected').attr('data-id');
 		console.log(id);
 		//const ref = db.collection('spells').doc(id);
 		//ref.delete();
