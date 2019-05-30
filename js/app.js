@@ -29,15 +29,7 @@ function clearForm()
 function myFunc(evt)
 {
 	const id = evt.target.parentElement.getAttribute('data-id');
-	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
 	console.log(id + " was clicked");	
-	const ref = db.collection('spells').doc(id);
-	
-	$('#delete_item').click(function(){
-		ref.delete();
-		refresh();
-	});//end-of-delete_item event
-	
 }
 
 // create element & render cafe
@@ -204,16 +196,6 @@ $('#item_cancel').click(function(){
 	 	$( ".docs" ).toggleClass('blur-me');
 	     	$('#close_app').hide();
 	});
-	
-	
-	$('#delete_item').click(function(){
-		const id = document.getElementsByClassName('selected').attr('data-id');
-		console.log(id);
-		//const ref = db.collection('spells').doc(id);
-		//ref.delete();
-		refresh();
-	});//end-of-delete_item event
-
 	
 	$('#item-list').on('click','li',function() {
 	$(this).toggleClass('selected').siblings().removeClass('selected');
