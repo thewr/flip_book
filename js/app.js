@@ -84,9 +84,7 @@ function myFunc(evt)
 							ref.delete();
 							refresh();
 						});//end-of-delete_item event
-	} else {
-		return;
-	}
+	} 
 }
 
 // create element & render cafe
