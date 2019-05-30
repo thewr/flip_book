@@ -204,6 +204,14 @@ $('#item_cancel').click(function(){
 	 	$( ".docs" ).toggleClass('blur-me');
 	     	$('#close_app').hide();
 	});
+	
+	
+	$('#delete_item').click(function(){
+		const id = $(this).attr('data-id');
+		const ref = db.collection('spells').doc(id);
+		ref.delete();
+		refresh();
+	});//end-of-delete_item event
 
 	
 	$('#item-list').on('click','li',function() {
