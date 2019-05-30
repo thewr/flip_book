@@ -79,7 +79,6 @@ function myFunc(evt)
 						docRef.delete();
 						refresh();
 					});//end-of-delete_item event
-
 	
 
 }
@@ -101,6 +100,71 @@ function refresh() {
 
 
 
+function clearForm()
+{
+      form.name.value = '';
+      form.wordsA.value = '';
+      form.wordsB.value = '';
+      form.wordsC.value = '';
+      form.subject.value = '';
+}
+
+function myFunc(evt)
+{
+	const id = evt.target.parentElement.getAttribute('data-id');
+
+	if(evt.target.nodeName == 'SPAN'){// && evt.taget.className = 'selected') {
+            console.log(id + " was clicked");
+	    const ref = db.collection("applications").doc(id);
+		try {
+			var tableData = {};
+			ref.get()
+			.then(doc => {
+				if(!doc.exists) {
+					window.alert("no such document");
+				} else {
+					tableData = {
+						//date: doc.data().date,
+						name: doc.data().name,
+						wordsA: doc.data().wordsA,
+						wordsB: doc.data().wordsB,
+						wordsC: doc.data().wordsC,
+						subject: doc.data().subject
+					};  //window.alert(tableData.name + " " + tableData.subject);
+				}
+			})
+		} catch (error) {
+		res.send(error);
+		}
+						$('#edit_item').click(function(){
+							form.name.value =  tableData.name;
+							form.wordsA.value = tableData.wordsA;
+							form.wordsB.value = tableData.wordsB;
+							form.wordsC.value = tableData.wordsC;
+							form.subject.value = tableData.subject;
+
+							$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
+								db.collection("applications").doc(id).update({
+									name: form.name.value,
+									wordsA: form.wordsA.value,
+									wordsB: form.wordsB.value,
+									wordsC: form.wordsC.value,
+									subject: form.subject.value
+								});
+								clearForm();
+								refresh();
+							});
+							return;
+						});
+
+						$('#delete_item').click(function(){
+							ref.delete();
+							refresh();
+						});//end-of-delete_item event
+	} else {
+		return;
+	}
+}
 
 // create element & render cafe
 function renderDB(doc){
@@ -129,20 +193,12 @@ function renderDB(doc){
   label_name.textContent = "NAME"; //&nbsp;
   label_name.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
 
-  let label_address = document.createElement('span');
-  label_address.textContent = "ADDRESS";
-  label_address.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
-
-  let label_website = document.createElement('span');
-  label_website.textContent = "WEBSITE";
-  label_website.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
-
-  let label_phone = document.createElement('span');
-  label_phone.textContent = "PHONE";
-  label_phone.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
+  let label_words = document.createElement('span');
+  label_words.textContent = "WORDS";
+  label_words.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
 	
   let label_subject = document.createElement('span');
-  label_subject.textContent = "LOG ENTRY";
+  label_subject.textContent = "DESCRIPTION";
   label_subject.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
 
   // generate content for fields
@@ -156,20 +212,13 @@ function renderDB(doc){
   li.appendChild(label_name);
   li.appendChild(name);
 
-  li.appendChild(label_address);
-  li.appendChild(wordsA);
-	
-  li.appendChild(label_website);
+  li.appendChild(label_words);
+  li.appendChild(wordsA);	
   li.appendChild(wordsB);
-	
-  li.appendChild(label_phone);
   li.appendChild(wordsC);
 	
   li.appendChild(label_subject);
   li.appendChild(subject);
-
- // li.appendChild(cross);
-
 
   // put the <tbody> in the <table>
   itemList.appendChild(li);
