@@ -13,67 +13,6 @@ itemList.count = 0;
 // create form element
 var form = document.querySelector('#item-form');
 
-function myFunc(evt)
-{
-	let id = evt.target.parentElement.getAttribute('data-id');
-	var docRef = db.collection("spells").doc(id);
-	       
-	try {
-		var tableData = {};
-		docRef.get()
-		.then(doc => {
-			if(!doc.exists) {
-				window.alert("no such document");
-			} else {
-				tableData = {
-					doc: doc.data(),
-					name: doc.data().name,
-					wordsA: doc.data().wordsA,
-					wordsB: doc.data().wordsB,
-					wordsC: doc.data().wordsC,
-				        subject: doc.data().subject
-				};  //window.alert(tableData.name + " " + tableData.subject);
-			}
-		})
-	} catch (error) {
-	res.send(error);
-	}
-		 			$('#edit_item').click(function(){
-					        form.name.value =  tableData.name;
-						form.wordsA.value = tableData.wordsA;
-						form.wordsB.value = tableData.wordsB;
-						form.wordsC.value = tableData.wordsC;
-						form.subject.value = tableData.subject;
-						
-						$('#item_submit').click(function(){ 
-							//form.addEventListener('click','append', (e) => {
-    							//e.preventDefault();
-							db.collection("spells").doc(id).update({
-								name: form.name.value,
-								wordsA: form.wordsA.value,
-								wordsB: form.wordsB.value,
-								wordsC: form.wordsC.value,
-								subject: form.subject.value
-							});	
-							refresh();
-							// getting data
-							/*
-							db.collection('spells').get().then(snapshot => {
-    							snapshot.docs.forEach(doc => {
-        						renderDB(doc);
-							});		
-							*/
-						});//end-of-item_submit
-					});//end-of-edit_item event
-	
-			 		$('#delete_item').click(function(){
-						docRef.delete();
-						refresh();
-					});//end-of-delete_item event
-	
-
-}
-
 function refresh() {
 
 	while(itemList.firstChild){
@@ -82,14 +21,12 @@ function refresh() {
 	}
 	alert("Displaying");
 
-	db.collection('applications').get().then(snapshot => {
+	db.collection('spells').get().then(snapshot => {
 	    snapshot.docs.forEach(doc => {
 		renderDB(doc);
 	    });
 	});//end of get data
 }
-
-
 
 function clearForm()
 {
@@ -98,63 +35,6 @@ function clearForm()
       form.wordsB.value = '';
       form.wordsC.value = '';
       form.subject.value = '';
-}
-
-function myFunc(evt)
-{
-	const id = evt.target.parentElement.getAttribute('data-id');
-
-	if(evt.target.nodeName == 'SPAN'){// && evt.taget.className = 'selected') {
-            console.log(id + " was clicked");
-	    const ref = db.collection("applications").doc(id);
-		try {
-			var tableData = {};
-			ref.get()
-			.then(doc => {
-				if(!doc.exists) {
-					window.alert("no such document");
-				} else {
-					tableData = {
-						//date: doc.data().date,
-						name: doc.data().name,
-						wordsA: doc.data().wordsA,
-						wordsB: doc.data().wordsB,
-						wordsC: doc.data().wordsC,
-						subject: doc.data().subject
-					};  //window.alert(tableData.name + " " + tableData.subject);
-				}
-			})
-		} catch (error) {
-		res.send(error);
-		}
-						$('#edit_item').click(function(){
-							form.name.value =  tableData.name;
-							form.wordsA.value = tableData.wordsA;
-							form.wordsB.value = tableData.wordsB;
-							form.wordsC.value = tableData.wordsC;
-							form.subject.value = tableData.subject;
-
-							$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
-								db.collection("applications").doc(id).update({
-									name: form.name.value,
-									wordsA: form.wordsA.value,
-									wordsB: form.wordsB.value,
-									wordsC: form.wordsC.value,
-									subject: form.subject.value
-								});
-								clearForm();
-								refresh();
-							});
-							return;
-						});
-
-						$('#delete_item').click(function(){
-							ref.delete();
-							refresh();
-						});//end-of-delete_item event
-	} else {
-		return;
-	}
 }
 
 // create element & render cafe
@@ -232,7 +112,7 @@ db.collection('spells').get().then(snapshot => {
 });
 
 // saving data
-/*
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     db.collection('spells').add({
@@ -251,7 +131,6 @@ form.addEventListener('submit', (e) => {
 	// generate new db
 	refresh();
 });
-*/
 
 form.addEventListener('cancel', (e) => {
     e.preventDefault();
