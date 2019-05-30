@@ -11,16 +11,7 @@ itemList.count = 0;
 
 
 // create form element
-
 var form = document.querySelector('#item-form');
-
-
-
-// define buttons
-
-refresh_button.addEventListener('click',refreshFunc,false);
-
-save_button.addEventListener('click',saveFunc,false);
 
 function myFunc(evt)
 {
