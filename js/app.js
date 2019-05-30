@@ -192,7 +192,93 @@ form.addEventListener('cancel', (e) => {
 
 
 $(function(){
+	$("#edit_item").hide();
+	$("#delete_item").hide();
 	$('.sidebar').hide();
+	
+	// Animate slide for create new form	
+	function display_add(){
+		 $( ".docs" ).toggleClass('blur-me');
+		 $(".min").hide();
+		 $(".content").show();
+	         $('.sidebar').show();
+	    	 //$('.sidebar').animate({width: '33%'});
+	         $(".max").hide().fadeIn(500);
+
+		//$("#label").html("Add Entry");
+	  	 $('#close_app').show();
+	}
+
+	// Add new document button show
+	$("#new_item").click(function(){
+		$("#item_submit").attr('value', 'Submit').attr('type','submit');
+		display_add();
+	});
+
+	// Animate slide for edit form
+	function display_edit(){
+		 $( ".docs" ).toggleClass('blur-me');
+		 $(".min").hide();
+		 $(".content").show();
+
+	         $('.sidebar').show();
+	    	 //$('.sidebar').animate({width: '33%'});
+	         $(".max").hide().fadeIn(500);
+
+		//$("#label").html("Add Entry");
+	  	 $('#close_app').show();
+	}
+
+	//Edit new document button show
+  	$("#edit_item").click(function(){
+	  $("#item_submit").attr('value', 'Append').attr('type','append');
+	  display_edit();
+  });
+
+  $('#item_submit').click(function(){
+    	  $(".content").hide();
+	  $('.sidebar').hide();
+	  $(".min").show();
+	  $( ".docs" ).toggleClass('blur-me');
+	//  $('#close_app').hide();
+  });
+	
+$('#item_cancel').click(function(){
+ 	 $('.sidebar').hide();
+         $(".min").show();
+	 $( ".docs" ).toggleClass('blur-me');
+	 refresh();
 });
+
+
+  	$('#close_app').click(function(){
+    		$(".content").hide();
+	   	$('.sidebar').animate({width: '54px'});
+	 	$( ".docs" ).toggleClass('blur-me');
+	     	$('#close_app').hide();
+	});
+
+	
+	$('#item-list').on('click','li',function() {
+	$(this).toggleClass('selected').siblings().removeClass('selected');
+		if($(this).hasClass('selected')){
+			//$(this).append($div);
+			$("#edit_item").show();
+			$("#delete_item").show();
+			// change selected's background-color
+			//$(this).css("background-color", "rgb(225, 255, 107)");
+		} else {
+			//$(this).css("background-color", "");
+			// $div.remove();
+      			$("#edit_item").hide();
+			$("#delete_item").hide();
+
+		}
+		
+
+	});
+
+});
+
 
 
