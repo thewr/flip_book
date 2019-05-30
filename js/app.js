@@ -11,8 +11,7 @@ function refresh() {
 		itemList.count -= 1;
 		itemList.removeChild(itemList.firstChild);
 	}
-	alert("Displaying");
-
+	
 	db.collection('spells').get().then(snapshot => {
 	    snapshot.docs.forEach(doc => {
 		renderDB(doc);
