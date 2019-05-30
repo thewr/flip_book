@@ -36,7 +36,7 @@ function myFunc(evt)
 	
 	if(evt.target.nodeName == 'SPAN'){// && evt.taget.className = 'selected') {
             console.log(id + " was clicked");	
-	    const ref = db.collection("spells").doc(id);
+	    const ref = db.collection('spells').doc(id);
 		try {
 			var tableData = {};
 			ref.get()
@@ -174,11 +174,7 @@ form.addEventListener('submit', (e) => {
 	wordsC: form.wordsC.value,
         subject: form.subject.value
     });
-      form.name.value = '';
-      form.wordsA.value = '';
-	form.wordsB.value = '';
-	form.wordsC.value = '';
-      form.subject.value = '';
+	clearForm();
 	
 	// generate new db
 	refresh();
