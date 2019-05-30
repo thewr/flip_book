@@ -1,36 +1,26 @@
 
-// creates a <table> element and a <tbody> element
+// creates a <ol> list element and functions
+// create form element
+var form = document.querySelector('#add-item-form');
 var itemList = document.querySelector('#item-list');
-itemList.addEventListener('click', myFunc, false);
-itemList.myParam = 'This is my parameter';
 
-// refresh the console (needs work)
-function refresh() {
+itemList.addEventListener('click', myFunc, false);//itemList.addEventListener('click', myFunc, false);
 
-    setTimeout(function () {
-        location.reload()
-    }, 100);
-}
+itemList.count = 0;
 
-// for selections
-var $div = $("<div id='edit_item'>"+"Edit"+"</div>");  //{id: "foo", "class": "a"});
 
-////// code to keep top content
-/*
-window.onscroll = function() {myFunction()};
 
-var header = document.getElementById("top-container");
-var sticky = header.offsetTop;
+// create form element
 
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
-*/
-///////
+var form = document.querySelector('#item-form');
+
+
+
+// define buttons
+
+refresh_button.addEventListener('click',refreshFunc,false);
+
+save_button.addEventListener('click',saveFunc,false);
 
 function myFunc(evt)
 {
@@ -94,8 +84,23 @@ function myFunc(evt)
 
 }
 
-// create form element
-var form = document.querySelector('#add-item-form');
+function refresh() {
+
+	while(itemList.firstChild){
+		itemList.count -= 1;
+		itemList.removeChild(itemList.firstChild);
+	}
+	alert("Displaying");
+
+	db.collection('applications').get().then(snapshot => {
+	    snapshot.docs.forEach(doc => {
+		renderDB(doc);
+	    });
+	});//end of get data
+}
+
+
+
 
 // create element & render cafe
 function renderDB(doc){
