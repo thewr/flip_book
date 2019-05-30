@@ -29,6 +29,66 @@ function clearForm()
       form.subject.value = '';
 }
 
+function myFunc(evt)
+{
+	const id = evt.target.parentElement.getAttribute('data-id');
+	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
+	
+	if(evt.target.nodeName == 'SPAN'){// && evt.taget.className = 'selected') {
+            console.log(id + " was clicked");	
+	    const ref = db.collection("spells").doc(id);
+		try {
+			var tableData = {};
+			ref.get()
+			.then(doc => {
+				if(!doc.exists) {
+					window.alert("no such document");
+				} else {
+					tableData = {
+						//date: doc.data().date,
+						name: doc.data().name,
+						wordsA: doc.data().wordsA,
+						wordsB: doc.data().wordsB,
+						wordsC: doc.data().wordsC,
+						subject: doc.data().subject
+					};  //window.alert(tableData.name + " " + tableData.subject);
+				}
+			})
+		} catch (error) {
+		res.send(error);
+		}
+
+						$('#edit_item').click(function(){
+							form.name.value =  tableData.name;
+							form.wordsA.value = tableData.wordsA;
+							form.wordsB.value = tableData.wordsB;
+							form.wordsC.value = tableData.wordsC;
+							form.subject.value = tableData.subject;
+
+							$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
+								db.collection("spells").doc(id).update({
+									name: form.name.value,
+									wordsA: form.wordsA.value,
+									wordsB: form.wordsB.value,
+									wordsC: form.wordsC.value,
+									subject: form.subject.value
+								});
+								clearForm();
+								refresh();
+							});
+							return;
+						});
+
+
+						$('#delete_item').click(function(){
+							ref.delete();
+							refresh();
+						});//end-of-delete_item event
+	} else {
+		return;
+	}
+}
+
 // create element & render cafe
 function renderDB(doc){
   // create list document elements
