@@ -30,16 +30,14 @@ function myFunc(evt)
 {
 	const id = evt.target.parentElement.getAttribute('data-id');
 	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
+	console.log(id + " was clicked");	
+	const ref = db.collection('spells').doc(id);
 	
-	if(evt.target.nodeName == 'SPAN'){// && evt.taget.className = 'selected') {
-            console.log(id + " was clicked");	
-	    const ref = db.collection('spells').doc(id);
-		
-		$('#delete_item').click(function(){
-			ref.delete();
-			refresh();
-		});//end-of-delete_item event
-	} 
+	$('#delete_item').click(function(){
+		ref.delete();
+		refresh();
+	});//end-of-delete_item event
+	
 }
 
 // create element & render cafe
