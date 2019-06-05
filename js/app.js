@@ -10,7 +10,6 @@ itemList.count = 0;
 
 // define buttons
 refresh_button.addEventListener('click',refreshFunc,false);
-save_button.addEventListener('click',saveFunc,false);
 
 function refreshFunc(evt)
 {
