@@ -3,6 +3,7 @@
 // create form element
 var form = document.querySelector('#item-form');
 var itemList = document.querySelector('#item-list');
+const db_name = "Spells";
 
 
 itemList.addEventListener('click', myFunc, false);//itemList.addEventListener('click', myFunc, false);
@@ -22,7 +23,7 @@ function refreshFunc(evt)
 		itemList.removeChild(itemList.firstChild);
 	}
 	//get data
-	db.collection('spells')
+	db.collection(db_name)
 		.orderBy('date','desc')
 		.get().then(snapshot => {
 		itemList.count = 0;
@@ -40,7 +41,7 @@ function refresh() {
 	}
 	
 	//get data
-	db.collection('applications').get().then(snapshot => {
+	db.collection(db_name).get().then(snapshot => {
 		//itemList.count = 0;
 	    snapshot.docs.forEach(doc => {
 		renderDB(doc);
@@ -94,7 +95,7 @@ function myFunc(evt)
 							form.subject.value = tableData.subject;
 
 							$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
-								db.collection("spells").doc(id).update({
+								db.collection(db_name).doc(id).update({
 									name: form.name.value,
 									wordsA: form.wordsA.value,
 									wordsB: form.wordsB.value,
