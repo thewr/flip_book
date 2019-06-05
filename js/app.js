@@ -3,7 +3,7 @@
 // create form element
 var form = document.querySelector('#item-form');
 var itemList = document.querySelector('#item-list');
-const db_name = "Spells";
+const db_name = "spells";
 
 
 itemList.addEventListener('click', myFunc, false);//itemList.addEventListener('click', myFunc, false);
@@ -23,7 +23,7 @@ function refreshFunc(evt)
 		itemList.removeChild(itemList.firstChild);
 	}
 	//get data
-	db.collection(db_name)
+	db.collection('spells')
 		.orderBy('name','desc')
 		.get().then(snapshot => {
 		itemList.count = 0;
