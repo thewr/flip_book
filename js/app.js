@@ -40,6 +40,7 @@ function refresh() {
 		itemList.removeChild(itemList.firstChild);
 	}
 
+
 	//get data
 	db.collection('spells')
 		.orderBy('name','asc')
@@ -51,7 +52,8 @@ function refresh() {
 				console.log(itemList.count);
 				renderDB(doc);
 	    });
-	});//end of get data
+	});//end of get data	
+	location.reload();
 }
 
 function clearForm()
