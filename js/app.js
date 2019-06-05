@@ -34,6 +34,8 @@ function refreshFunc(evt)
 }
 
 function refresh() {
+  	
+	window.alert('rendering database ...');
 
 	while(itemList.firstChild){
 		//console.log('removing ... ' + itemList.count);
@@ -123,7 +125,6 @@ function myFunc(evt)
 
 // create element & render cafe
 function renderDB(doc){
-  window.alert('rendering database ...');
   itemList.count += 1; 
   // create list document elements
   let li = document.createElement('li');
