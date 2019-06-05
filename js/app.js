@@ -238,6 +238,7 @@ $(function(){
 
 	// Animate slide for edit form
 	function display_edit(){
+		  location.reload();
 		 $( ".docs" ).toggleClass('blur-me');
 		 $(".min").hide();
 		 $(".content").show();
