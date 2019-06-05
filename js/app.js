@@ -8,12 +8,41 @@ var itemList = document.querySelector('#item-list');
 itemList.addEventListener('click', myFunc, false);//itemList.addEventListener('click', myFunc, false);
 itemList.count = 0;
 
+// define buttons
+refresh_button.addEventListener('click',refreshFunc,false);
+save_button.addEventListener('click',saveFunc,false);
+
+function refreshFunc(evt)
+{
+	var count = itemList.count;
+	const id = evt.target.parentElement.getAttribute('data-id');
+
+	//alert("Doc ID: " + id);
+
+	while(itemList.firstChild){
+		itemList.removeChild(itemList.firstChild);
+	}
+	//get data
+	db.collection('applications')
+		.orderBy('date','desc')
+		.get().then(snapshot => {
+		itemList.count = 0;
+	    snapshot.docs.forEach(doc => {
+		renderDB(doc);
+	    });
+	});//end of get data
+}
+
 function refresh() {
 	while(itemList.firstChild){
+		//console.log('removing ... ' + itemList.count);
 		itemList.count -= 1;
 		itemList.removeChild(itemList.firstChild);
-	}	
-	db.collection('spells').get().then(snapshot => {
+	}
+	
+	//get data
+	db.collection('applications').get().then(snapshot => {
+		//itemList.count = 0;
 	    snapshot.docs.forEach(doc => {
 		renderDB(doc);
 	    });
@@ -78,10 +107,11 @@ function myFunc(evt)
 							});
 							return;
 						});
-		$('#delete_item').click(function(){
-			ref.delete();
-			refresh();
-		});//end-of-delete_item event
+
+						$('#delete_item').click(function(){
+							ref.delete();
+							refresh();
+						});//end-of-delete_item event
 	} else {
 		return;
 	}
@@ -89,6 +119,7 @@ function myFunc(evt)
 
 // create element & render cafe
 function renderDB(doc){
+	itemList.count += 1; 
   // create list document elements
   let li = document.createElement('li');
   li.setAttribute('data-id', doc.id);  //Each document gets an id.
@@ -143,15 +174,6 @@ function renderDB(doc){
 
   // put the <tbody> in the <table>
   itemList.appendChild(li);
-
-  // deleting data
-  /*
-    cross.addEventListener('click', (e) => {
-        e.stopPropagation();
-        let id = e.target.parentElement.getAttribute('data-id');
-        db.collection('spells').doc(id).delete();
-    });
-    */
 }
 
 // getting data
