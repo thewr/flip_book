@@ -34,7 +34,7 @@ function refreshFunc(evt)
 }
 
 function refresh() {
-	
+
 	while(itemList.firstChild){
 		//console.log('removing ... ' + itemList.count);
 		itemList.count -= 1;
@@ -47,6 +47,7 @@ function refresh() {
 		.get().then(snapshot => {
 			itemList.count = 0;
 	    		snapshot.docs.forEach(doc => {
+				alert('rendering...');
 		renderDB(doc);
 	    });
 	});//end of get data
