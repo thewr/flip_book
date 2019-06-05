@@ -24,7 +24,7 @@ function refreshFunc(evt)
 	}
 	//get data
 	db.collection(db_name)
-		.orderBy('date','desc')
+		.orderBy('name','desc')
 		.get().then(snapshot => {
 		itemList.count = 0;
 	    snapshot.docs.forEach(doc => {
