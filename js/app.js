@@ -266,6 +266,7 @@ $('#item_cancel').click(function(){
  	 $('.sidebar').hide();
          $(".min").show();
 	 $( ".docs" ).toggleClass('blur-me');
+	 clearForm();
 	 refresh();
 });
 
