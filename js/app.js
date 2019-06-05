@@ -35,9 +35,7 @@ function refreshFunc(evt)
 }
 
 function refresh() {
-  	
-	window.alert('rendering database ...');
-
+  
 	while(itemList.firstChild){
 		//console.log('removing ... ' + itemList.count);
 		itemList.count -= 1;
