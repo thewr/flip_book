@@ -45,6 +45,7 @@ function refresh() {
 		.orderBy('name','asc')
 		.get().then(snapshot => {
 			itemList.count = 0;
+		        console.log('displaying contents of db..');
 	    		snapshot.docs.forEach(doc => {
 				itemList.count += 1;
 				console.log(itemList.count);
