@@ -34,6 +34,7 @@ function refreshFunc(evt)
 }
 
 function refresh() {
+	
 	while(itemList.firstChild){
 		//console.log('removing ... ' + itemList.count);
 		itemList.count -= 1;
@@ -41,9 +42,11 @@ function refresh() {
 	}
 	
 	//get data
-	db.collection('spells').get().then(snapshot => {
-		//itemList.count = 0;
-	    snapshot.docs.forEach(doc => {
+	db.collection('spells')
+		.orderBy('name','desc')
+		.get().then(snapshot => {
+			itemList.count = 0;
+	    		snapshot.docs.forEach(doc => {
 		renderDB(doc);
 	    });
 	});//end of get data
