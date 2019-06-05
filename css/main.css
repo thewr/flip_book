@@ -203,6 +203,7 @@ body>.container>.app>.sidebar {
 
 #refresh_button {
     background-color: 	#ccc;
+    float:right;
 }
 
 #save_button {
