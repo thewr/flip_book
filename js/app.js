@@ -34,20 +34,20 @@ function refreshFunc(evt)
 	});//end of get data
 }
 
+var tmp;
 function refresh() {
-  
-	while(itemList.firstChild){
-		itemList.removeChild(itemList.firstChild);
-	}
-
-
 	//get data
 	db.collection('spells')
 		.orderBy('name','asc')
 		.get().then(snapshot => {
 			itemList.count = 0;
 		        console.log('displaying contents of db..');
+			while(itemList.firstChild){
+				itemList.removeChild(itemList.firstChild);
+			}
 	    		snapshot.docs.forEach(doc => {
+				
+				
 				itemList.count += 1;
 				console.log(itemList.count);
 				renderDB(doc);
