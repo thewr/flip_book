@@ -113,6 +113,7 @@ function myFunc(evt)
 
 						$('#delete_item').click(function(){
 							ref.delete();
+							itemList.count -= 1;
 							refresh();
 						});//end-of-delete_item event
 	} else {
