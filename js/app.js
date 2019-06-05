@@ -24,7 +24,7 @@ function refreshFunc(evt)
 	}
 	//get data
 	db.collection('spells')
-		.orderBy('name','desc')
+		.orderBy('name','asc')
 		.get().then(snapshot => {
 		itemList.count = 0;
 	    snapshot.docs.forEach(doc => {
@@ -43,7 +43,7 @@ function refresh() {
 	
 	//get data
 	db.collection('spells')
-		.orderBy('name','desc')
+		.orderBy('name','asc')
 		.get().then(snapshot => {
 			itemList.count = 0;
 	    		snapshot.docs.forEach(doc => {
