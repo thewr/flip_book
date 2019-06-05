@@ -75,7 +75,7 @@ function myFunc(evt)
 			ref.get()
 			.then(doc => {
 				if(!doc.exists) {
-					//window.alert("no such document");
+					window.alert("no such document");
 				} else {
 					tableData = {
 						//date: doc.data().date,
@@ -109,7 +109,7 @@ function myFunc(evt)
 								clearForm();
 								refresh();
 							});
-							return;
+							//return;
 						});
 
 						$('#delete_item').click(function(){
@@ -117,9 +117,7 @@ function myFunc(evt)
 							itemList.count -= 1;
 							refresh();
 						});//end-of-delete_item event
-	} else {
-		return;
-	}
+	} 
 }
 
 // create element & render cafe
