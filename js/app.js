@@ -200,7 +200,6 @@ form.addEventListener('submit', (e) => {
         subject: form.subject.value
     });
 	clearForm();
-	
 	// generate new db
 	refresh();
 });
@@ -213,6 +212,7 @@ form.addEventListener('cancel', (e) => {
 
 
 $(function(){
+	location.reload();
 	$("#edit_item").hide();
 	$("#delete_item").hide();
 	$('.sidebar').hide();
@@ -238,7 +238,6 @@ $(function(){
 
 	// Animate slide for edit form
 	function display_edit(){
-		  location.reload();
 		 $( ".docs" ).toggleClass('blur-me');
 		 $(".min").hide();
 		 $(".content").show();
