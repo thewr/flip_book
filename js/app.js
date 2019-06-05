@@ -47,8 +47,7 @@ function refresh() {
 		.get().then(snapshot => {
 			itemList.count = 0;
 	    		snapshot.docs.forEach(doc => {
-				window.alert('rendering...');
-		renderDB(doc);
+				renderDB(doc);
 	    });
 	});//end of get data
 }
@@ -124,7 +123,8 @@ function myFunc(evt)
 
 // create element & render cafe
 function renderDB(doc){
-	itemList.count += 1; 
+  window.alert('rendering database ...');
+  itemList.count += 1; 
   // create list document elements
   let li = document.createElement('li');
   li.setAttribute('data-id', doc.id);  //Each document gets an id.
