@@ -53,7 +53,6 @@ function refresh() {
 				renderDB(doc);
 	    });
 	});//end of get data	
-	location.reload();
 }
 
 function clearForm()
