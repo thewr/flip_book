@@ -22,7 +22,7 @@ function refreshFunc(evt)
 		itemList.removeChild(itemList.firstChild);
 	}
 	//get data
-	db.collection('applications')
+	db.collection('spells')
 		.orderBy('date','desc')
 		.get().then(snapshot => {
 		itemList.count = 0;
