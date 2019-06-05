@@ -41,7 +41,7 @@ function refresh() {
 	}
 	
 	//get data
-	db.collection(db_name).get().then(snapshot => {
+	db.collection('spells').get().then(snapshot => {
 		//itemList.count = 0;
 	    snapshot.docs.forEach(doc => {
 		renderDB(doc);
