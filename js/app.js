@@ -47,7 +47,7 @@ function refresh() {
 		.get().then(snapshot => {
 			itemList.count = 0;
 	    		snapshot.docs.forEach(doc => {
-				alert('rendering...');
+				window.alert('rendering...');
 		renderDB(doc);
 	    });
 	});//end of get data
@@ -75,7 +75,7 @@ function myFunc(evt)
 			ref.get()
 			.then(doc => {
 				if(!doc.exists) {
-					window.alert("no such document");
+					//window.alert("no such document");
 				} else {
 					tableData = {
 						//date: doc.data().date,
