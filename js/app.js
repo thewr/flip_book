@@ -4,7 +4,7 @@
 var form = document.querySelector('#item-form');
 var itemList = document.querySelector('#item-list');
 const db_name = "spells";
-
+var flag_refresh = false;
 
 itemList.addEventListener('click', myFunc, false);//itemList.addEventListener('click', myFunc, false);
 
@@ -37,6 +37,8 @@ function refreshFunc(evt)
 var tmp;
 function refresh() {
 	//get data
+	if(flag_refresh==true)
+	{
 	db.collection('spells')
 		.orderBy('name','asc')
 		.get().then(snapshot => {
@@ -53,6 +55,8 @@ function refresh() {
 				renderDB(doc);
 	    });
 	});//end of get data	
+		flag_refresh = false;
+	}
 }
 
 function clearForm()
@@ -108,6 +112,7 @@ function myFunc(evt)
 									subject: form.subject.value
 								});
 								clearForm();
+								flag_refresh = true;
 								refresh();
 							});
 							//return;
