@@ -47,6 +47,7 @@ function refresh() {
 			itemList.count = 0;
 	    		snapshot.docs.forEach(doc => {
 				itemList.count += 1;
+				console.log(itemList.count);
 				renderDB(doc);
 	    });
 	});//end of get data
