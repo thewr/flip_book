@@ -7,7 +7,6 @@ const db_name = "spells";
 
 
 itemList.addEventListener('click', myFunc, false);//itemList.addEventListener('click', myFunc, false);
-itemList.count = 0;
 
 // define buttons
 refresh_button.addEventListener('click',refreshFunc,false);
@@ -28,6 +27,8 @@ function refreshFunc(evt)
 		.get().then(snapshot => {
 		itemList.count = 0;
 	    snapshot.docs.forEach(doc => {
+		    itemList.count += 1;
+
 		renderDB(doc);
 	    });
 	});//end of get data
@@ -49,6 +50,7 @@ function refresh() {
 		.get().then(snapshot => {
 			itemList.count = 0;
 	    		snapshot.docs.forEach(doc => {
+				itemList.count += 1;
 				renderDB(doc);
 	    });
 	});//end of get data
@@ -125,7 +127,6 @@ function myFunc(evt)
 
 // create element & render cafe
 function renderDB(doc){
-  itemList.count += 1; 
   // create list document elements
   let li = document.createElement('li');
   li.setAttribute('data-id', doc.id);  //Each document gets an id.
@@ -184,7 +185,9 @@ function renderDB(doc){
 
 // getting data
 db.collection('spells').get().then(snapshot => {
+	itemList.count = 0;
     snapshot.docs.forEach(doc => {
+	itemList.count += 1;
         renderDB(doc);
     });
 });
