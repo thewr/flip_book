@@ -16,7 +16,7 @@ function refreshFunc(evt)
 	var count = itemList.count;
 	const id = evt.target.parentElement.getAttribute('data-id');
 
-	//alert("Doc ID: " + id);
+	//alert	("Doc ID: " + id);
 
 	while(itemList.firstChild){
 		itemList.removeChild(itemList.firstChild);
@@ -37,11 +37,9 @@ function refreshFunc(evt)
 function refresh() {
   
 	while(itemList.firstChild){
-		//console.log('removing ... ' + itemList.count);
-		itemList.count -= 1;
 		itemList.removeChild(itemList.firstChild);
 	}
-	
+
 	//get data
 	db.collection('spells')
 		.orderBy('name','asc')
