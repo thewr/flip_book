@@ -217,7 +217,6 @@ form.addEventListener('cancel', (e) => {
 
 
 $(function(){
-	location.reload();
 	$("#edit_item").hide();
 	$("#delete_item").hide();
 	$('.sidebar').hide();
