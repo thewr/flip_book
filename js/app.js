@@ -197,6 +197,7 @@ db.collection('spells').get().then(snapshot => {
 // saving data
 
 form.addEventListener('submit', (e) => {
+
     e.preventDefault();
     db.collection('spells').add({
         name: form.name.value,
@@ -206,7 +207,8 @@ form.addEventListener('submit', (e) => {
         subject: form.subject.value
     });
 	clearForm();
-	// generate new db
+	// generate new db 
+	flag_refresh = true;
 	refresh();
 });
 
@@ -262,7 +264,6 @@ $(function(){
   });
 
   $('#item_submit').click(function(){
-	  flag_refresh = true;
     	  $(".content").hide();
 	  $('.sidebar').hide();
 	  $(".min").show();
