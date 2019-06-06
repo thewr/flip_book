@@ -262,6 +262,7 @@ $(function(){
   });
 
   $('#item_submit').click(function(){
+	  flag_refresh = true;
     	  $(".content").hide();
 	  $('.sidebar').hide();
 	  $(".min").show();
