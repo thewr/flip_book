@@ -195,6 +195,7 @@ db.collection('spells').get().then(snapshot => {
 });
 
 // saving data
+/*
 form.addEventListener('submit', (e) => {
 
     e.preventDefault();
@@ -209,6 +210,7 @@ form.addEventListener('submit', (e) => {
 	// generate new db 
 	refresh();
 });
+*/
 
 form.addEventListener('cancel', (e) => {
     e.preventDefault();
