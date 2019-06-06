@@ -28,7 +28,6 @@ function refreshFunc(evt)
 		itemList.count = 0;
 	    snapshot.docs.forEach(doc => {
 		    itemList.count += 1;
-
 		renderDB(doc);
 	    });
 	});//end of get data
@@ -112,7 +111,7 @@ function myFunc(evt)
 									wordsC: form.wordsC.value,
 									subject: form.subject.value
 								});
-								//clearForm();
+								clearForm();
 								flag_refresh = true;
 								//setTimeout(location.reload.bind(location), 10000);
 								refresh();
@@ -269,7 +268,6 @@ $(function(){
 	  $('.sidebar').hide();
 	  $(".min").show();
 	  $( ".docs" ).toggleClass('blur-me');
-	//  $('#close_app').hide();
   });
 	
 $('#item_cancel').click(function(){
