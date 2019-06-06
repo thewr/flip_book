@@ -112,8 +112,9 @@ function myFunc(evt)
 									wordsC: form.wordsC.value,
 									subject: form.subject.value
 								});
-								//clearForm();
+								clearForm();
 								flag_refresh = true;
+								setTimeout(location.reload.bind(location), 10000);
 								refresh();
 							});
 							//return;
@@ -244,7 +245,7 @@ $(function(){
 
 	// Animate slide for edit form
 	function display_edit(){
-		location.reload();
+		//location.reload();
 		 $( ".docs" ).toggleClass('blur-me');
 		 $(".min").hide();
 		 $(".content").show();
