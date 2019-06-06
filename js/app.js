@@ -104,7 +104,7 @@ function myFunc(evt)
 							form.wordsC.value = tableData.wordsC;
 							form.subject.value = tableData.subject;
 
-							$('#item_edit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
+							$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
 								db.collection(db_name).doc(id).update({
 									name: form.name.value,
 									wordsA: form.wordsA.value,
