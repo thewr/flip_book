@@ -78,8 +78,7 @@ function myFunc(evt)
 			ref.get()
 			.then(doc => {
 				if(!doc.exists) {
-					window.alert("no such document");
-					return;
+					throw("no such document");
 				} else {
 					tableData = {
 						//date: doc.data().date,
@@ -114,7 +113,7 @@ function myFunc(evt)
 								clearForm();
 								flag_refresh = true;
 								//setTimeout(location.reload.bind(location), 10000);
-								refresh();
+								//refresh();
 							});
 							//return;
 						});
@@ -122,7 +121,7 @@ function myFunc(evt)
 						$('#delete_item').click(function(){
 							ref.delete();
 							itemList.count -= 1;
-							refresh();
+							//refresh();
 						});//end-of-delete_item event
 	} 
 }
@@ -206,16 +205,31 @@ form.addEventListener('submit', (e) => {
     });
 	clearForm();
 	// generate new db 
-	refresh();
+	//refresh();
 });
 
 form.addEventListener('cancel', (e) => {
     e.preventDefault();
-	refresh();
+	//refresh();
+});
+
+// real-time listener
+db.collection('spells').orderBy('name').onSnapshot(snapshot => {
+    let changes = snapshot.docChanges();
+    changes.forEach(change => {
+        console.log(change.doc.data());
+        if(change.type == 'added'){
+            renderCafe(change.doc);
+        } else if (change.type == 'removed'){
+            let li = cafeList.querySelector('[data-id=' + change.doc.id + ']');
+            cafeList.removeChild(li);
+        }
+    });
 });
 
 
 
+//JQUERY FUNCTIONS
 $(function(){
 	$("#edit_item").hide();
 	$("#delete_item").hide();
