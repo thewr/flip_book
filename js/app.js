@@ -70,6 +70,7 @@ function clearForm()
 
 function myFunc(evt)
 {
+	flag_refresh = true;
 	const id = evt.target.parentElement.getAttribute('data-id');
 	
 	if(evt.target.nodeName == 'SPAN'){
