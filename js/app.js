@@ -80,6 +80,7 @@ function myFunc(evt)
 			.then(doc => {
 				if(!doc.exists) {
 					window.alert("no such document");
+					return;
 				} else {
 					tableData = {
 						//date: doc.data().date,
@@ -95,6 +96,7 @@ function myFunc(evt)
 			res.send(error);
 		}
 		$('#edit_item').click(function(){
+			console.log(tableData.name);
 			
 							form.name.value =  tableData.name;
 							form.wordsA.value = tableData.wordsA;
@@ -110,7 +112,7 @@ function myFunc(evt)
 									wordsC: form.wordsC.value,
 									subject: form.subject.value
 								});
-								clearForm();
+								//clearForm();
 								flag_refresh = true;
 								refresh();
 							});
