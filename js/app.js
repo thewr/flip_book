@@ -108,7 +108,7 @@ function myFunc(evt)
 							clearForm();
 							flag_refresh = true;
 							//setTimeout(location.reload.bind(location), 10000);
-							//refresh();
+							refresh();
 						});
 					});			
 				}
@@ -121,7 +121,6 @@ function myFunc(evt)
 						$('#delete_item').click(function(){
 							ref.delete();
 							itemList.count -= 1;
-							//refresh();
 						});//end-of-delete_item event
 	} 
 }
