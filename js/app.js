@@ -5,6 +5,7 @@ var form = document.querySelector('#item-form');
 var itemList = document.querySelector('#item-list');
 const db_name = "spells";
 var flag_refresh = true;
+var flag_update = false;
 
 itemList.addEventListener('click', myFunc, false);//itemList.addEventListener('click', myFunc, false);
 
@@ -78,44 +79,43 @@ function myFunc(evt)
 			.then(doc => {
 				if(!doc.exists) {
 					throw("no such document");
-				} else {
-					tableData = {
-						//date: doc.data().date,
-						name: doc.data().name,
-						wordsA: doc.data().wordsA,
-						wordsB: doc.data().wordsB,
-						wordsC: doc.data().wordsC,
-						subject: doc.data().subject
-					};  
+				} else {		
+					$('#edit_item').click(function(){
+						tableData = {
+							//date: doc.data().date,
+							name: doc.data().name,
+							wordsA: doc.data().wordsA,
+							wordsB: doc.data().wordsB,
+							wordsC: doc.data().wordsC,
+							subject: doc.data().subject
+						};  			
+						
+						form.name.value =  tableData.name;
+						form.wordsA.value = tableData.wordsA;
+						form.wordsB.value = tableData.wordsB;
+						form.wordsC.value = tableData.wordsC;
+						form.subject.value = tableData.subject;
+
+						$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
+							db.collection(db_name).doc(id).update({
+								name: form.name.value,
+								wordsA: form.wordsA.value,
+								wordsB: form.wordsB.value,
+								wordsC: form.wordsC.value,
+								subject: form.subject.value
+							});
+							clearForm();
+							flag_refresh = true;
+							//setTimeout(location.reload.bind(location), 10000);
+							//refresh();
+						});
+					});			
 				}
 			})
 		} catch (error) {
 			res.send(error);
 		}
-		$('#edit_item').click(function(){
-			console.log(tableData.name);
-			
-							form.name.value =  tableData.name;
-							form.wordsA.value = tableData.wordsA;
-							form.wordsB.value = tableData.wordsB;
-							form.wordsC.value = tableData.wordsC;
-							form.subject.value = tableData.subject;
 
-							$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
-								db.collection(db_name).doc(id).update({
-									name: form.name.value,
-									wordsA: form.wordsA.value,
-									wordsB: form.wordsB.value,
-									wordsC: form.wordsC.value,
-									subject: form.subject.value
-								});
-								clearForm();
-								flag_refresh = true;
-								//setTimeout(location.reload.bind(location), 10000);
-								//refresh();
-							});
-							//return;
-						});
 
 						$('#delete_item').click(function(){
 							ref.delete();
