@@ -74,14 +74,15 @@ function myFunc(evt)
             console.log(id + " was clicked");	
 	    const ref = db.collection("spells").doc(id);
 		try {
-			var tableData = {};
+			
 			ref.get()
 			.then(doc => {
 				if(!doc.exists) {
 					throw("no such document");
 				} else {		
 					$('#edit_item').click(function(){
-						tableData = {
+						//var tableData = {};
+						var tableData = {
 							//date: doc.data().date,
 							name: doc.data().name,
 							wordsA: doc.data().wordsA,
