@@ -222,11 +222,13 @@ db.collection('spells').orderBy('name').onSnapshot(snapshot => {
         console.log(change.doc.data());
         if(change.type == 'added'){
             renderDB(change.doc);
-        } else if (change.type == 'modified'){
+        } /*else if (change.type == 'modified'){
 		let li = itemList.querySelector('[data-id=' + change.doc.id + ']');
 		itemList.removeChild(li);
 		renderDB(change.doc);
-	} else if (change.type == 'removed'){
+	} 
+	*/
+	    else if (change.type == 'removed'){
 		let li = itemList.querySelector('[data-id=' + change.doc.id + ']');
 		itemList.removeChild(li);
         }
