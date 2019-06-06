@@ -112,7 +112,7 @@ function myFunc(evt)
 									wordsC: form.wordsC.value,
 									subject: form.subject.value
 								});
-								clearForm();
+								//clearForm();
 								flag_refresh = true;
 								//setTimeout(location.reload.bind(location), 10000);
 								refresh();
@@ -291,14 +291,10 @@ $('#item_cancel').click(function(){
 	$('#item-list').on('click','li',function() {
 	$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
-			//$(this).append($div);
 			$("#edit_item").show();
 			$("#delete_item").show();
-			// change selected's background-color
-			//$(this).css("background-color", "rgb(225, 255, 107)");
 		} else {
-			//$(this).css("background-color", "");
-			// $div.remove();
+
       			$("#edit_item").hide();
 			$("#delete_item").hide();
 
