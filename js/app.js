@@ -48,8 +48,6 @@ function refresh() {
 				itemList.removeChild(itemList.firstChild);
 			}
 	    		snapshot.docs.forEach(doc => {
-				
-				
 				itemList.count += 1;
 				console.log(itemList.count);
 				renderDB(doc);
@@ -186,6 +184,7 @@ function renderDB(doc){
 }
 
 // getting data
+/*
 db.collection('spells').get().then(snapshot => {
 	itemList.count = 0;
     snapshot.docs.forEach(doc => {
@@ -193,7 +192,7 @@ db.collection('spells').get().then(snapshot => {
         renderDB(doc);
     });
 });
-
+*/
 // saving data
 
 form.addEventListener('submit', (e) => {
@@ -208,7 +207,6 @@ form.addEventListener('submit', (e) => {
     });
 	clearForm();
 	// generate new db 
-	flag_refresh = true;
 	refresh();
 });
 
@@ -226,6 +224,8 @@ $(function(){
 	
 	// Animate slide for create new form	
 	function display_add(){
+		flag_refresh = true;
+		console.log(flag_refresh);
 		 $( ".docs" ).toggleClass('blur-me');
 		 $(".min").hide();
 		 $(".content").show();
