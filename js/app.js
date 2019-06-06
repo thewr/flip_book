@@ -104,7 +104,7 @@ function myFunc(evt)
 							form.wordsC.value = tableData.wordsC;
 							form.subject.value = tableData.subject;
 
-							$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
+							$('#item_edit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
 								db.collection(db_name).doc(id).update({
 									name: form.name.value,
 									wordsA: form.wordsA.value,
@@ -114,7 +114,7 @@ function myFunc(evt)
 								});
 								clearForm();
 								flag_refresh = true;
-								setTimeout(location.reload.bind(location), 10000);
+								//setTimeout(location.reload.bind(location), 10000);
 								refresh();
 							});
 							//return;
