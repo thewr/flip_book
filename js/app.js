@@ -183,8 +183,7 @@ function renderDB(doc){
   itemList.appendChild(li);
 }
 
-// getting data
-/*
+// get data initially
 db.collection('spells').get().then(snapshot => {
 	itemList.count = 0;
     snapshot.docs.forEach(doc => {
@@ -192,9 +191,8 @@ db.collection('spells').get().then(snapshot => {
         renderDB(doc);
     });
 });
-*/
-// saving data
 
+// saving data
 form.addEventListener('submit', (e) => {
 
     e.preventDefault();
