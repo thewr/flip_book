@@ -4,7 +4,7 @@
 var form = document.querySelector('#item-form');
 var itemList = document.querySelector('#item-list');
 const db_name = "spells";
-var flag_refresh = false;
+var flag_refresh = true;
 
 itemList.addEventListener('click', myFunc, false);//itemList.addEventListener('click', myFunc, false);
 
