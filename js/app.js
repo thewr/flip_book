@@ -52,7 +52,8 @@ function refresh() {
 				console.log(itemList.count);
 				renderDB(doc);
 	    });
-	});//end of get data	
+	});//end of get data
+		location.reload();
 		flag_refresh = false;
 	}
 }
