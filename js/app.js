@@ -53,7 +53,6 @@ function refresh() {
 				renderDB(doc);
 	    });
 	});//end of get data
-		location.reload();
 		flag_refresh = false;
 	}
 }
@@ -197,7 +196,6 @@ db.collection('spells').get().then(snapshot => {
 
 // saving data
 form.addEventListener('submit', (e) => {
-
     e.preventDefault();
     db.collection('spells').add({
         name: form.name.value,
@@ -246,6 +244,7 @@ $(function(){
 
 	// Animate slide for edit form
 	function display_edit(){
+		location.reload();
 		 $( ".docs" ).toggleClass('blur-me');
 		 $(".min").hide();
 		 $(".content").show();
