@@ -72,7 +72,7 @@ function myFunc(evt)
 	
 	if(evt.target.nodeName == 'SPAN'){
             console.log(id + " was clicked");	
-	    const ref = db.collection("spells").doc(id);
+	    var ref = db.collection("spells").doc(id);	
 		try {
 			
 			ref.get()
@@ -97,20 +97,16 @@ function myFunc(evt)
 						form.wordsC.value = tableData.wordsC;
 						form.subject.value = tableData.subject;
 
-						$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
-							db.collection(db_name).doc(id).update({
-								name: form.name.value,
-								wordsA: form.wordsA.value,
-								wordsB: form.wordsB.value,
-								wordsC: form.wordsC.value,
-								subject: form.subject.value
+						$('#item_submit').click(function(){
+							db.collection(db_name).doc(id).update(tableData).then(function() {
+    								console.log("Document successfully written!");
 							});
 							clearForm();
 							flag_refresh = true;
 							//setTimeout(location.reload.bind(location), 10000);
 							refresh();
 						});
-					});			
+					}); //endofedit			
 				}
 			})
 		} catch (error) {
