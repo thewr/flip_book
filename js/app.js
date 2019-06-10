@@ -109,7 +109,7 @@ function myFunc(evt)
 							db.collection(db_name).doc(id).set(tableData).then(function() {
     								console.log("Document successfully written!");
 							});
-							clearForm();
+							//clearForm();
 							flag_refresh = true;
 							//setTimeout(location.reload.bind(location), 10000);
 							refresh();
