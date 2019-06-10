@@ -73,7 +73,6 @@ function myFunc(evt)
 	if(evt.target.nodeName == 'SPAN'){
             console.log(id + " was clicked");	
 	    var ref = db.collection("spells").doc(id);	
-
 		try {		
 			ref.get()
 			.then(doc => {
@@ -81,21 +80,12 @@ function myFunc(evt)
 					throw("no such document");
 				} else {		
 					$('#edit_item').click(function(){
-						//var tableData = {};
-						var tableData = {
-							//date: doc.data().date,
-							name: doc.data().name,
-							wordsA: doc.data().wordsA,
-							wordsB: doc.data().wordsB,
-							wordsC: doc.data().wordsC,
-							subject: doc.data().subject
-						};  			
-						
-						form.name.value =  tableData.name;
-						form.wordsA.value = tableData.wordsA;
-						form.wordsB.value = tableData.wordsB;
-						form.wordsC.value = tableData.wordsC;
-						form.subject.value = tableData.subject;
+			
+						form.name.value =  doc.data().name;
+						form.wordsA.value = doc.data().wordsA;
+						form.wordsB.value = doc.data().wordsB;
+						form.wordsC.value = doc.data().wordsC;
+						form.subject.value = doc.data().subject;
 
 						$('#item_submit').click(function(){
 							return db.runTransaction(function(transaction) {
@@ -116,7 +106,7 @@ function myFunc(evt)
 								}).catch(function(error) {
 							    		console.log("Transaction failed: ", error);
 							});
-							tableData = {
+							var tableData = {
 							//date: doc.data().date,
 							name: form.name.value,
 							wordsA: form.wordsA.value,
