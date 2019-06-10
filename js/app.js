@@ -73,6 +73,26 @@ function myFunc(evt)
 	if(evt.target.nodeName == 'SPAN'){
             console.log(id + " was clicked");	
 	    var ref = db.collection("spells").doc(id);	
+		
+	return db.runTransaction(function(transaction) {
+	    // This code may get re-run multiple times if there are conflicts.
+	    return transaction.get(ref).then(function(sfDoc) {
+		if (!sfDoc.exists) {
+		    throw "Document does not exist!";
+		}
+
+		// Add one person to the city population.
+		// Note: this could be done without a transaction
+		//       by updating the population using FieldValue.increment()
+		var newwordsC = sfDoc.data().wordsC + 1;
+		transaction.update(ref, { wordsC: newwordsC });
+	    });
+	}).then(function() {
+	    console.log("Transaction successfully committed!");
+	}).catch(function(error) {
+	    console.log("Transaction failed: ", error);
+	});
+
 		try {
 			
 			ref.get()
