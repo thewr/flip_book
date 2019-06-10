@@ -104,31 +104,18 @@ function myFunc(evt)
 									subject: form.subject.value
 								};  
 
-								var newwordsC = doc.data().wordsC + 1;
 								transaction.update(ref, tableData);
+								clearForm();
+								flag_refresh = true;
+								//setTimeout(location.reload.bind(location), 10000);
+								refresh();
 							    });
 								}).then(function() {
 							    		console.log("Transaction successfully committed!");
 								}).catch(function(error) {
 							    		console.log("Transaction failed: ", error);
 							});
-							/*
-							var tableData = {
-							//date: doc.data().date,
-							name: form.name.value,
-							wordsA: form.wordsA.value,
-							wordsB: form.wordsB.value,
-							wordsC: form.wordsC.value,
-							subject: form.subject.value
-							};  			
-							db.collection(db_name).doc(id).set(tableData).then(function() {
-    								console.log("Document successfully written!");
-							});
-							*/
-							clearForm();
-							flag_refresh = true;
-							//setTimeout(location.reload.bind(location), 10000);
-							refresh();
+
 						});
 					}); //endofedit			
 				}
