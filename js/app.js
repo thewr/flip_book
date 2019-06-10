@@ -90,22 +90,29 @@ function myFunc(evt)
 						$('#item_submit').click(function(){
 							return db.runTransaction(function(transaction) {
 							    // This code may get re-run multiple times if there are conflicts.
-							    return transaction.get(ref).then(function(sfDoc) {
-								if (!sfDoc.exists) {
+							    return transaction.get(ref).then(function(doc) {
+								if (!doc.exists) {
 								    throw "Document does not exist!";
 								}
 
-								// Add one person to the city population.
-								// Note: this could be done without a transaction
-								//       by updating the population using FieldValue.increment()
-								var newwordsC = sfDoc.data().wordsC + 1;
-								transaction.update(ref, { wordsC: newwordsC });
+								// Update fields to reflect change.
+								 var tableData = {
+									name: form.name.value,
+									wordsA: form.wordsA.value,
+									wordsB: form.wordsB.value,
+									wordsC: form.wordsC.value,
+									subject: form.subject.value
+								};  
+
+								var newwordsC = doc.data().wordsC + 1;
+								transaction.update(ref, tableData);
 							    });
 								}).then(function() {
 							    		console.log("Transaction successfully committed!");
 								}).catch(function(error) {
 							    		console.log("Transaction failed: ", error);
 							});
+							/*
 							var tableData = {
 							//date: doc.data().date,
 							name: form.name.value,
@@ -117,7 +124,8 @@ function myFunc(evt)
 							db.collection(db_name).doc(id).set(tableData).then(function() {
     								console.log("Document successfully written!");
 							});
-							//clearForm();
+							*/
+							clearForm();
 							flag_refresh = true;
 							//setTimeout(location.reload.bind(location), 10000);
 							refresh();
