@@ -98,6 +98,14 @@ function myFunc(evt)
 						form.subject.value = tableData.subject;
 
 						$('#item_submit').click(function(){
+							tableData = {
+							//date: doc.data().date,
+							name: form.name.value,
+							wordsA: form.wordsA.value,
+							wordsB: form.wordsB.value,
+							wordsC: form.wordsC.value,
+							subject: form.subject.value
+							};  			
 							db.collection(db_name).doc(id).set(tableData).then(function() {
     								console.log("Document successfully written!");
 							});
