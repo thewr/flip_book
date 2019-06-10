@@ -98,7 +98,7 @@ function myFunc(evt)
 						form.subject.value = tableData.subject;
 
 						$('#item_submit').click(function(){
-							db.collection(db_name).doc(id).update(tableData).then(function() {
+							db.collection(db_name).doc(id).set(tableData).then(function() {
     								console.log("Document successfully written!");
 							});
 							clearForm();
