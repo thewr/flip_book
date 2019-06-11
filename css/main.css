@@ -42,11 +42,18 @@ html>.container, body>.container {
     flex-wrap: initial;
 }
 
-@media (max-width: 900px) body>.container>.app
+@media (max-width: 900px) body>.container>.app>.sidebar
 {
   display: block;
-  position: relative;
+  position: absolute;  //relative
   background: #e7e9ea;
+  transition: width .2s ease-out;
+  transition-property: width;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+  opacity: 0.94;
+  z-index = 1000;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
