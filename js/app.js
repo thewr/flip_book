@@ -232,6 +232,11 @@ db.collection('spells').orderBy('name').onSnapshot(snapshot => {
 	    }
 	    if (change.type == 'modified'){
 		    console.log("Modified item: ", change.doc.data());
+		    
+		    let li = itemList.querySelector('[data-id=' + change.doc.id + ']');
+		    itemList.removeChild(li);
+		    renderDB(change.doc);
+		    
 	    }
 	    if (change.type == 'removed'){
 		    console.log("Removed item: ", change.doc.data());
