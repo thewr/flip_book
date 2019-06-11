@@ -169,7 +169,7 @@ body>.container>.app>.sidebar {
     background: #101112;
     margin: 0;
     padding-left: 16px;
-    text-size: 10rem;
+ //   text-size: 10rem;
     text-align: center;
     height: 32px;
     border-top: 2px solid #b7bcc0;
