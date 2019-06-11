@@ -105,10 +105,10 @@ function myFunc(evt)
 								};  
 
 								transaction.update(ref, tableData);
-								clearForm();
+								//clearForm();
 								flag_refresh = true;
 								//setTimeout(location.reload.bind(location), 10000);
-								refresh();
+								//refresh();
 							    });
 								}).then(function() {
 							    		console.log("Transaction successfully committed!");
