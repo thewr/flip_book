@@ -225,19 +225,20 @@ form.addEventListener('cancel', (e) => {
 db.collection('spells').orderBy('name').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
-        console.log(change.doc.data());
-        if(change.type == 'added'){
-            renderDB(change.doc);
-        } /*else if (change.type == 'modified'){
-		let li = itemList.querySelector('[data-id=' + change.doc.id + ']');
-		itemList.removeChild(li);
-		renderDB(change.doc);
-	} 
-	*/
-	    else if (change.type == 'removed'){
-		let li = itemList.querySelector('[data-id=' + change.doc.id + ']');
-		itemList.removeChild(li);
-        }
+	    if(change.type == 'added'){
+		    console.log("New item: ", change.doc.data());
+            
+		    renderDB(change.doc);
+	    }
+	    if (change.type == 'modified'){
+		    console.log("Modified item: ", change.doc.data());
+	    }
+	    if (change.type == 'removed'){
+		    console.log("Removed item: ", change.doc.data());
+		    
+		    let li = itemList.querySelector('[data-id=' + change.doc.id + ']');
+		    itemList.removeChild(li);
+	    }
     });
 });
 
