@@ -49,6 +49,15 @@ html>.container, body>.container {
   background: #e7e9ea;
 }
 
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 16px;
+    background: #eee;
+  }
+}
+
 .blur-me {
     z-index: 1;
   filter: blur(2px);
