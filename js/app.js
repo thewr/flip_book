@@ -36,8 +36,7 @@ function refreshFunc(evt)
 
 var tmp;
 function refresh() {
-	//get data
-	//if(flag_refresh==true){
+	if(flag_refresh==true){
 	db.collection('spells')
 		.orderBy('name','asc')
 		.get().then(snapshot => {
@@ -54,7 +53,7 @@ function refresh() {
 	});//end of get data
 		clearForm();
 		flag_refresh = false;
-	//}
+	}
 }
 
 function clearForm()
