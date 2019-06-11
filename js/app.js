@@ -52,6 +52,7 @@ function refresh() {
 				renderDB(doc);
 	    });
 	});//end of get data
+		clearForm();
 		flag_refresh = false;
 	//}
 }
@@ -108,7 +109,7 @@ function myFunc(evt)
 								//clearForm();
 								flag_refresh = true;
 								//setTimeout(location.reload.bind(location), 10000);
-								//refresh();
+								refresh();
 							    });
 								}).then(function() {
 							    		console.log("Transaction successfully committed!");
