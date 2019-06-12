@@ -285,6 +285,7 @@ input[type=cancel]{
   color: #c444444;
   width: 50px;
   height: 25px;
+  border-radius: 2px;
   text-align: center;
   cursor: pointer;
 
