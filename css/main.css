@@ -47,11 +47,11 @@ html>.container, body>.container {
   display: block;
   position: absolute;  //relative
   background: #e7e9ea;
-  transition: width .2s ease-out;
-  transition-property: width;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
-  transition-delay: 0s;
+//  transition: width .2s ease-out;
+//  transition-property: width;
+//  transition-duration: 0.2s;
+//  transition-timing-function: ease-out;
+// transition-delay: 0s;
   opacity: 0.94;
   z-index = 1000;
 }
@@ -97,7 +97,6 @@ html>.container, body>.container {
     justify-content: space-between;
     background: #101112;
     padding: 0 1rem;
-    text-size: 10rem;
     height: 44px;
     z-index: 1000;
 }
@@ -175,7 +174,6 @@ body>.container>.app>.sidebar {
     background: #101112;
     margin: 0;
     padding-left: 16px;
- //   text-size: 10rem;
     text-align: center;
     height: 32px;
     border-top: 2px solid #b7bcc0;
@@ -281,10 +279,11 @@ input[type=cancel]{
   display:inline-block;
   position: relative;
   border: 1px solid rgba(27, 31, 35, 0.2);
-  color: #c444444;
+  color: #red;
   width: 50px;
   height: 25px;
   border-radius: 2px;
+  margin-top: 5px;
   text-align: center;
   cursor: pointer;
 
