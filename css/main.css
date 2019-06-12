@@ -60,8 +60,7 @@ html>.container, body>.container {
   select:focus,
   textarea:focus,
   input:focus {
-    font-size: 16px;
-    background: #eee;
+    font-size: inherit;
   }
 }
 
