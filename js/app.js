@@ -138,13 +138,13 @@ function renderDB(doc){
   let li = document.createElement('li');
   li.setAttribute('data-id', doc.id);  //Each document gets an id.
   let name = document.createElement('span');
-  name.style.cssText = "padding: 3px 0px 3px 12px; font-size: 12px; border-bottom: 2px solid black";
+  name.style.cssText = "padding: 3px 0px 3px 12px; font-size: 16px; border-bottom: 2px solid black";
   let wordsA = document.createElement('span');
-  wordsA.style.cssText = "padding: 3px 0px 3px 12px; font-size: 12px;";
+  wordsA.style.cssText = "padding: 3px 0px 3px 12px; font-size: 16px;";
   let wordsB = document.createElement('span');
-  wordsB.style.cssText = "padding: 3px 0px 6px 12px; font-size: 12px;";
+  wordsB.style.cssText = "padding: 3px 0px 6px 12px; font-size: 16px;";
   let wordsC = document.createElement('span');
-  wordsC.style.cssText = "font-family: Arial, Helvetica, sans-serif; font-size: 12px; padding: 3px 0px 6px 12px; display: block; border-bottom: 2px solid black";
+  wordsC.style.cssText = "font-family: Arial, Helvetica, sans-serif; font-size: 16px; padding: 3px 0px 6px 12px; display: block; border-bottom: 2px solid black";
 
   let subject = document.createElement('span');
   subject.style.cssText = "padding: 3px 0px 6px 12px; display: block;";
