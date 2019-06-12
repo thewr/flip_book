@@ -279,7 +279,7 @@ input[type=append]{
   cursor: pointer;
 }
 
-
+/*
 input[type=cancel]{
   background-color: #cbd6e9;
   display:inline-block;
@@ -293,8 +293,8 @@ input[type=cancel]{
   margin-top: 5px;
   text-align: center;
   cursor: pointer;
-
 }
+*/
 
 
 input[type=append]:hover {
@@ -304,22 +304,6 @@ input[type=append]:hover {
 input[type=submit]:hover {
   background-color: #3F729B;
 }
-/*
-button{
-    border: 0;
-    background-color: #fff;
-    border-radius: 4px;
-    padding: 13px;
-    width: 14%;
-    border: 1px solid #ccc;
-    box-shadow: -1px 0px 1px rgba(0,0,0,0.1);
-    color: white;
-    font-weight: bold;
-    font-family: ubuntu;
-    letter-spacing: 1px;
-    color: black;
-}
-*/
 
 @media (max-width: 480px) { 
     body>.container>.app>.docs {
