@@ -347,6 +347,8 @@ body>.container>.app>.docs {
     white-space: pre-line;
 }
 
+
+
 .selected{
     background-color: yellow;
 }
@@ -364,6 +366,13 @@ body>.container>.app>.docs {
 
     font-size-adjust:auto;
 }
+
+#item-list li span .title{
+    padding: 3px 0px 3px 12px; 
+    font-size: 16px; 
+    border-bottom: 2px solid black;    
+}
+
 
 #item-list li:hover
 {
