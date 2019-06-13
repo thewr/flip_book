@@ -156,14 +156,6 @@ body>.container>.app>.sidebar {
   display: block;
 }
 
-.btn-group input{
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  margin-right:2px;
-  float: left; /* Float the buttons side by side */
-}
-
 #close_app {
  background-color: transparent;
  text-decoration: none !important;
@@ -268,9 +260,7 @@ textarea {
 }
 
 
-//input[type=submit],
-
-/*
+input[type=submit],
 input[type=append]{
   background-color: #4285F4;
   //position:absolute;
@@ -286,8 +276,8 @@ input[type=append]{
   text-align: center;
   cursor: pointer;
 }
-*/
-/*
+
+
 input[type=cancel]{
   background-color: #cbd6e9;
   display:inline-block;
@@ -302,7 +292,7 @@ input[type=cancel]{
   text-align: center;
   cursor: pointer;
 }
-*/
+
 
 
 input[type=append]:hover {
