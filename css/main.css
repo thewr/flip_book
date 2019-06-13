@@ -346,9 +346,6 @@ body>.container>.app>.docs {
     cursor: pointer;
     white-space: pre-line;
 }
-
-
-
 .selected{
     background-color: yellow;
 }
@@ -363,18 +360,29 @@ body>.container>.app>.docs {
     font-weight: 400;
     display: block;
     font-size: 16px;
-
     font-size-adjust:auto;
 }
 
-.custom_span1{
+.name_data{
     padding: 3px 0px 3px 12px; 
     border-bottom: 2px solid black;    
 }
 
-.custom_span2{
-    padding: 3px 0px 3px 12px; 
+.words_data{
+    padding: 3px 0px 6px 12px; 
 }
+
+.words_data_last{
+    padding: 3px 0px 6px 12px; 
+    display: block; 
+    border-bottom: 2px solid black
+}
+
+.subject_data{
+    padding: 3px 0px 6px 12px;
+    display: block;    
+}
+
 
 
 #item-list li:hover
