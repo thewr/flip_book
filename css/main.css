@@ -110,6 +110,7 @@ html>.container, body>.container {
   z-index: 1000;
 }
 
+/*
 body>.container>.app>.sidebar {
    // position: absolute;
     top: 0;
@@ -122,6 +123,7 @@ body>.container>.app>.sidebar {
     background: #282b2d;
     //opacity: .94;
 }
+*/
 
 .sidebar{
  //-webkit-box-flex: 1;
