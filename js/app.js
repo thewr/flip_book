@@ -138,16 +138,18 @@ function renderDB(doc){
   let li = document.createElement('li');
   li.setAttribute('data-id', doc.id);  //Each document gets an id.
   let name = document.createElement('span');
-  name.classList.add("custom_span1");
+  name.classList.add("name_data");
   let wordsA = document.createElement('span');
-  wordsA.style.cssText = "padding: 3px 0px 3px 12px; font-size: 16px;";
+  wordsA.classList.add("words_data");
   let wordsB = document.createElement('span');
-  wordsB.style.cssText = "padding: 3px 0px 6px 12px; font-size: 16px;";
+  wordsB.classList.add("words_data");
   let wordsC = document.createElement('span');
-  wordsC.style.cssText = "font-family: Arial, Helvetica, sans-serif; font-size: 16px; padding: 3px 0px 6px 12px; display: block; border-bottom: 2px solid black";
+  wordsC.classList.add("words_data_last");
+  //wordsC.style.cssText = "font-family: Arial, Helvetica, sans-serif; font-size: 16px; padding: 3px 0px 6px 12px; display: block; border-bottom: 2px solid black";
 
   let subject = document.createElement('span');
-  subject.style.cssText = "padding: 3px 0px 6px 12px; display: block;";
+  subject.classList.add('subject_data');
+  //subject.style.cssText = "padding: 3px 0px 6px 12px; display: block;";
 
   let cross = document.createElement('div');
   cross.textContent = 'x';
