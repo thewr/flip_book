@@ -110,20 +110,20 @@ html>.container, body>.container {
   z-index: 1000;
 }
 
-/*
+
 body>.container>.app>.sidebar {
-   // position: absolute;
+    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     z-index: 10000;
-    //transition: width .2s ease-out;
-    //width: calc(10% + 350px);
+    transition: width .2s ease-out;
+    width: calc(10% + 350px);
     box-shadow: 10px 0 12px rgba(0,0,0,0.45);
     background: #282b2d;
-    //opacity: .94;
+    opacity: .94;
 }
-*/
+
 
 .sidebar{
  -webkit-box-flex: 1;
