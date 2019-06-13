@@ -362,19 +362,18 @@ body>.container>.app>.docs {
     color:#3c1231;
     font-weight: 400;
     display: block;
-    font-size: 14px;
+    font-size: 16px;
 
     font-size-adjust:auto;
 }
 
 .custom_span1{
     padding: 3px 0px 3px 12px; 
-    font-size: 16px; 
     border-bottom: 2px solid black;    
 }
 
 .custom_span2{
-    
+    padding: 3px 0px 3px 12px; 
 }
 
 
