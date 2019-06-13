@@ -108,6 +108,13 @@ html>.container, body>.container {
     z-index: 1000;
 }
 
+.container .header .settings .name {
+    margin: 0 .25rem 0 .5rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .container .header ul.options{
     text-align: right;   
 }
