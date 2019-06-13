@@ -157,8 +157,6 @@ body>.container>.app>.sidebar {
 }
 
 .btn-group input{
-  background-color: #4CAF50; /* Green background */
-  border: 1px solid green; /* Green border */
   color: white; /* White text */
   padding: 10px 24px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
