@@ -345,6 +345,26 @@ body>.container>.app>.docs {
     flex-wrap: initial;
 }
 
+.docs>section.view{
+    -webkit-box-flex: 0;
+    flex: 0 6.25rem;
+}
+
+.docs>section{
+    background: #f0f1f2;
+    color: #575e63;
+    -webkit-box-flex: 1;
+    flex: 1 1 0;
+    transition: -webkit-box-flex .2s ease-out;
+    transition: flex .2s ease-out;
+    transition: flex .2s ease-out,-webkit-box-flex .2s ease-out;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
 #item-list{
     list-style-type: none;
     padding: 0;
