@@ -184,7 +184,7 @@ display: block;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0%;
-    padding: 0 1em 1em 1em;
+    padding: 0.5em 1em 1em 1.5em;
 }
 
 .sidebar > .content .label {
