@@ -173,12 +173,17 @@ aside{
 display: block;
 }
 
-.sidebar > .max .content{
-    width: 100%;
-   // display: flex;
-   // position: relative;
-    margin: 0;
-    padding:  0;
+.sidebar > .max {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+     flex-direction: column;
+    -webkit-box-flex: 1;
+    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
 }
 
 .sidebar > .content .label {
