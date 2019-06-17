@@ -36,11 +36,28 @@ html>.container, body>.container {
     height: 100%;
     display: -webkit-box;
     display: flex;
-    //-webkit-box-orient: vertical;
-    //-webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-flow: column;
     flex-direction: column;
     flex-wrap: initial;
+}
+
+.container .header
+{
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    background: #101112;
+    padding-top: 0px;
+    padding-right: 1rem;
+    padding-bottom: 0px;
+    padding-left: 1rem;
+    height: 54px;
+    z-index: 1000;
 }
 
 @media (max-width: 900px) body>.container>.app>.sidebar
@@ -95,19 +112,7 @@ html>.container, body>.container {
     flex-flow: column;
 }
 
-.container .header
-{
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    background: #101112;
-    padding: 0 1rem;
-    height: 54px;
-    z-index: 1000;
-}
+
 
 .container .header .settings .name {
     margin: 0 .25rem 0 .5rem;
@@ -143,8 +148,8 @@ body>.container>.app>.sidebar {
 .sidebar{
  -webkit-box-flex: 1;
  flex: 1 0 350px;   
- border-top: 2px solid #b7bcc0;
- //min-width: 250px;
+ //border-top: 2px solid #b7bcc0;
+ width: 350px;
  //margin-top: 44px;
  //position: fixed;
  display: flex;
@@ -152,11 +157,14 @@ body>.container>.app>.sidebar {
  -webkit-box-direction: normal;
  //height: 100%;
  flex-direction: column;
- //padding: 1%;
- background-color: #101112;
+ background: #282b2d;
  border-right: 1px solid #3a3e41;
  box-shadow: 1px 2px 8px rgba(0,0,0,0.45);
- z-index: 1000;
+ z-index: 100;
+}
+
+aside{
+display: block;
 }
 
 
