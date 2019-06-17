@@ -117,15 +117,16 @@ html>.container, body>.container {
     color: #70b0e0;
     display: flex;
     display: -webkit-box;
-    min-width:0;
-    max-width:20em;
+    width: 50%;
 }
 
 .container .header .settings .name {
-    margin: 0 .25rem 0 .5rem;
+    margin: 0 1rem 0 .5rem;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    display: inline-block;
+    text-size: 180%;
 }
 
 .container .header ul.options{
