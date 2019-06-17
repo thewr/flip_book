@@ -324,6 +324,7 @@ input[type=submit]:hover {
     //right: 0;}
 }
 
+/*
 body>.container>.app>.docs {
     position: absolute;
     top: 100px;
@@ -331,16 +332,17 @@ body>.container>.app>.docs {
     left: 200px;
     //right: 0;    
 }
+*/
 
 .docs {
     -webkit-box-flex: 8;
     flex: 8 800px;
     display: -webkit-box;
-    display: relative;
     position: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-flow: column;
+    flex-wrap: initial;
 }
 
 #item-list{
