@@ -112,13 +112,14 @@ html>.container, body>.container {
     flex-flow: column;
 }
 
-
-
-.container .header .settings .name {
-    margin: 0 .25rem 0 .5rem;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+.container .header .settings {
+   // white-space: nowrap;
+    color: #70b0e0;
+    display: flex;
+    display: -webkit-box;
+    min-width:0;
+    max-width:20em;
+//    overflow: hidden;
 }
 
 .container .header ul.options{
@@ -166,7 +167,6 @@ body>.container>.app>.sidebar {
 aside{
 display: block;
 }
-
 
 .sidebar > .max .content{
     width: 100%;
