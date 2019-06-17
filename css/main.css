@@ -173,7 +173,7 @@ aside{
 display: block;
 }
 
-.sidebar > .max {
+.sidebar > .max > .content {
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
@@ -184,6 +184,7 @@ display: block;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0%;
+    padding: 0 1em 1em 1em;
 }
 
 .sidebar > .content .label {
