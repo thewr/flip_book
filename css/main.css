@@ -234,27 +234,6 @@ display: block;
   text-decoration: none;
 }
 
-#new_item {
-    background-color: 	#90EE90;
-}
-
-#edit_item {
-    background-color: 	#ffff66;
-}
-
-#delete_item {
-    background-color: 	#ff0000;
-}
-
-#refresh_button {
-    background-color: 	#ccc;
-    float:right;
-}
-
-#save_button {
-    background-color: 	#0099ff;
-}
-
 .options #label
 {
    color: white;
