@@ -87,11 +87,12 @@ html>.container, body>.container {
   filter: blur(2px);
 }
 
+/*
 .app{
     display: block;
     position: relative;
-    background: #e7e9ea;    
 }
+*/
 
 
 html>.container>.app, body>.container>.app {
