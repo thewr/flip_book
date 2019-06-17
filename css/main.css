@@ -156,7 +156,7 @@ body>.container>.app>.sidebar {
 
 .sidebar{
  -webkit-box-flex: 1;
- flex: 1 0 350px;   
+ //flex: 1 0 350px;   
  width: 350px;
  display: flex;
  -webkit-box-orient: vertical;
