@@ -126,7 +126,7 @@ html>.container, body>.container {
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    text-size: 180%;
+    font-size: 180%;
 }
 
 .container .header ul.options{
