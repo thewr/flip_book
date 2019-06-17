@@ -18,6 +18,7 @@ html, body
 html {
     display: block;
 }
+/*
 *::-webkit-scrollbar {
     width: .5em;
     height: .5em;
@@ -29,6 +30,7 @@ html {
 *::-webkit-scrollbar-track {
     background: rgba(126,135,142,0.25);
 }
+*/
 
 
 html>.container, body>.container {
