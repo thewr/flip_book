@@ -212,7 +212,7 @@ display: block;
     z-index: 1000;
 }
 
-.options {
+ul.options {
   list-style-type: none;
   display: inline-block;
   padding: 0;
@@ -221,14 +221,14 @@ display: block;
   overflow: hidden;
 }
 
-.options li{
+.container .header .options li{
   float: left;
   cursor: pointer;
   display: inline-block;
-  color: #000;
   padding: 3px;
   margin-right:16px;
-  //background-color: white;
+  color: #b7bcc0;
+  background: #282b2d;
   border-radius: 3px;
   text-align: center;
   text-decoration: none;
