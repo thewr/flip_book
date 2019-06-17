@@ -347,6 +347,7 @@ body>.container>.app>.docs {
 
 .docs>section.view{
     -webkit-box-flex: 0;
+    left: 32px;
     flex: 0 6.25rem;
 }
 
