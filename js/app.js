@@ -317,7 +317,7 @@ $('#item_cancel').click(function(){
 
   	$('#close_app').click(function(){
     		$(".content").hide();
-	   	$('.sidebar').animate({width: '54px'});
+	   	//$('.sidebar').animate({width: '54px'});
 	 	$( ".docs" ).toggleClass('blur-me');
 	     	$('#close_app').hide();
 	});
