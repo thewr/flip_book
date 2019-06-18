@@ -172,7 +172,7 @@ aside{
 display: block;
 }
 
-.sidebar > .max > .content {
+.sidebar > .content {
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
