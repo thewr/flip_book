@@ -317,7 +317,6 @@ input[type=submit]:hover {
 
 @media (max-width: 480px) { 
     body>.container>.app>.docs {
-    position: absolute;
     top: 3%;
     left: 3%;
     }
