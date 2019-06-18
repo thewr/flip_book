@@ -141,18 +141,23 @@ html>.container, body>.container {
 
 body>.container>.app>.sidebar {
     position: absolute;
+    display:flex;
     top: 0;
     bottom: 0;
     left: 0;
-    z-index: 10000;
-    transition: width .2s ease-out;
-    width: calc(10% + 350px);
+    z-index: 1000;
+    width: 350px;
     box-shadow: 10px 0 12px rgba(0,0,0,0.45);
     background: #282b2d;
     opacity: .94;
 }
 
+.sidebar > .content
+{
+    width: 90%;
+}
 
+/*
 .sidebar{
  -webkit-box-flex: 1;
  //flex: 1 0 350px;   
@@ -167,6 +172,7 @@ body>.container>.app>.sidebar {
  box-shadow: 1px 2px 8px rgba(0,0,0,0.45);
  z-index: 100;
 }
+*/
 
 aside{
 display: block;
