@@ -140,7 +140,7 @@ html>.container, body>.container {
 
 
 body>.container>.app>.sidebar {
-    position: absolute;
+ //   position: absolute;
     display:flex;
     top: 0;
     bottom: 0;
