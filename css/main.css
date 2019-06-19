@@ -17,6 +17,7 @@ html, body
 body {
     display: block;
 }
+
 /*
 *::-webkit-scrollbar {
     width: .5em;
@@ -157,10 +158,10 @@ body>.container>.app>.sidebar {
     width: 90%;
 }
 
-/*
+
 .sidebar{
  -webkit-box-flex: 1;
- //flex: 1 0 350px;   
+ flex: 1 0 350px;   
  width: 350px;
  display: flex;
  -webkit-box-orient: vertical;
@@ -172,7 +173,6 @@ body>.container>.app>.sidebar {
  box-shadow: 1px 2px 8px rgba(0,0,0,0.45);
  z-index: 100;
 }
-*/
 
 aside{
 display: block;
@@ -339,7 +339,9 @@ body>.container>.app>.docs {
 
 .docs {
     -webkit-box-flex: 8;
-    flex: 8 800px;
+    flex-grow: 8;
+    flex-shrink: 1;
+    flex-basis: 800px;
     display: -webkit-box;
     position: flex;
     -webkit-box-orient: vertical;
@@ -348,18 +350,22 @@ body>.container>.app>.docs {
     flex-wrap: initial;
 }
 
+/*
 .docs>section.view{
     -webkit-box-flex: 0;
     top: 8px;
     left: 32px;
     flex: 0 6.25rem;
 }
+*/
 
 .docs>section{
     background: #f0f1f2;
     color: #575e63;
     -webkit-box-flex: 1;
-    flex: 1 1 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0px;
     transition: -webkit-box-flex .2s ease-out;
     transition: flex .2s ease-out;
     transition: flex .2s ease-out,-webkit-box-flex .2s ease-out;
