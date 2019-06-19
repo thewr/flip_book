@@ -174,7 +174,7 @@ body>.container>.app>.sidebar {
  z-index: 100;
 }
 
-.sidebar .closed{
+.sidebar.closed{
     -webkit-box-flex: 0;
     flex: 0 50px;
 }
