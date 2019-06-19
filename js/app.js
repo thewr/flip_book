@@ -253,12 +253,12 @@ db.collection('spells').orderBy('name').onSnapshot(snapshot => {
 
 //JQUERY FUNCTIONS
 $(function(){
-	$('sidebar').addClass('closed');
+	$('.sidebar').addClass('closed');
 	$("#edit_item").hide();
 	$("#delete_item").hide();
 	//$('.sidebar').hide();
 	//$('.sidebar .closed').show();
-	$('content').hide();
+	$('.content').hide();
 	
 	//$('.sidebar .closed').show();
 	$('.min').show();
