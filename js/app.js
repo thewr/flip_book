@@ -256,8 +256,8 @@ $(function(){
 	$("#edit_item").hide();
 	$("#delete_item").hide();
 	$('.sidebar').hide();
-	$('.sidebar .closed').show();
-	//$('aside').addClass('sidebar closed');
+	//$('.sidebar .closed').show();
+	$('aside').addClass('closed');
 	
 	// Animate slide for create new form	
 	function display_add(){
