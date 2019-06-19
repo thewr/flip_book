@@ -203,6 +203,28 @@ display: block;
   display: block;
 }
 
+.sidebar > .min .options{
+    -webkit-box-flex: 1;
+    flex: 1 1 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    overflow-y: auto;
+    background: #3a3e41;
+    border-bottom: 2px solid #3a3e41;
+}
+
+.options {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
 #close_app {
  background-color: transparent;
  text-decoration: none !important;
@@ -210,21 +232,10 @@ display: block;
  cursor: pointer;
 }
 
-.container .min{
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    background: #101112;
-    margin: 0;
-    padding-left: 16px;
-    text-align: center;
-    height: 32px;
-    border-top: 2px solid #b7bcc0;
-    z-index: 1000;
+.sidebar>min {
+    background: #3a3e41;
 }
+
 
 ul.options {
   list-style-type: none;
