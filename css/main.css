@@ -440,10 +440,8 @@ h1 {
 }
 
 #item-list li{
-    /* display: flex; */
     flex-direction: column;
     margin-bottom: 16px;
-    /* min-width: 480px; */
     width: 250px;
     margin-top: 10px;
     padding: 5px;
