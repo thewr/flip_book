@@ -257,6 +257,7 @@ $(function(){
 	$("#delete_item").hide();
 	$('.sidebar').hide();
 	$('.sidebar .closed').show();
+	//$('aside').addClass('sidebar closed');
 	
 	// Animate slide for create new form	
 	function display_add(){
@@ -276,7 +277,6 @@ $(function(){
 	// Add new document button show
 	$("#new_item").click(function(){
 		$("#item_submit").attr('value', 'Submit').attr('type','submit');
-		$('.sidebar').addClass('closed');
 		display_add();
 	});
 
