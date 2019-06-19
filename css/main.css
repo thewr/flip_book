@@ -139,20 +139,6 @@ html>.container, body>.container {
     white-space: nowrap;
 }
 
-
-body>.container>.app>.sidebar {
- //   position: absolute;
-    display:flex;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    width: 350px;
-    box-shadow: 10px 0 12px rgba(0,0,0,0.45);
-    background: #282b2d;
-    opacity: .94;
-}
-
 .sidebar > .content
 {
     width: 90%;
