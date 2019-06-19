@@ -275,6 +275,7 @@ $(function(){
 	// Add new document button show
 	$("#new_item").click(function(){
 		$("#item_submit").attr('value', 'Submit').attr('type','submit');
+		$('.sidebar').addClass('closed');
 		display_add();
 	});
 
@@ -317,7 +318,6 @@ $('#item_cancel').click(function(){
 
   	$('#close_app').click(function(){
     		$(".content").hide();
-	   	//$('.sidebar').animate({width: '54px'});
 	 	$( ".docs" ).toggleClass('blur-me');
 	     	$('#close_app').hide();
 	});
