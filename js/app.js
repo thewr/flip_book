@@ -260,6 +260,7 @@ $(function(){
 	$('content').hide();
 	$('sidebar').addClass('closed');
 	$('.sidebar .closed').show();
+	$('.min').show();
 	
 	// Animate slide for create new form	
 	function display_add(){
