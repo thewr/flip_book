@@ -257,7 +257,9 @@ $(function(){
 	$("#delete_item").hide();
 	$('.sidebar').hide();
 	//$('.sidebar .closed').show();
-	$('aside').addClass('closed');
+	$('content').hide();
+	$('sidebar').addClass('closed');
+	$('.sidebar .closed').show();
 	
 	// Animate slide for create new form	
 	function display_add(){
