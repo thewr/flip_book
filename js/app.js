@@ -256,11 +256,7 @@ $(function(){
 	$('.sidebar').addClass('closed');
 	$("#edit_item").hide();
 	$("#delete_item").hide();
-	//$('.sidebar').hide();
-	//$('.sidebar .closed').show();
 	$('.content').hide();
-	
-	//$('.sidebar .closed').show();
 	$('.min').show();
 	
 	// Animate slide for create new form	
@@ -268,12 +264,10 @@ $(function(){
 		flag_refresh = true;
 		console.log(flag_refresh);
 		 $( ".docs" ).toggleClass('blur-me');
+		 $('.sidebar').removeClass('closed');
 		 $(".min").hide();
 		 $(".content").show();
-	         $('.sidebar').show();
-	    	 //$('.sidebar').animate({width: '33%'});
 	         $(".max").hide().fadeIn(500);
-
 		//$("#label").html("Add Entry");
 	  	 $('#close_app').show();
 	}
