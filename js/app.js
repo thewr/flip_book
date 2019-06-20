@@ -309,6 +309,7 @@ $(function(){
 $('#item_cancel').click(function(){
          $(".min").show();
 	 $(".content").hide();
+	 $('.sidebar').addClass('closed');
 	 $( ".docs" ).toggleClass('blur-me');
 	 clearForm();
 	 refresh();
