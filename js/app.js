@@ -308,6 +308,7 @@ $(function(){
 	
 $('#item_cancel').click(function(){
          $(".min").show();
+	 $(".content").hide();
 	 $( ".docs" ).toggleClass('blur-me');
 	 clearForm();
 	 refresh();
