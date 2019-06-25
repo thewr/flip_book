@@ -267,7 +267,6 @@ $(function(){
 	}
 	
 	function display_full(){
-		 $( ".docs" ).toggleClass('blur-me');
 		 $('.sidebar').removeClass('closed');
 		 $(".min").hide();
 		 $(".content").show();
@@ -298,7 +297,6 @@ $(function(){
 		 $(".content").show();
 
 	         $('.sidebar').show();
-	    	 //$('.sidebar').animate({width: '33%'});
 	         $(".max").hide().fadeIn(500);
 
 		//$("#label").html("Add Entry");
