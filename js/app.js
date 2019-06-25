@@ -312,12 +312,13 @@ $(function(){
   });
 
   $('#item_submit').click(function(){
-		display_min()
+	       $( ".docs" ).toggleClass('blur-me');
+		display_min();
   });
 	
 	$('#item_cancel').click(function(){
-		display_min()
-        	$( ".docs" ).toggleClass('blur-me');
+		$( ".docs" ).toggleClass('blur-me');
+		display_min();
 		clearForm();
 		refresh();
 	});
