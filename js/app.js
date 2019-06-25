@@ -265,8 +265,6 @@ $(function(){
 		 $(".content").hide();
 		 $('.sidebar').addClass('closed');
 		 $( ".docs" ).toggleClass('blur-me');
-		 clearForm();
-		 refresh();
 	}
 	
 	function display_full(){
@@ -315,14 +313,13 @@ $(function(){
   });
 
   $('#item_submit').click(function(){
-    	  $(".content").hide();
-	  $('.sidebar').hide();
-	  $(".min").show();
-	  $( ".docs" ).toggleClass('blur-me');
+		display_min()
   });
 	
 	$('#item_cancel').click(function(){
 		display_min()
+		clearForm();
+		refresh();
 	});
 
 
