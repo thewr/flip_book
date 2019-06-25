@@ -297,7 +297,7 @@ $(function(){
 		 $(".content").show();
 
 	         $('.sidebar').show();
-	         $(".max").hide().fadeIn(500);
+	       //  $(".max").hide().fadeIn(500);
 
 		//$("#label").html("Add Entry");
 	  	 $('#close_app').show();
@@ -314,12 +314,12 @@ $(function(){
 		display_min();
   });
 	
-	$('#item_cancel').click(function(){
+$('#item_cancel').click(function(){
 		$( ".docs" ).toggleClass('blur-me');
 		display_min();
 		clearForm();
 		refresh();
-	});
+});
 
 
   	$('#close_app').click(function(){
