@@ -259,15 +259,30 @@ $(function(){
 	$('.content').hide();
 	$('.min').show();
 	
-	// Animate slide for create new form	
-	function display_add(){
-		flag_refresh = true;
-		console.log(flag_refresh);
+	// Display min-sidebar
+	function display_min(){
+		 $(".min").show();
+		 $(".content").hide();
+		 $('.sidebar').addClass('closed');
+		 $( ".docs" ).toggleClass('blur-me');
+		 clearForm();
+		 refresh();
+	}
+	
+	function display_full(){
 		 $( ".docs" ).toggleClass('blur-me');
 		 $('.sidebar').removeClass('closed');
 		 $(".min").hide();
 		 $(".content").show();
-	         $(".max").hide().fadeIn(500);
+	         $(".max").hide().fadeIn(500);		
+	}
+	
+	
+	// Animate slide for create new form	
+	function display_add(){
+		flag_refresh = true;
+		console.log(flag_refresh);
+		display_full();
 		//$("#label").html("Add Entry");
 	  	 $('#close_app').show();
 	}
@@ -307,12 +322,7 @@ $(function(){
   });
 	
 $('#item_cancel').click(function(){
-         $(".min").show();
-	 $(".content").hide();
-	 $('.sidebar').addClass('closed');
-	 $( ".docs" ).toggleClass('blur-me');
-	 clearForm();
-	 refresh();
+	display_min()
 });
 
 
@@ -325,13 +335,12 @@ $('#item_cancel').click(function(){
 	$('#item-list').on('click','li',function() {
 	$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
+			display_min();
 			$("#edit_item").show();
-			$("#delete_item").show();
+			$("#delete_item").show();			
 		} else {
-
       			$("#edit_item").hide();
 			$("#delete_item").hide();
-
 		}
 		
 
