@@ -278,6 +278,7 @@ $(function(){
 	function display_add(){
 		flag_refresh = true;
 		console.log(flag_refresh);
+		$( ".docs" ).toggleClass('blur-me');
 		display_full();
 		//$("#label").html("Add Entry");
 	  	 $('#close_app').show();
