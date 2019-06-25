@@ -302,7 +302,6 @@ $(function(){
   $('#item_submit').click(function(){
 	       $( ".docs" ).toggleClass('blur-me');
 		display_min();
-	  	clearForm();
 		refresh();
   });
 	
