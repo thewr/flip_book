@@ -321,9 +321,9 @@ $(function(){
 	  $( ".docs" ).toggleClass('blur-me');
   });
 	
-$('#item_cancel').click(function(){
-	display_min()
-});
+	$('#item_cancel').click(function(){
+		display_min()
+	});
 
 
   	$('#close_app').click(function(){
