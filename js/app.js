@@ -264,7 +264,6 @@ $(function(){
 		 $(".min").show();
 		 $(".content").hide();
 		 $('.sidebar').addClass('closed');
-		 $( ".docs" ).toggleClass('blur-me');
 	}
 	
 	function display_full(){
@@ -318,6 +317,7 @@ $(function(){
 	
 	$('#item_cancel').click(function(){
 		display_min()
+        	$( ".docs" ).toggleClass('blur-me');
 		clearForm();
 		refresh();
 	});
@@ -332,7 +332,6 @@ $(function(){
 	$('#item-list').on('click','li',function() {
 	$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
-			display_min();
 			$("#edit_item").show();
 			$("#delete_item").show();			
 		} else {
