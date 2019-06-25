@@ -295,13 +295,15 @@ $(function(){
 
 	//Edit new document button show
   	$("#edit_item").click(function(){
-	  $("#item_submit").attr('value', 'Append').attr('type','append');
-	  display_edit();
+		  $("#item_submit").attr('value', 'Append').attr('type','append');
+	  	display_edit();
   });
 
   $('#item_submit').click(function(){
 	       $( ".docs" ).toggleClass('blur-me');
 		display_min();
+	  	clearForm();
+		refresh();
   });
 	
 $('#item_cancel').click(function(){
