@@ -300,7 +300,6 @@ $(function(){
 	       //  $(".max").hide().fadeIn(500);
 
 		//$("#label").html("Add Entry");
-	  	 $('#close_app').show();
 	}
 
 	//Edit new document button show
