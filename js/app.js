@@ -277,11 +277,8 @@ $(function(){
 	// Animate slide for create new form	
 	function display_add(){
 		flag_refresh = true;
-		console.log(flag_refresh);
 		$( ".docs" ).toggleClass('blur-me');
 		display_full();
-		//$("#label").html("Add Entry");
-	  	 $('#close_app').show();
 	}
 
 	// Add new document button show
@@ -292,15 +289,8 @@ $(function(){
 
 	// Animate slide for edit form
 	function display_edit(){
-		//location.reload();
 		 $( ".docs" ).toggleClass('blur-me');
-		 $(".min").hide();
-		 $(".content").show();
-
-	         $('.sidebar').show();
-	       //  $(".max").hide().fadeIn(500);
-
-		//$("#label").html("Add Entry");
+		 display_full();
 	}
 
 	//Edit new document button show
@@ -321,12 +311,6 @@ $('#item_cancel').click(function(){
 		refresh();
 });
 
-
-  	$('#close_app').click(function(){
-    		$(".content").hide();
-	 	$( ".docs" ).toggleClass('blur-me');
-	     	$('#close_app').hide();
-	});
 	
 	$('#item-list').on('click','li',function() {
 	$(this).toggleClass('selected').siblings().removeClass('selected');
