@@ -306,6 +306,7 @@ $(function(){
   });
 	
 $('#item_cancel').click(function(){
+		flag_refresh = true;
 		$( ".docs" ).toggleClass('blur-me');
 		display_min();
 		clearForm();
