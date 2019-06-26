@@ -237,6 +237,7 @@ display: block;
 
 .container .header .settings:not(.inactive), .sidebar>.min .options li:not(.inactive), .sidebar>.min .options .row:not(.inactive)
 {
+    padding: 8px 16px 8px 16px;
     cursor: pointer;
 }
 
