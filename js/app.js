@@ -142,7 +142,7 @@ function renderDB(doc){
   let name = document.createElement('span');
   name.classList.add("name_data");
   let level = document.createElement('span');
-  //level.classList.add("name_data");
+  level.classList.add("name_data");
   let wordsA = document.createElement('span');
   wordsA.classList.add("words_data");
   let wordsB = document.createElement('span');
