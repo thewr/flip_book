@@ -59,6 +59,7 @@ function refresh() {
 function clearForm()
 {
       form.name.value = '';
+      form.level.value = '';
       form.wordsA.value = '';
       form.wordsB.value = '';
       form.wordsC.value = '';
@@ -98,6 +99,7 @@ function myFunc(evt)
 								// Update fields to reflect change.
 								 var tableData = {
 									name: form.name.value,
+									level: form.level.value,
 									wordsA: form.wordsA.value,
 									wordsB: form.wordsB.value,
 									wordsC: form.wordsC.value,
@@ -139,6 +141,8 @@ function renderDB(doc){
   li.setAttribute('data-id', doc.id);  //Each document gets an id.
   let name = document.createElement('span');
   name.classList.add("name_data");
+  let level = document.createElement('span');
+  //level.classList.add("name_data");
   let wordsA = document.createElement('span');
   wordsA.classList.add("words_data");
   let wordsB = document.createElement('span');
@@ -161,6 +165,11 @@ function renderDB(doc){
   label_name.textContent = "NAME"; //&nbsp;
   label_name.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
 
+ // create elements for labels for each data to display
+  let label_level = document.createElement('span');
+  label_name.textContent = "LEVEL"; //&nbsp;
+  label_name.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
+	
   let label_words = document.createElement('span');
   label_words.textContent = "WORDS";
   label_words.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
@@ -171,6 +180,7 @@ function renderDB(doc){
 
   // generate content for fields
   name.textContent = doc.data().name;
+  level.textContent = doc.data().level;
   wordsA.textContent = doc.data().wordsA;
   wordsB.textContent = doc.data().wordsB;
   wordsC.textContent = doc.data().wordsC;
@@ -179,7 +189,10 @@ function renderDB(doc){
   // append list
   li.appendChild(label_name);
   li.appendChild(name);
-
+	
+  li.appendChild(label_level);
+  li.appendChild(level);
+	
   li.appendChild(label_words);
   li.appendChild(wordsA);	
   li.appendChild(wordsB);
@@ -208,6 +221,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     db.collection('spells').add({
         name: form.name.value,
+	level: form.level.value,
         wordsA: form.wordsA.value,
 	wordsB: form.wordsB.value,
 	wordsC: form.wordsC.value,
