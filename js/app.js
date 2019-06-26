@@ -167,8 +167,8 @@ function renderDB(doc){
 
  // create elements for labels for each data to display
   let label_level = document.createElement('span');
-  label_name.textContent = "LEVEL"; //&nbsp;
-  label_name.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
+  label_level.textContent = "LEVEL"; //&nbsp;
+  label_level.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
 	
   let label_words = document.createElement('span');
   label_words.textContent = "WORDS";
