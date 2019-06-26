@@ -204,7 +204,7 @@ display: block;
     -webkit-box-align: stretch;
     align-items: stretch;
     overflow-y: auto;
-    background: #3a3e41;
+   // background: #3a3e41;
     border-bottom: 2px solid #3a3e41;
 }
 
