@@ -518,7 +518,7 @@ h1 {
 
 #item-list li:hover
 {
-    background-color: #ccc;
+    background-color: yellow;
 }
 
 #item-list label{
