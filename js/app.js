@@ -276,7 +276,7 @@ $(function(){
 	
 	// Animate slide for create new form	
 	function display_add(){
-		flag_refresh = true;
+		//flag_refresh = true;
 		$( ".docs" ).toggleClass('blur-me');
 		display_full();
 	}
@@ -306,11 +306,11 @@ $(function(){
   });
 	
 $('#item_cancel').click(function(){
-		flag_refresh = true;
+		//flag_refresh = true;
 		$( ".docs" ).toggleClass('blur-me');
 		display_min();
 		clearForm();
-		refresh();
+		//refresh();
 });
 
 	
