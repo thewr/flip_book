@@ -223,7 +223,7 @@ display: block;
     padding: 0;
 }
 
-.doc>section>header, .sidebar>.min>.options>li:first-child {
+.doc>section>header, .sidebar>.min>.options>li {
     display: -webkit-box;
     display: flex;
     -webkit-box-align: center;
