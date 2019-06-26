@@ -315,7 +315,8 @@ $('#item_cancel').click(function(){
 
 	
 	$('#item-list').on('click','li',function() {
-	$(this).toggleClass('selected').siblings().removeClass('selected');
+		$(this).unbind("mouseenter mouseleave");
+		$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
 			$("#delete_item").show();			
