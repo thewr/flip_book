@@ -482,8 +482,7 @@ h1 {
     background-color: yellow;
 }
 
-#item-list li:not(.selected)
-{
+#item-list li:not(.selected), #item-list li:not(.selected):hover {
     background-color: #e9f3e2;
 }
 
