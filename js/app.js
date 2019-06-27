@@ -272,6 +272,8 @@ $(function(){
 	$("#delete_item").hide();
 	$('.content').hide();
 	$('.min').show();
+	$("#edit_item").hide();
+	$("#delete_item").hide();
 	
 	// Display min-sidebar
 	function display_min(){
