@@ -272,8 +272,6 @@ $(function(){
 	$("#delete_item").hide();
 	$('.content').hide();
 	$('.min').show();
-	$("#edit_item").hide();
-	$("#delete_item").hide();
 	
 	// Display min-sidebar
 	function display_min(){
@@ -311,19 +309,24 @@ $(function(){
 
 	//Edit new document button show
   	$("#edit_item").click(function(){
-		  $("#item_submit").attr('value', 'Append').attr('type','append');
+		$("#item_submit").attr('value', 'Append').attr('type','append');
 	  	display_edit();
   });
 
   $('#item_submit').click(function(){
 	       $( ".docs" ).toggleClass('blur-me');
+	        $("#edit_item").hide();
+		$("#delete_item").hide();
 		display_min();
+	      $("#item_submit").attr('value', 'Append').attr('type','append');
 		//refresh();
   });
 	
 $('#item_cancel').click(function(){
 		//flag_refresh = true;
 		$( ".docs" ).toggleClass('blur-me');
+		$("#edit_item").hide();
+		$("#delete_item").hide();
 		display_min();
 		$('#item-list li').removeClass('selected');
 		clearForm();
