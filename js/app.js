@@ -315,11 +315,9 @@ $(function(){
 
   $('#item_submit').click(function(){
 	       $( ".docs" ).toggleClass('blur-me');
-	  	/*
 	        $("#edit_item").hide();
 		$("#delete_item").hide();
 	  	$("#item_submit").attr('value', 'Append').attr('type','append');
-		*/
 		display_min();
 	      
 		//refresh();
@@ -328,11 +326,9 @@ $(function(){
 $('#item_cancel').click(function(){
 		//flag_refresh = true;
 		$( ".docs" ).toggleClass('blur-me');
-		/*
 		$("#edit_item").hide();
 		$("#delete_item").hide();
 		$('#item-list li').removeClass('selected');
-		*/
 		display_min();
 
 		clearForm();
