@@ -328,11 +328,9 @@ $(function(){
 $('#item_cancel').click(function(){
 		//flag_refresh = true;
 		$( ".docs" ).toggleClass('blur-me');
-		/*
 		$("#edit_item").hide();
 		$("#delete_item").hide();
-		$('#item-list li').removeClass('selected');
-		*/
+		$('#item-list li').toggleClass('selected');
 		display_min();
 
 		clearForm();
