@@ -330,7 +330,11 @@ $('#item_cancel').click(function(){
 		$( ".docs" ).toggleClass('blur-me');
 		$("#edit_item").hide();
 		$("#delete_item").hide();
-		$('#item-list li').toggleClass('selected');
+	
+		if($('#item-list li').hasClass('selected') == TRUE){
+			$('#item-list li').toggleClass('selected');
+		}					  
+
 		display_min();
 
 		clearForm();
