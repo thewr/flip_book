@@ -7,7 +7,7 @@ const db_name = "spells";
 var flag_refresh = true;
 var flag_update = false;
 
-itemList.addEventListener('click', myFunc, false);//itemList.addEventListener('click', myFunc, false);
+itemList.addEventListener('click', myFunc, false);
 
 // define buttons
 refresh_button.addEventListener('click',refreshFunc,false);
