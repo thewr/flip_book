@@ -317,11 +317,9 @@ $(function(){
 
   $('#item_submit').click(function(){
 	       $( ".docs" ).toggleClass('blur-me');
-	  	/*
 	        $("#edit_item").hide();
 		$("#delete_item").hide();
-	  	$("#item_submit").attr('value', 'Append').attr('type','append');
-		*/
+	  	//$("#item_submit").attr('value', 'Append').attr('type','append');
 		display_min();
 	      
 		//refresh();
