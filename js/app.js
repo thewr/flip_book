@@ -119,7 +119,13 @@ function myFunc(evt)
 							});
 
 						});
-					}); //endofedit			
+					}); //endofedit	
+					
+					$('#delete_item').click(function(){
+							ref.delete();
+							itemList.count -= 1;
+						});//end-of-delete_item event
+					
 				}
 			})
 		} catch (error) {
@@ -127,10 +133,7 @@ function myFunc(evt)
 		}
 
 
-						$('#delete_item').click(function(){
-							ref.delete();
-							itemList.count -= 1;
-						});//end-of-delete_item event
+
 	} 
 }
 
@@ -256,7 +259,6 @@ db.collection('spells').orderBy('level').onSnapshot(snapshot => {
 	    }
 	    if (change.type == 'removed'){
 		    console.log("Removed item: ", change.doc.data());
-		    
 		    let li = itemList.querySelector('[data-id=' + change.doc.id + ']');
 		    itemList.removeChild(li);
 	    }
