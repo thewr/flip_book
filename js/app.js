@@ -68,74 +68,69 @@ function clearForm()
 
 function myFunc(evt)
 {
-	flag_refresh = true;
 	const id = evt.target.parentElement.getAttribute('data-id');
+	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
 	
-	if(evt.target.nodeName == 'SPAN'){
-            console.log(id + " was clicked");	
-	    var ref = db.collection("spells").doc(id);	
-		try {		
-			ref.get()
-			.then(doc => {
-				if(!doc.exists) {
-					throw("no such document");
-				} else {		
-					$('#edit_item').click(function(){
+	//if(evt.target.nodeName == 'SPAN'){
+		console.log(id + " was clicked");	
+	    	const ref = db.collection("applications").doc(id);
+		
+		$('#edit_item').click(function(){
+			//get data
+			try {
+				var tableData = {};
+				ref.get()
+				.then(doc => {
+					if(!doc.exists) {
+						window.alert("no such document");
+					} else {
+						tableData = {
+							//date: doc.data().date,
+							name: doc.data().name,
+							wordsA: doc.data().wordsA,
+							wordsB: doc.data().wordsB,
+							wordsC: doc.data().wordsC,
+							wordsD: doc.data().wordsD,
+							subject: doc.data().subject
+						};  //window.alert(tableData.name + " " + tableData.subject);
+					}
+				})
+			} catch (error) { 
+				res.send(error);
+			} //end of try
 			
-						form.name.value =  doc.data().name;
-						form.wordsA.value = doc.data().wordsA;
-						form.wordsB.value = doc.data().wordsB;
-						form.wordsC.value = doc.data().wordsC;
-						form.subject.value = doc.data().subject;
+			form.name.value =  tableData.name;
+			form.wordsA.value = tableData.wordsA;
+			form.wordsB.value = tableData.wordsB;
+			form.wordsC.value = tableData.wordsC;
+			form.wordsD.value = tableData.wordsD;
+			form.subject.value = tableData.subject;
 
-						$('#item_submit').click(function(){
-							return db.runTransaction(function(transaction) {
-							    // This code may get re-run multiple times if there are conflicts.
-							    return transaction.get(ref).then(function(doc) {
-								if (!doc.exists) {
-								    throw "Document does not exist!";
-								}
-
-								// Update fields to reflect change.
-								 var tableData = {
-									name: form.name.value,
-									level: form.level.value,
-									wordsA: form.wordsA.value,
-									wordsB: form.wordsB.value,
-									wordsC: form.wordsC.value,
-									subject: form.subject.value
-								};  
-
-								transaction.update(ref, tableData);
-								//clearForm();
-								//flag_refresh = true;
-								//setTimeout(location.reload.bind(location), 10000);
-								//refresh();
-							    });
-								}).then(function() {
-							    		console.log("Transaction successfully committed!");
-								}).catch(function(error) {
-							    		console.log("Transaction failed: ", error);
-							});
-
-						});
-					}); //endofedit	
-					
-					$('#delete_item').click(function(){
-							ref.delete();
-							itemList.count -= 1;
-						});//end-of-delete_item event
-					
-				}
-			})
-		} catch (error) {
-			res.send(error);
-		}
+			$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
+				db.collection("applications").doc(id).update({
+					name: form.name.value,
+					wordsA: form.wordsA.value,
+					wordsB: form.wordsB.value,
+					wordsC: form.wordsC.value,
+					wordsD: form.wordsD.value,
+					subject: form.subject.value
+				});
+				clearForm();
+				refresh();
+			});
+		}); //end of edit item
 
 
-
-	} 
+		$('#delete_item').click(function(){
+			ref.delete();
+			refresh();
+		});//end-of-delete_item event
+		
+	//} else {
+	//	return;
+	//}
 }
+
 
 // create element & render cafe
 function renderDB(doc){
