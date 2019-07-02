@@ -22,4 +22,4 @@ Date.prototype.addHours = function(h) {
 
 var d = new Date().addHours(10).toLocaleString();
 document.getElementById("demo").innerHTML = d;
-</script>
+
