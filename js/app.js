@@ -71,7 +71,7 @@ function myFunc(evt)
 	const id = evt.target.parentElement.getAttribute('data-id');
 	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
 	
-	//if(evt.target.nodeName == 'SPAN'){
+	if($(evt.target).hasClass('selected')) {             //evt.target.nodeName == 'SPAN'){
 		console.log(id + " was clicked");	
 	    	const ref = db.collection("applications").doc(id);
 		
@@ -126,9 +126,9 @@ function myFunc(evt)
 			refresh();
 		});//end-of-delete_item event
 		
-	//} else {
-	//	return;
-	//}
+	} else {
+		return;
+	}
 }
 
 
