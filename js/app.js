@@ -331,7 +331,7 @@ $('#item_cancel').click(function(){
 		$("#edit_item").hide();
 		$("#delete_item").hide();
 	
-		if($('#item-list li').hasClass('selected') == TRUE){
+		if($('#item-list li').hasClass('selected')){
 			$('#item-list li').toggleClass('selected');
 		}					  
 
