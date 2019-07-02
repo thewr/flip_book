@@ -87,10 +87,10 @@ function myFunc(evt)
 						tableData = {
 							//date: doc.data().date,
 							name: doc.data().name,
+							level: doc.data().level,
 							wordsA: doc.data().wordsA,
 							wordsB: doc.data().wordsB,
 							wordsC: doc.data().wordsC,
-							wordsD: doc.data().wordsD,
 							subject: doc.data().subject
 						};  //window.alert(tableData.name + " " + tableData.subject);
 					}
@@ -100,19 +100,19 @@ function myFunc(evt)
 			} //end of try
 			
 			form.name.value =  tableData.name;
+			form.level.value = tableData.level;
 			form.wordsA.value = tableData.wordsA;
 			form.wordsB.value = tableData.wordsB;
 			form.wordsC.value = tableData.wordsC;
-			form.wordsD.value = tableData.wordsD;
 			form.subject.value = tableData.subject;
 
 			$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
 				db.collection("applications").doc(id).update({
 					name: form.name.value,
+					level: form.level.value,
 					wordsA: form.wordsA.value,
 					wordsB: form.wordsB.value,
 					wordsC: form.wordsC.value,
-					wordsD: form.wordsD.value,
 					subject: form.subject.value
 				});
 				clearForm();
