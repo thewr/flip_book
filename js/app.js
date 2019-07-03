@@ -76,10 +76,8 @@ function myFunc(evt)
 		console.log("id: " + id + " was clicked " + ref); 
 		
 		$('#edit_item').click(function(){
-			try {
-				
-				ref.get()
-				.then(doc => {
+			try {			
+				ref.get().then(doc => {
 					if(!doc.exists) {
 						window.alert("no such document");
 					} else {
@@ -94,17 +92,14 @@ function myFunc(evt)
 						};  //window.alert(tableData.name + " " + tableData.subject);
 					}
 				})
-			} catch (error) { 
-				res.send(error);
-			} //end of try
-			
+				
 			form.name.value =  obj.name;
 			form.level.value = obj.level;
 			form.wordsA.value = obj.wordsA;
 			form.wordsB.value = obj.wordsB;
 			form.wordsC.value = obj.wordsC;
 			form.subject.value = obj.subject;
-
+				
 			$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
 				ref.update({
 					name: form.name.value,
@@ -115,10 +110,11 @@ function myFunc(evt)
 					subject: form.subject.value
 				});
 				clearForm();
-			});
-			
+			});			
 		}); //end of edit item
-
+		} catch (error) { 
+			res.send(error);
+		} //end of try
 
 		$('#delete_item').click(function(){
 			ref.delete();
