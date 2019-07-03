@@ -75,9 +75,7 @@ function myFunc(evt)
 	    	const ref = db.collection("applications").doc(id);
 		console.log("id: " + id + " was clicked " + ref); 
 		
-		$('#edit_item').click(function(){
-			//get data
-			try {
+		try {
 				var tableData = {};
 				ref.get()
 				.then(doc => {
@@ -98,6 +96,8 @@ function myFunc(evt)
 			} catch (error) { 
 				res.send(error);
 			} //end of try
+		
+		$('#edit_item').click(function(){
 			
 			form.name.value =  tableData.name;
 			form.level.value = tableData.level;
@@ -118,6 +118,7 @@ function myFunc(evt)
 				clearForm();
 				refresh();
 			});
+			
 		}); //end of edit item
 
 
