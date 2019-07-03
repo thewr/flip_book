@@ -71,7 +71,7 @@ function myFunc(evt)
 	const id = evt.target.parentElement.getAttribute('data-id');
 	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
 	
-	if(evt.target.nodeName == 'SPAN'){ //$(evt.target).hasClass('selected')) {             //evt.target.nodeName == 'SPAN'){
+	if($(evt.target).hasClass('selected')) {             //evt.target.nodeName == 'SPAN'){
 	    	const ref = db.collection('spells').doc(id);
 		console.log("id: " + id + " was clicked " + ref); 
 		
@@ -186,6 +186,7 @@ function renderDB(doc){
   subject.textContent = doc.data().subject;
 
   // append list
+  li.appendChild(cross);
   li.appendChild(label_name);
   li.appendChild(name);
 	
@@ -203,17 +204,6 @@ function renderDB(doc){
   // put the <tbody> in the <table>
   itemList.appendChild(li);
 }
-
-// get data initially
-/*
-db.collection('spells').get().then(snapshot => {
-	itemList.count = 0;
-    snapshot.docs.forEach(doc => {
-	itemList.count += 1;
-        renderDB(doc);
-    });
-});
-*/
 
 // saving data
 form.addEventListener('submit', (e) => {
