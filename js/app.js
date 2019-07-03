@@ -328,7 +328,7 @@ $('#item_cancel').click(function(){
 		$("#delete_item").hide();
 	
 		if($('#item-list li').hasClass('selected')){
-			$('#item-list li').toggleClass('selected');
+			$('#item-list li').removeClass('selected');
 		}					  
 
 		display_min();
