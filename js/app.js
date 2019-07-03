@@ -1,6 +1,3 @@
-describe
-
-
 // creates a <ol> list element and functions
 // create form element
 var form = document.querySelector('#item-form');
@@ -73,7 +70,7 @@ function myFunc(evt)
 	const id = evt.target.parentElement.getAttribute('data-id');
 	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
 	
-	if($(evt.target).hasClass('selected')) {             //evt.target.nodeName == 'SPAN'){
+	if(evt.target.nodeName == 'SPAN'){
 	    	const ref = db.collection('spells').doc(id);
 		console.log("id: " + id + " was clicked " + ref); 
 		
