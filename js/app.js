@@ -72,7 +72,7 @@ function myFunc(evt)
 	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
 	
 	if(evt.target.nodeName == 'SPAN'){ //$(evt.target).hasClass('selected')) {             //evt.target.nodeName == 'SPAN'){
-	    	const ref = db.collection("applications").doc(id);
+	    	const ref = db.collection('spells').doc(id);
 		console.log("id: " + id + " was clicked " + ref); 
 		
 		try {
