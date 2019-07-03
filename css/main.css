@@ -437,7 +437,7 @@ h1 {
 
 
 .docs>section{
-    background: #f0f1f2;
+    //background: #f0f1f2;
     color: #575e63;
     -webkit-box-flex: 1;
     flex-grow: 1;
