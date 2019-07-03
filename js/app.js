@@ -74,7 +74,9 @@ function myFunc(evt)
 	    	const ref = db.collection('spells').doc(id);
 		console.log("id: " + id + " was clicked " + ref); 
 		
-		try {
+		$('#edit_item').click(function(){
+			
+			try {
 				var tableData = {};
 				ref.get()
 				.then(doc => {
@@ -95,8 +97,6 @@ function myFunc(evt)
 			} catch (error) { 
 				res.send(error);
 			} //end of try
-		
-		$('#edit_item').click(function(){
 			
 			form.name.value =  tableData.name;
 			form.level.value = tableData.level;
@@ -115,7 +115,6 @@ function myFunc(evt)
 					subject: form.subject.value
 				});
 				clearForm();
-				refresh();
 			});
 			
 		}); //end of edit item
