@@ -73,7 +73,7 @@ function myFunc(evt)
 	
 	if($(evt.target).hasClass('selected')) {             //evt.target.nodeName == 'SPAN'){
 	    	const ref = db.collection("applications").doc(id);
-		//console.log("id: " id + " was clicked with ref: " + ref); 
+		console.log("id: " + id + " was clicked " + ref); 
 		
 		$('#edit_item').click(function(){
 			//get data
