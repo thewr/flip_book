@@ -72,18 +72,18 @@ function myFunc(evt)
 	
 	if(evt.target.nodeName == 'SPAN'){
 	    	const ref = db.collection('spells').doc(id);
+		var obj = {};
 		console.log("id: " + id + " was clicked " + ref); 
 		
 		$('#edit_item').click(function(){
-			
 			try {
-				var tableData = {};
+				
 				ref.get()
 				.then(doc => {
 					if(!doc.exists) {
 						window.alert("no such document");
 					} else {
-						tableData = {
+						obj = {
 							//date: doc.data().date,
 							name: doc.data().name,
 							level: doc.data().level,
@@ -98,12 +98,12 @@ function myFunc(evt)
 				res.send(error);
 			} //end of try
 			
-			form.name.value =  tableData.name;
-			form.level.value = tableData.level;
-			form.wordsA.value = tableData.wordsA;
-			form.wordsB.value = tableData.wordsB;
-			form.wordsC.value = tableData.wordsC;
-			form.subject.value = tableData.subject;
+			form.name.value =  obj.name;
+			form.level.value = obj.level;
+			form.wordsA.value = obj.wordsA;
+			form.wordsB.value = obj.wordsB;
+			form.wordsC.value = obj.wordsC;
+			form.subject.value = obj.subject;
 
 			$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
 				ref.update({
