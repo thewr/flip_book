@@ -73,7 +73,7 @@ function myFunc(evt)
 	if(evt.target.nodeName == 'SPAN'){
 	    	const ref = db.collection('spells').doc(id);
 		var obj = {};
-		console.log("id: " + id + " was clicked " + ref); 
+		console.log("id: " + id + " was clicked"); 
 		
 			try {			
 				ref.get().then(doc => {
