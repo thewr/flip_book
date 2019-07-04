@@ -114,7 +114,8 @@ function myFunc(evt)
 					subject: form.subject.value
 				});
 				clearForm();
-			});			
+			});
+			return;
 		}); //end of edit item
 
 
