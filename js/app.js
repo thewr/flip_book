@@ -93,7 +93,7 @@ function myFunc(evt)
 				})
 			} catch (error) { 
 			res.send(error);
-		} //end of try
+			} //end of try
 				
 		
 		$('#edit_item').click(function(){
@@ -112,9 +112,9 @@ function myFunc(evt)
 					wordsB: form.wordsB.value,
 					wordsC: form.wordsC.value,
 					subject: form.subject.value
-				});
-				clearForm();
+				});				
 			});
+			clearForm();
 			return;
 		}); //end of edit item
 
