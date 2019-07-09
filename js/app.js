@@ -70,7 +70,7 @@ function myFunc(evt)
 	const id = evt.target.parentElement.getAttribute('data-id');
 	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
 	
-	if(evt.target.nodeName == 'li'){
+//	if(evt.target.nodeName == 'li'){
 	    	const ref = db.collection('spells').doc(id);
 		var obj = {};
 		console.log("id: " + id + " was clicked"); 
@@ -123,9 +123,9 @@ function myFunc(evt)
 			ref.delete();
 		});//end-of-delete_item event
 		
-	} else {
-		return;
-	}
+//	} else {
+//		return;
+//	}
 }
 
 
