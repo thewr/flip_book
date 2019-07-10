@@ -70,7 +70,7 @@ function myFunc(evt)
 	
 	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
 	
-	if(evt.target.nodeName == 'SPAN'){
+	if(evt.target.nodeName == 'li.selected'){
 		const id = evt.target.parentElement.getAttribute('data-id');
 	    	const ref = db.collection('spells').doc(id);
 		var obj = {};
