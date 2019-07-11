@@ -107,7 +107,8 @@ function myFunc(evt)
 									wordsB: form.wordsB.value,
 									wordsC: form.wordsC.value,
 									subject: form.subject.value
-								});				
+								});	
+								return false;
 							});
 						}); //end of edit item		
 					} 
