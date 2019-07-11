@@ -109,7 +109,6 @@ function myFunc(evt)
 									subject: form.subject.value
 								});				
 							});
-							return;
 						}); //end of edit item		
 					} 
 				})
