@@ -89,7 +89,7 @@ function myFunc(evt)
 							wordsB: doc.data().wordsB,
 							wordsC: doc.data().wordsC,
 							subject: doc.data().subject
-						};  //window.alert(tableData.name + " " + tableData.subject);
+						};  window.alert(obj.name);
 					}
 				})
 			} catch (error) { 
