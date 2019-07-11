@@ -89,41 +89,38 @@ function myFunc(evt)
 							wordsB: doc.data().wordsB,
 							wordsC: doc.data().wordsC,
 							subject: doc.data().subject
-						};  window.alert(obj.name);
-					}
+						};  //window.alert(obj.name)
+						
+						$('#edit_item').click(function(){
+							form.name.value =  obj.name;
+							form.level.value = obj.level;
+							form.wordsA.value = obj.wordsA;
+							form.wordsB.value = obj.wordsB;
+							form.wordsC.value = obj.wordsC;
+							form.subject.value = obj.subject;
+							
+							$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
+								ref.update({
+									name: form.name.value,
+									level: form.level.value,
+									wordsA: form.wordsA.value,
+									wordsB: form.wordsB.value,
+									wordsC: form.wordsC.value,
+									subject: form.subject.value
+								});				
+							});
+							clearForm();
+							return;
+						}); //end of edit item		
+					} 
 				})
 			} catch (error) { 
 			res.send(error);
 			} //end of try
-				
-		
-		$('#edit_item').click(function(){
-			form.name.value =  obj.name;
-			form.level.value = obj.level;
-			form.wordsA.value = obj.wordsA;
-			form.wordsB.value = obj.wordsB;
-			form.wordsC.value = obj.wordsC;
-			form.subject.value = obj.subject;
-				
-			$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
-				ref.update({
-					name: form.name.value,
-					level: form.level.value,
-					wordsA: form.wordsA.value,
-					wordsB: form.wordsB.value,
-					wordsC: form.wordsC.value,
-					subject: form.subject.value
-				});				
-			});
-			clearForm();
-			return;
-		}); //end of edit item
 
-
-		$('#delete_item').click(function(){
-			ref.delete();
-		});//end-of-delete_item event
-		
+			$('#delete_item').click(function(){
+				ref.delete();
+			});//end-of-delete_item event
 	} else {
 		return;
 	}
