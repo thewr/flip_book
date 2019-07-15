@@ -101,7 +101,7 @@ function myFunc(evt)
 							subject: doc.data().subject
 						};  //window.alert(obj.name)
 						
-						$('#edit_item').click(function(){
+						$('#edit_item').on("click", function(){
 							form.name.value =  obj.name;
 							form.level.value = obj.level;
 							form.wordsA.value = obj.wordsA;
