@@ -328,7 +328,10 @@ $('#item_cancel').click(function(){
 		$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
-			$("#delete_item").show();			
+			$("#delete_item").show();	
+			
+			const tmp = $(this).attr('data-id');
+			window.alert(temp);
 		} else {
       			$("#edit_item").hide();
 			$("#delete_item").hide();
