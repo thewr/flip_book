@@ -2,6 +2,10 @@
 // create form element
 var form = document.querySelector('#item-form');
 var itemList = document.querySelector('#item-list');
+//const outputHeader=document.querySelector("#lblQuote");
+//const inputTextField=document.querySelector("#txtQuote");
+const editButton=document.querySelector("#edit_item");
+//const loadButton=document.querySelector("#loadButton");
 const db_name = "spells";
 var flag_refresh = true;
 var flag_update = false;
@@ -64,6 +68,10 @@ function clearForm()
       form.wordsC.value = '';
       form.subject.value = '';
 }
+
+editButton.addEventListener("click",function(){
+    console.log("Edit button clicked");
+});
 
 function myFunc(evt)
 {
