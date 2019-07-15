@@ -332,7 +332,7 @@ $('#item_cancel').click(function(){
 			$("#delete_item").show();	
 			
 			const tmp = $(this).attr('data-id');
-			window.alert(temp);
+			window.alert(tmp);
 		} else {
       			$("#edit_item").hide();
 			$("#delete_item").hide();
