@@ -7,6 +7,7 @@ var itemList = document.querySelector('#item-list');
 const editButton=document.querySelector("#edit_item");
 //const loadButton=document.querySelector("#loadButton");
 const db_name = "spells";
+const ID = "";
 var flag_refresh = true;
 var flag_update = false;
 
@@ -71,6 +72,7 @@ function clearForm()
 
 editButton.addEventListener("click",function(){
     console.log("Edit button clicked");
+    const id = document.getElementsByClassName("selected").;
 });
 
 function myFunc(evt)
@@ -339,8 +341,8 @@ $('#item_cancel').click(function(){
 			$("#edit_item").show();
 			$("#delete_item").show();	
 			
-			const tmp = $(this).attr('data-id');
-			window.alert(tmp);
+			ID = $(this).attr('data-id');
+			window.alert(ID);
 		} else {
       			$("#edit_item").hide();
 			$("#delete_item").hide();
