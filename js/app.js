@@ -108,6 +108,7 @@ function myFunc(evt)
 									wordsC: form.wordsC.value,
 									subject: form.subject.value
 								});	
+								itemList.removeEventListener('click', myFunc);
 								return false;
 							});
 						}); //end of edit item		
