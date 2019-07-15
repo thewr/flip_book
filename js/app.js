@@ -72,7 +72,6 @@ function clearForm()
 
 editButton.addEventListener("click",function(){
     console.log("Edit button clicked");
-    const id = document.getElementsByClassName("selected").;
 });
 
 function myFunc(evt)
