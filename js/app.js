@@ -80,8 +80,8 @@ function myFunc(evt)
 	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
 	
 	if(evt.target.parentElement.className == 'selected'){
-		const id = evt.target.parentElement.getAttribute('data-id');
-	    	const ref = db.collection('spells').doc(id);
+		var id = evt.target.parentElement.getAttribute('data-id');
+	    	var ref = db.collection('spells').doc(id);
 		var obj = {};
 		console.log("id: " + id + " was clicked"); 
 		
