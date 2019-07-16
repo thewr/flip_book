@@ -100,7 +100,7 @@ editButton.addEventListener("click",function(){
 					form.wordsC.value = o.wordsC;
 					form.subject.value = o.subject;
 				}
-			}
+			});
 		}
 });
 
