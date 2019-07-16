@@ -78,7 +78,12 @@ editButton.addEventListener("click",function(){
 		if(element.className == 'selected')
 	 	{		 
  			var id = element.getAttribute('data-id');
-	 		var obj = {
+		    	var ref = db.collection('spells').doc(id);
+			ref.get().then(doc => {
+				if(!doc.exists) {
+					window.alert("no such document");
+				} else {
+					var o = {
 							//date: doc.data().date,
 							name: doc.data().name,
 							level: doc.data().level,
@@ -86,14 +91,16 @@ editButton.addEventListener("click",function(){
 							wordsB: doc.data().wordsB,
 							wordsC: doc.data().wordsC,
 							subject: doc.data().subject
-			};  //window.alert(obj.name)}
+					};  //window.alert(obj.name)}
 			
-			form.name.value =  obj.name;
-			form.level.value = obj.level;
-			form.wordsA.value = obj.wordsA;
-			form.wordsB.value = obj.wordsB;
-			form.wordsC.value = obj.wordsC;
-			form.subject.value = obj.subject;
+					form.name.value =  o.name;
+					form.level.value = o.level;
+					form.wordsA.value = o.wordsA;
+					form.wordsB.value = o.wordsB;
+					form.wordsC.value = o.wordsC;
+					form.subject.value = o.subject;
+				}
+			}
 		}
 });
 
