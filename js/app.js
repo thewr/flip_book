@@ -102,6 +102,7 @@ editButton.addEventListener("click",function(){
 				}
 			});
 		}
+	}
 });
 
 function myFunc(e)
