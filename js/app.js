@@ -74,13 +74,21 @@ editButton.addEventListener("click",function(){
     console.log("Edit button clicked");
 });
 
-function myFunc(evt)
+function myFunc(e)
 {
-	
+	//wClick = document.getElementById("item-list");
 	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
+	wTile = e.target.parentElement;
 	
-	if(evt.target.parentElement.className == 'selected'){
-		var id = evt.target.parentElement.getAttribute('data-id');
+	for (let element of wTile.children) {
+ 	 if(element.className == 'selected')
+	 {		 
+		 element.style.background = 'blue';
+	 }
+	}
+		
+	if(wTile.className == 'selected'){
+		var id = e.target.parentElement.getAttribute('data-id');
 	    	var ref = db.collection('spells').doc(id);
 		var obj = {};
 		console.log("id: " + id + " was clicked"); 
