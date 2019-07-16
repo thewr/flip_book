@@ -71,14 +71,37 @@ function clearForm()
 }
 
 editButton.addEventListener("click",function(){
-    console.log("Edit button clicked");
+	console.log("Edit button clicked");
+	
+	var x = document.getElementById("item-list");
+	for (let element of x.children) {
+		if(element.className == 'selected')
+	 	{		 
+ 			var id = element.getAttribute('data-id');
+	 		var obj = {
+							//date: doc.data().date,
+							name: doc.data().name,
+							level: doc.data().level,
+							wordsA: doc.data().wordsA,
+							wordsB: doc.data().wordsB,
+							wordsC: doc.data().wordsC,
+							subject: doc.data().subject
+			};  //window.alert(obj.name)}
+			
+			form.name.value =  obj.name;
+			form.level.value = obj.level;
+			form.wordsA.value = obj.wordsA;
+			form.wordsB.value = obj.wordsB;
+			form.wordsC.value = obj.wordsC;
+			form.subject.value = obj.subject;
+		}
 });
 
 function myFunc(e)
 {
 	//wClick = document.getElementById("item-list");
 	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
-	wTile = e.target.parentElement;
+	var wTile = e.target.parentElement;
 	
 	for (let element of wTile.children) {
  	 if(element.className == 'selected')
