@@ -7,7 +7,7 @@ var itemList = document.querySelector('#item-list');
 const editButton=document.querySelector("#edit_item");
 //const loadButton=document.querySelector("#loadButton");
 const db_name = "spells";
-const ID = "";
+var ID = "";
 var flag_refresh = true;
 var flag_update = false;
 
