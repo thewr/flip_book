@@ -186,9 +186,7 @@ function myFunc(e)
 		ref.delete(); 
 	});//end-of-delete_item event
 	
-	} else {
-		return;
-	}
+	} else { return; }
 }
 
 
