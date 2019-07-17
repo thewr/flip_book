@@ -78,6 +78,7 @@ editButton.addEventListener("click",function(){
 		if(element.className == 'selected')
 	 	{		 
  			var id = element.getAttribute('data-id');
+			console.log("Editing ID: "+id);
 		    	var ref = db.collection('spells').doc(id);
 			ref.get().then(doc => {
 				if(!doc.exists) {
@@ -112,6 +113,7 @@ editButton.addEventListener("click",function(){
 									wordsC: form.wordsC.value,
 									subject: form.subject.value
 								});	
+								console.log("ID: "+id+" Edited");
 								//itemList.removeEventListener('click', myFunc);
 								return false;
 					});
