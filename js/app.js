@@ -123,6 +123,7 @@ editButton.addEventListener("click",function(){
 
 function myFunc(e)
 {
+	
 	//wClick = document.getElementById("item-list");
 	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
 	var wTile = e.target.parentElement;
@@ -130,16 +131,18 @@ function myFunc(e)
 	if(wTile.className == 'selected'){
 		var id = wTile.getAttribute('data-id');
 	    	var ref = db.collection('spells').doc(id);
+		
+		/*
 		var obj = {};
 		console.log("id: " + id + " was clicked"); 
 		
-			try {			
+			try {
+						
 				ref.get().then(doc => {
 					if(!doc.exists) {
 						window.alert("no such document");
 					} else {
 						obj = {
-							//date: doc.data().date,
 							name: doc.data().name,
 							level: doc.data().level,
 							wordsA: doc.data().wordsA,
@@ -174,10 +177,15 @@ function myFunc(e)
 			} catch (error) { 
 			res.send(error);
 			} //end of try
-
-			$('#delete_item').click(function(){
-				ref.delete();
-			});//end-of-delete_item event
+			
+			*/
+		
+		
+	
+	$('#delete_item').click(function(){  
+		ref.delete(); 
+	});//end-of-delete_item event
+	
 	} else {
 		return;
 	}
