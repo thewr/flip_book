@@ -92,13 +92,29 @@ editButton.addEventListener("click",function(){
 							wordsC: doc.data().wordsC,
 							subject: doc.data().subject
 					};  //window.alert(obj.name)}
-			
+					
+					
+					// copy contents to form
 					form.name.value =  o.name;
 					form.level.value = o.level;
 					form.wordsA.value = o.wordsA;
 					form.wordsB.value = o.wordsB;
 					form.wordsC.value = o.wordsC;
 					form.subject.value = o.subject;
+					
+					// update new
+					$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
+								ref.update({
+									name: form.name.value,
+									level: form.level.value,
+									wordsA: form.wordsA.value,
+									wordsB: form.wordsB.value,
+									wordsC: form.wordsC.value,
+									subject: form.subject.value
+								});	
+								//itemList.removeEventListener('click', myFunc);
+								return false;
+					});
 				}
 			});
 		}
@@ -110,16 +126,9 @@ function myFunc(e)
 	//wClick = document.getElementById("item-list");
 	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
 	var wTile = e.target.parentElement;
-	
-	for (let element of wTile.children) {
- 	 if(element.className == 'selected')
-	 {		 
-		 element.style.background = 'blue';
-	 }
-	}
 		
 	if(wTile.className == 'selected'){
-		var id = e.target.parentElement.getAttribute('data-id');
+		var id = wTile.getAttribute('data-id');
 	    	var ref = db.collection('spells').doc(id);
 		var obj = {};
 		console.log("id: " + id + " was clicked"); 
@@ -156,7 +165,7 @@ function myFunc(e)
 									wordsC: form.wordsC.value,
 									subject: form.subject.value
 								});	
-								itemList.removeEventListener('click', myFunc);
+								//itemList.removeEventListener('click', myFunc);
 								return false;
 							});
 						}); //end of edit item		
