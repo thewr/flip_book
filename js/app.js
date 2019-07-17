@@ -104,8 +104,9 @@ editButton.addEventListener("click",function(){
 					form.subject.value = o.subject;
 					
 					// update new
-					$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
-								ref.update({
+					$('#item_submit').click(function(e){ //form.addEventListener('append', (e) => { e.preventDefault();
+							e.preventDefault();	
+							ref.update({
 									name: form.name.value,
 									level: form.level.value,
 									wordsA: form.wordsA.value,
@@ -266,6 +267,21 @@ function renderDB(doc){
 
 // saving data
 form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    db.collection('spells').add({
+        name: form.name.value,
+	level: form.level.value,
+        wordsA: form.wordsA.value,
+	wordsB: form.wordsB.value,
+	wordsC: form.wordsC.value,
+        subject: form.subject.value
+    });
+	clearForm();
+	// generate new db 
+	//refresh();
+});
+
+form.addEventListener('append', (e) => {
     e.preventDefault();
     db.collection('spells').add({
         name: form.name.value,
