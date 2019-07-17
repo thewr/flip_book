@@ -398,7 +398,7 @@ $('#item_cancel').click(function(){
 			
 			ID = $(this).attr('data-id');
 			const REF = db.collection('spells').doc(ID);
-			window.alert(ID+" at "+REF);
+			//window.alert(ID+" at "+REF);
 		} else {
       			$("#edit_item").hide();
 			$("#delete_item").hide();
