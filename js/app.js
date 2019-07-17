@@ -104,7 +104,7 @@ editButton.addEventListener("click",function(){
 					form.subject.value = o.subject;
 					
 					// update new
-					$('#item_submit').click(function(e){ //form.addEventListener('append', (e) => { e.preventDefault();
+					$('#item_submit').unbind().click(function(e){ //form.addEventListener('append', (e) => { e.preventDefault();
 							e.preventDefault();	
 							ref.update({
 									name: form.name.value,
