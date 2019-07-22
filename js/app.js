@@ -105,7 +105,7 @@ editButton.addEventListener("click",function(){
 					// update new
 					$('#item_submit').click(function(e){ //.unbind().// form.addEventListener('append', (e) => { e.preventDefault();
 							e.preventDefault();	
-						  	//e.stopImmediatePropagation();
+						  	e.stopImmediatePropagation();
 							ref.update({
 									name: form.name.value,
 									level: form.level.value,
