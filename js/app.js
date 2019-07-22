@@ -40,7 +40,7 @@ function refreshFunc(evt)
 
 var tmp;
 function refresh() {
-	if(flag_refresh==true){
+	//if(flag_refresh==true){
 	db.collection('spells')
 		.orderBy('name','asc')
 		.get().then(snapshot => {
@@ -56,8 +56,7 @@ function refresh() {
 	    });
 	});//end of get data
 		clearForm();
-		flag_refresh = false;
-	}
+	//}
 }
 
 function clearForm()
@@ -104,7 +103,7 @@ editButton.addEventListener("click",function(){
 					form.subject.value = o.subject;
 					
 					// update new
-					$('#item_submit').unbind().click(function(e){ //form.addEventListener('append', (e) => { e.preventDefault();
+					$('#item_submit').click(function(e){ //.unbind().// form.addEventListener('append', (e) => { e.preventDefault();
 							e.preventDefault();	
 						  	//e.stopImmediatePropagation();
 							ref.update({
