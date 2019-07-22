@@ -11,6 +11,13 @@ var ID = "";
 var flag_refresh = true;
 var flag_update = false;
 
+/*
+document.getElementById("list").addEventListener("click",function(e) {
+  if (e.target && e.target.matches("li.item")) {
+    e.target.className = "foo"; // new class name here
+    }
+});
+*/
 itemList.addEventListener('click', myFunc, false);
 
 // define buttons
@@ -131,7 +138,7 @@ function myFunc(e)
 	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
 	var wTile = e.target.parentElement;
 		
-	if(wTile.className == 'selected'){
+	if(wTile.matches('li.selected')){
 		var id = wTile.getAttribute('data-id');
 	    	var ref = db.collection('spells').doc(id);
 		
