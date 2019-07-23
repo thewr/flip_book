@@ -141,8 +141,7 @@ function myFunc(e)
 	if(wTile.matches('li.selected')){
 		var id = wTile.getAttribute('data-id');
 	    	var ref = db.collection('spells').doc(id);
-		
-		/*
+	
 		var obj = {};
 		console.log("id: " + id + " was clicked"); 
 		
@@ -188,7 +187,7 @@ function myFunc(e)
 			res.send(error);
 			} //end of try
 			
-			*/
+		
 		
 		
 	
