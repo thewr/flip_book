@@ -18,7 +18,9 @@ document.getElementById("list").addEventListener("click",function(e) {
     }
 });
 */
-itemList.addEventListener('click', myFunc, false);
+
+var itemList_tile = document.querySelector("#item-list li");
+itemList_tile.addEventListener('click', myFunc, false);
 
 // define buttons
 refresh_button.addEventListener('click',refreshFunc,false);
@@ -76,6 +78,7 @@ function clearForm()
       form.subject.value = '';
 }
 
+/*
 editButton.addEventListener("click",function(){
 	console.log("Edit button clicked");
 	
@@ -130,13 +133,14 @@ editButton.addEventListener("click",function(){
 		}
 	}
 });
+*/
 
 function myFunc(e)
 {
 	
 	//wClick = document.getElementById("item-list");
 	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
-	var wTile = e.target.parentElement;
+	var wTile = e.target;//.parentElement;
 		
 	if(wTile.matches('li.selected')){
 		var id = wTile.getAttribute('data-id');
