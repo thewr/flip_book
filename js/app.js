@@ -20,9 +20,6 @@ document.getElementById("list").addEventListener("click",function(e) {
 */
 
 var itemList_tile = document.querySelector("#item-list li");
-if(itemList_tile){
-	itemList_tile.addEventListener('click', myFunc, false);
-}
 
 // define buttons
 refresh_button.addEventListener('click',refreshFunc,false);
@@ -204,6 +201,9 @@ function myFunc(e)
 	} else { return; }
 }
 
+if(itemList_tile){
+	itemList_tile.addEventListener('click', myFunc, false);
+}
 
 // create element & render cafe
 function renderDB(doc){
