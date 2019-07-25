@@ -20,7 +20,9 @@ document.getElementById("list").addEventListener("click",function(e) {
 */
 
 var itemList_tile = document.querySelector("#item-list li");
-itemList_tile.addEventListener('click', myFunc, false);
+if(itemList_tile){
+	itemList_tile.addEventListener('click', myFunc, false);
+}
 
 // define buttons
 refresh_button.addEventListener('click',refreshFunc,false);
