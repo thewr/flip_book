@@ -1,15 +1,12 @@
 // creates a <ol> list element and functions
+
+var itemList = document.querySelector('#item-list');
+itemList.addEventListener('click', myFunc, false);//itemList.addEventListener('click', myFunc, false);
+itemList.count = 0;
 // create form element
 var form = document.querySelector('#item-form');
-var itemList = document.querySelector('#item-list');
-//const outputHeader=document.querySelector("#lblQuote");
-//const inputTextField=document.querySelector("#txtQuote");
-const editButton=document.querySelector("#edit_item");
-//const loadButton=document.querySelector("#loadButton");
-const db_name = "spells";
-var ID = "";
-var flag_refresh = true;
-var flag_update = false;
+
+//const editButton=document.querySelector("#edit_item");
 
 /*
 document.getElementById("list").addEventListener("click",function(e) {
@@ -18,8 +15,6 @@ document.getElementById("list").addEventListener("click",function(e) {
     }
 });
 */
-
-var itemList_tile = document.querySelector("#item-list li");
 
 // define buttons
 refresh_button.addEventListener('click',refreshFunc,false);
@@ -77,6 +72,7 @@ function clearForm()
       form.subject.value = '';
 }
 
+/*
 editButton.addEventListener("click",function(){
 	console.log("Edit button clicked");
 	
@@ -135,60 +131,73 @@ editButton.addEventListener("click",function(){
 		}
 	}
 });
+*/
 
 			
-function myFunc(e)
-{	
-	//wClick = document.getElementById("item-list");
+function myFunc(evt)
+{
+	const id = evt.target.parentElement.getAttribute('data-id');
 	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
-	var wTile = e.target;//.parentElement;
 	
 	if(evt.target.nodeName == 'SPAN'){
-		if(wTile.matches('li.selected')){
-			var id = wTile.getAttribute('data-id');
-			var ref = db.collection('spells').doc(id);
+		console.log(id + " was clicked");	
+	    	const ref = db.collection("spells").doc(id);
+		
+		$('#edit_item').click(function(){
+			//get data
+			try {
+				var tableData = {};
+				ref.get()
+				.then(doc => {
+					if(!doc.exists) {
+						window.alert("no such document");
+					} else {
+						tableData = {
+							//date: doc.data().date,
+							name: doc.data().name,
+							wordsA: doc.data().wordsA,
+							wordsB: doc.data().wordsB,
+							wordsC: doc.data().wordsC,
+							subject: doc.data().subject
+						};  //window.alert(tableData.name + " " + tableData.subject);
+						
+						form.name.value =  tableData.name;
+						form.wordsA.value = tableData.wordsA;
+						form.wordsB.value = tableData.wordsB;
+						form.wordsC.value = tableData.wordsC;
+						form.subject.value = tableData.subject;
+						
+					}
+				})
+			} catch (error) { 
+				res.send(error);
+			} //end of try
+			
 
-			var obj = {};
-			console.log("id: " + id + " was clicked"); 
 
-			ref.get().then(doc => {
-				if(!doc.exists) {
-					window.alert("no such document");
-				} else {
-					obj = {
-						name: doc.data().name,
-						level: doc.data().level,
-						wordsA: doc.data().wordsA,
-						wordsB: doc.data().wordsB,
-						wordsC: doc.data().wordsC,
-						subject: doc.data().subject
-					};  //window.alert(obj.name)
+			$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
+				db.collection("spells").doc(id).update({
+					name: form.name.value,
+					level: form.level.value,
+					wordsA: form.wordsA.value,
+					wordsB: form.wordsB.value,
+					wordsC: form.wordsC.value,
+					subject: form.subject.value
+				});
+				clearForm();
+				refresh();
+			});
+		}); //end of edit item
 
-					$('#edit_item').on("click", function(){
-						form.name.value =  obj.name;
-						form.level.value = obj.level;
-						form.wordsA.value = obj.wordsA;
-						form.wordsB.value = obj.wordsB;
-						form.wordsC.value = obj.wordsC;
-						form.subject.value = obj.subject;
 
-						$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
-								ref.update({
-									name: form.name.value,
-									level: form.level.value,
-									wordsA: form.wordsA.value,
-									wordsB: form.wordsB.value,
-									wordsC: form.wordsC.value,
-									subject: form.subject.value
-								});	
-								return false;
-						});
-					}); //end of edit item		
-				} 	
-				$('#delete_item').click(function(){  
-					ref.delete(); 
-				});//end-of-delete_item event
-			}
+		$('#delete_item').click(function(){
+			ref.delete();
+			refresh();
+		});//end-of-delete_item event
+		
+	} else {
+		return;
+	}
 }
 
 	
