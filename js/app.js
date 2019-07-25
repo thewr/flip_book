@@ -133,75 +133,69 @@ editButton.addEventListener("click",function(){
 	}
 });
 
-
-function myFunc(e)
-{
-	
-	//wClick = document.getElementById("item-list");
-	//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
-	var wTile = e.target;//.parentElement;
-		
-	if(wTile.matches('li.selected')){
-		var id = wTile.getAttribute('data-id');
-	    	var ref = db.collection('spells').doc(id);
-	
-		var obj = {};
-		console.log("id: " + id + " was clicked"); 
-		
-			try {
-						
-				ref.get().then(doc => {
-					if(!doc.exists) {
-						window.alert("no such document");
-					} else {
-						obj = {
-							name: doc.data().name,
-							level: doc.data().level,
-							wordsA: doc.data().wordsA,
-							wordsB: doc.data().wordsB,
-							wordsC: doc.data().wordsC,
-							subject: doc.data().subject
-						};  //window.alert(obj.name)
-						
-						$('#edit_item').on("click", function(){
-							form.name.value =  obj.name;
-							form.level.value = obj.level;
-							form.wordsA.value = obj.wordsA;
-							form.wordsB.value = obj.wordsB;
-							form.wordsC.value = obj.wordsC;
-							form.subject.value = obj.subject;
-							
-							$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
-								ref.update({
-									name: form.name.value,
-									level: form.level.value,
-									wordsA: form.wordsA.value,
-									wordsB: form.wordsB.value,
-									wordsC: form.wordsC.value,
-									subject: form.subject.value
-								});	
-								//itemList.removeEventListener('click', myFunc);
-								return false;
-							});
-						}); //end of edit item		
-					} 
-				})
-			} catch (error) { 
-			res.send(error);
-			} //end of try
-			
-		
-		
-		
-	
-	$('#delete_item').click(function(){  
-		ref.delete(); 
-	});//end-of-delete_item event
-	
-	} else { return; }
-}
-
 if(itemList_tile){
+	function myFunc(e)
+	{	
+		//wClick = document.getElementById("item-list");
+		//evt.target.parentElement.getElementsByTagName('li').classList.add('selected');
+		var wTile = e.target;//.parentElement;
+
+		if(wTile.matches('li.selected')){
+			var id = wTile.getAttribute('data-id');
+			var ref = db.collection('spells').doc(id);
+
+			var obj = {};
+			console.log("id: " + id + " was clicked"); 
+
+				try {
+
+					ref.get().then(doc => {
+						if(!doc.exists) {
+							window.alert("no such document");
+						} else {
+							obj = {
+								name: doc.data().name,
+								level: doc.data().level,
+								wordsA: doc.data().wordsA,
+								wordsB: doc.data().wordsB,
+								wordsC: doc.data().wordsC,
+								subject: doc.data().subject
+							};  //window.alert(obj.name)
+
+							$('#edit_item').on("click", function(){
+								form.name.value =  obj.name;
+								form.level.value = obj.level;
+								form.wordsA.value = obj.wordsA;
+								form.wordsB.value = obj.wordsB;
+								form.wordsC.value = obj.wordsC;
+								form.subject.value = obj.subject;
+
+								$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
+									ref.update({
+										name: form.name.value,
+										level: form.level.value,
+										wordsA: form.wordsA.value,
+										wordsB: form.wordsB.value,
+										wordsC: form.wordsC.value,
+										subject: form.subject.value
+									});	
+									//itemList.removeEventListener('click', myFunc);
+									return false;
+								});
+							}); //end of edit item		
+						} 
+					})
+				} catch (error) { 
+				res.send(error);
+				} //end of try
+
+		$('#delete_item').click(function(){  
+			ref.delete(); 
+		});//end-of-delete_item event
+
+		} else { return; }
+	}
+
 	itemList_tile.addEventListener('click', myFunc, false);
 }
 
