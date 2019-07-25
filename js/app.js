@@ -78,7 +78,7 @@ function clearForm()
       form.subject.value = '';
 }
 
-/*
+
 editButton.addEventListener("click",function(){
 	console.log("Edit button clicked");
 	
@@ -133,7 +133,7 @@ editButton.addEventListener("click",function(){
 		}
 	}
 });
-*/
+
 
 function myFunc(e)
 {
