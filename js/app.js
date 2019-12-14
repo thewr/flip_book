@@ -140,15 +140,14 @@ function myFunc(evt)
 	if(evt.target.nodeName == 'SPAN'){
 		console.log(id + " was clicked");	
 	    	const ref = db.collection("spells").doc(id);
-		
-		
+
 		$('#edit_item').click(function(){
 			try {
 				var tableData = {};
 				ref.get()
 				.then(doc => {
 					if(!doc.exists) {
-						window.alert("no such document");
+						console.log("no such document");
 					} else {
 						tableData = {
 							//date: doc.data().date,
