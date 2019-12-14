@@ -5,8 +5,8 @@ itemList.addEventListener('click', myFunc, false);//itemList.addEventListener('c
 itemList.count = 0;
 // create form element
 var form = document.querySelector('#item-form');
+var edit = document.querySelector("#edit_ite,");
 
-//const editButton=document.querySelector("#edit_item");
 
 /*
 document.getElementById("list").addEventListener("click",function(e) {
@@ -70,7 +70,7 @@ function clearForm()
 }
 
 
-editButton.addEventListener("click",function(){
+edit.addEventListener("click",function(){
 	console.log("Edit button clicked");
 	/*
 	var x = document.getElementById("item-list");
