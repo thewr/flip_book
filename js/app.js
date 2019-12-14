@@ -283,7 +283,7 @@ form.addEventListener('submit', (e) => {
     });
 	clearForm();
 	// generate new db 
-	//refresh();
+	refresh();
 });
 
 //edit to db
@@ -295,11 +295,11 @@ form.addEventListener('append', (e) => {
         wordsA: form.wordsA.value,
 	wordsB: form.wordsB.value,
 	wordsC: form.wordsC.value,
-        subject: "TMP"//form.subject.value
+        subject: form.subject.value
     });
 	clearForm();
 	// generate new db 
-	//refresh();
+	refresh();
 });
 
 form.addEventListener('cancel', (e) => {
