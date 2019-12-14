@@ -154,6 +154,7 @@ function myFunc(evt)
 						tableData = {
 							//date: doc.data().date,
 							name: doc.data().name,
+							level: doc.data().level,
 							wordsA: doc.data().wordsA,
 							wordsB: doc.data().wordsB,
 							wordsC: doc.data().wordsC,
@@ -161,11 +162,11 @@ function myFunc(evt)
 						};  //window.alert(tableData.name + " " + tableData.subject);
 						
 						form.name.value =  tableData.name;
+						form.level.value = tableData.level;
 						form.wordsA.value = tableData.wordsA;
 						form.wordsB.value = tableData.wordsB;
 						form.wordsC.value = tableData.wordsC;
 						form.subject.value = tableData.subject;
-						
 					}
 				})
 			} catch (error) { 
