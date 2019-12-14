@@ -43,7 +43,6 @@ function refreshFunc(evt)
 
 var tmp;
 function refresh() {
-	//if(flag_refresh==true){
 	db.collection('spells')
 		.orderBy('name','asc')
 		.get().then(snapshot => {
@@ -59,7 +58,6 @@ function refresh() {
 	    });
 	});//end of get data
 		clearForm();
-	//}
 }
 
 function clearForm()
@@ -144,7 +142,6 @@ function myFunc(evt)
 	    	const ref = db.collection("spells").doc(id);
 		
 		$('#edit_item').click(function(){
-			//get data
 			try {
 				var tableData = {};
 				ref.get()
@@ -222,8 +219,8 @@ function renderDB(doc){
   subject.classList.add('subject_data');
   //subject.style.cssText = "padding: 3px 0px 6px 12px; display: block;";
 
-  let cross = document.createElement('div');
-  cross.textContent = 'x';
+ // let cross = document.createElement('div');
+ // cross.textContent = 'x';
 
 
 
@@ -254,7 +251,7 @@ function renderDB(doc){
   subject.textContent = doc.data().subject;
 
   // append list
-  li.appendChild(cross);
+  //li.appendChild(cross);
   li.appendChild(label_name);
   li.appendChild(name);
 	
@@ -273,7 +270,7 @@ function renderDB(doc){
   itemList.appendChild(li);
 }
 
-// saving data
+//save new to db
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     db.collection('spells').add({
@@ -289,6 +286,7 @@ form.addEventListener('submit', (e) => {
 	//refresh();
 });
 
+//edit to db
 form.addEventListener('append', (e) => {
     e.preventDefault();
     db.collection('spells').add({
@@ -319,6 +317,7 @@ db.collection('spells').orderBy('level').onSnapshot(snapshot => {
 		    renderDB(change.doc);
 	    }
 	    
+	    /*
 	    if (change.type == 'modified'){
 		    console.log("Modified item: ", change.doc.data());
 		    
@@ -327,6 +326,7 @@ db.collection('spells').orderBy('level').onSnapshot(snapshot => {
 		    renderDB(change.doc);
 		    
 	    }
+	    */
 
 	    if (change.type == 'removed'){
 		    console.log("Removed item: ", change.doc.data());
@@ -414,7 +414,7 @@ $('#item_cancel').click(function(){
 
 	
 	$('#item-list').on('click','li',function() {
-		$(this).unbind("mouseenter mouseleave");
+		//$(this).unbind("mouseenter mouseleave");
 		$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
