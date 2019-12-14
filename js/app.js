@@ -7,7 +7,7 @@ itemList.count = 0;
 var form = document.querySelector('#item-form');
 var edit = document.querySelector('#edit_item');
 var submit = document.querySelector('#item_submit');
-var cancel = document.querySelector('#item_cancel'):
+var cancel = document.querySelector('#item_cancel');
 
 
 /*
