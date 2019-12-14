@@ -6,8 +6,6 @@ itemList.count = 0;
 // create form element
 var form = document.querySelector('#item-form');
 var edit = document.querySelector('#edit_item');
-var submit = document.querySelector('#item_submit');
-var cancel = document.querySelector('#item_cancel');
 
 
 /*
@@ -143,6 +141,7 @@ function myFunc(evt)
 		console.log(id + " was clicked");	
 	    	const ref = db.collection("spells").doc(id);
 		
+		
 		$('#edit_item').click(function(){
 			try {
 				var tableData = {};
@@ -171,6 +170,7 @@ function myFunc(evt)
 				})
 			} catch (error) { 
 				res.send(error);
+				
 			} //end of try
 			
 
@@ -391,7 +391,7 @@ $(function(){
 	  	display_edit();
  	 });
 
- 	submit.click(function(){
+ 	$("#item_submit").click(function(){
 	        $( ".docs" ).toggleClass('blur-me');
 	        $("#edit_item").hide();
 		$("#delete_item").hide();
@@ -401,7 +401,7 @@ $(function(){
 		//refresh();
   	});
 	
-	cancel.click(function(){
+	$("#item_cancel").click(function(){
 		//flag_refresh = true;
 		$( ".docs" ).toggleClass('blur-me');
 		$("#edit_item").hide();
@@ -417,7 +417,7 @@ $(function(){
 		//refresh();
 	});
 
-	itemList.on('click','li',function() {
+	$("#item-list").on('click','li',function() {
 		//$(this).unbind("mouseenter mouseleave");
 		$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
