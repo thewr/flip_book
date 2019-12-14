@@ -287,6 +287,7 @@ form.addEventListener('submit', (e) => {
 });
 
 //edit to db
+/*
 form.addEventListener('append', (e) => {
     e.preventDefault();
     db.collection('spells').add({
@@ -301,11 +302,14 @@ form.addEventListener('append', (e) => {
 	// generate new db 
 	refresh();
 });
+*/
 
+/*
 form.addEventListener('cancel', (e) => {
     e.preventDefault();
 	//refresh();
 });
+*/
 
 // real-time listener
 db.collection('spells').orderBy('level').onSnapshot(snapshot => {
@@ -370,7 +374,7 @@ $(function(){
 
 	// Add new document button show
 	$("#new_item").click(function(){
-		$("#item_submit").attr('value', 'Submit').attr('type','submit');
+		//$("#item_submit").attr('value', 'Submit').attr('type','submit');
 		display_add();
 	});
 
@@ -382,7 +386,7 @@ $(function(){
 
 	//Edit new document button show
   	$("#edit_item").click(function(){
-		$("#item_submit").attr('value', 'Append').attr('type','append');
+		//$("#item_submit").attr('value', 'Append').attr('type','append');
 	  	display_edit();
   });
 
