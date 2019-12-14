@@ -23,12 +23,11 @@ function refreshFunc(evt)
 {
 	var count = itemList.count;
 	const id = evt.target.parentElement.getAttribute('data-id');
-
-	//alert	("Doc ID: " + id);
-
+	
 	while(itemList.firstChild){
 		itemList.removeChild(itemList.firstChild);
 	}
+	
 	//get data
 	db.collection('spells')
 		.orderBy('name','asc')
@@ -47,7 +46,7 @@ function refresh() {
 		.orderBy('name','asc')
 		.get().then(snapshot => {
 			itemList.count = 0;
-		        console.log('displaying contents of db..');
+		        console.log('displaying contents of db...');
 			while(itemList.firstChild){
 				itemList.removeChild(itemList.firstChild);
 			}
@@ -70,10 +69,10 @@ function clearForm()
       form.subject.value = '';
 }
 
-/*
+
 editButton.addEventListener("click",function(){
 	console.log("Edit button clicked");
-	
+	/*
 	var x = document.getElementById("item-list");
 	for (let element of x.children) {
 		if(element.className == 'selected')
@@ -128,8 +127,9 @@ editButton.addEventListener("click",function(){
 			});
 		}
 	}
+	*/
 });
-*/
+
 
 			
 function myFunc(evt)
