@@ -5,7 +5,9 @@ itemList.addEventListener('click', myFunc, false);//itemList.addEventListener('c
 itemList.count = 0;
 // create form element
 var form = document.querySelector('#item-form');
-var edit = document.querySelector("#edit_item");
+var edit = document.querySelector('#edit_item');
+var submit = document.querySelector('#item_submit');
+var cancel = document.querySelector('#item_cancel'):
 
 
 /*
@@ -388,9 +390,9 @@ $(function(){
   	$("#edit_item").click(function(){
 		//$("#item_submit").attr('value', 'Append').attr('type','append');
 	  	display_edit();
-  });
+ 	 });
 
-  $('#item_submit').click(function(){
+ 	submit.click(function(){
 	        $( ".docs" ).toggleClass('blur-me');
 	        $("#edit_item").hide();
 		$("#delete_item").hide();
@@ -398,9 +400,9 @@ $(function(){
 		display_min();
 	      
 		//refresh();
-  });
+  	});
 	
-$('#item_cancel').click(function(){
+	cancel.click(function(){
 		//flag_refresh = true;
 		$( ".docs" ).toggleClass('blur-me');
 		$("#edit_item").hide();
@@ -414,10 +416,9 @@ $('#item_cancel').click(function(){
 
 		clearForm();
 		//refresh();
-});
+	});
 
-	
-	$('#item-list').on('click','li',function() {
+	itemList.on('click','li',function() {
 		//$(this).unbind("mouseenter mouseleave");
 		$(this).toggleClass('selected').siblings().removeClass('selected');
 		if($(this).hasClass('selected')){
