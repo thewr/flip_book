@@ -287,7 +287,6 @@ form.addEventListener('submit', (e) => {
 });
 
 //edit to db
-/*
 form.addEventListener('append', (e) => {
     e.preventDefault();
     db.collection('spells').add({
@@ -296,13 +295,12 @@ form.addEventListener('append', (e) => {
         wordsA: form.wordsA.value,
 	wordsB: form.wordsB.value,
 	wordsC: form.wordsC.value,
-        subject: form.subject.value
+        subject: "TMP"//form.subject.value
     });
 	clearForm();
 	// generate new db 
 	//refresh();
 });
-*/
 
 form.addEventListener('cancel', (e) => {
     e.preventDefault();
