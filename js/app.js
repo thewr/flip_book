@@ -323,7 +323,6 @@ db.collection('spells').orderBy('level').onSnapshot(snapshot => {
 		    renderDB(change.doc);
 	    }
 	    
-	    /*
 	    if (change.type == 'modified'){
 		    console.log("Modified item: ", change.doc.data());
 		    
@@ -332,7 +331,6 @@ db.collection('spells').orderBy('level').onSnapshot(snapshot => {
 		    renderDB(change.doc);
 		    
 	    }
-	    */
 
 	    if (change.type == 'removed'){
 		    console.log("Removed item: ", change.doc.data());
