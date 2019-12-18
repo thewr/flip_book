@@ -314,7 +314,7 @@ textarea {
 
 
 input[type=submit],
-input[type=append]{
+input[type=edit]{
   background-color: #4285F4;
   //position:absolute;
   display:inline-block;
