@@ -174,7 +174,7 @@ function myFunc(evt)
 			
 
 
-			$('#item_submit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
+			$('#item_edit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
 				db.collection("spells").doc(id).update({
 					name: form.name.value,
 					level: form.level.value,
@@ -183,8 +183,8 @@ function myFunc(evt)
 					wordsC: form.wordsC.value,
 					subject: form.subject.value
 				});
-				clearForm();
-				refresh();
+				//clearForm();
+				//refresh();
 			});
 		}); //end of edit item
 
@@ -289,7 +289,7 @@ form.addEventListener('submit', (e) => {
 });
 
 //edit to db
-
+/*
 form.addEventListener('edit', (e) => {
     e.preventDefault();
     db.collection('spells').add({
@@ -304,7 +304,7 @@ form.addEventListener('edit', (e) => {
 	// generate new db 
 	refresh();
 });
-
+*/
 /*
 form.addEventListener('cancel', (e) => {
     e.preventDefault();
