@@ -51,13 +51,11 @@ html>.container, body>.container {
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-pack: justify;
-    justify-content: space-between;
     background: #101112;
     padding-top: 5px;
     padding-right: 0;
     padding-bottom: 5px;
     padding-left: 0;
-    text-transform: capitalize;
     height: 43px;
     z-index: 1000;
 }
@@ -123,12 +121,12 @@ html>.container, body>.container {
 }
 
 .container .header .settings .name {
-    margin: 0 1rem 0 .5rem;
     text-overflow: ellipsis;
+    text-transform: capitalize;
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    font-size: 180%;
+    font-size: 14px;
 }
 
 .container .header ul.options{
