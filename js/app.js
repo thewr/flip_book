@@ -289,8 +289,8 @@ form.addEventListener('submit', (e) => {
 });
 
 //edit to db
-/*
-form.addEventListener('append', (e) => {
+
+form.addEventListener('edit', (e) => {
     e.preventDefault();
     db.collection('spells').add({
         name: form.name.value,
@@ -304,7 +304,6 @@ form.addEventListener('append', (e) => {
 	// generate new db 
 	refresh();
 });
-*/
 
 /*
 form.addEventListener('cancel', (e) => {
