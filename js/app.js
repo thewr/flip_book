@@ -351,23 +351,27 @@ $(function(){
 	
 	// Display min-sidebar
 	function display_min(){
-		 $(".min").show();
-		 $(".content").hide();
-		 $('.sidebar').addClass('closed');
+		$('.sidebar').addClass('closed');
+		$("#edit_item").hide();
+		$("#delete_item").hide();
+		$('.content').hide();
+		$('.min').show();
 	}
 	
 	function display_full(){
 		 $('.sidebar').removeClass('closed');
+		 $( ".docs" ).toggleClass('blur-me');
 		 $(".min").hide();
 		 $(".content").show();
-	         $(".max").hide().fadeIn(500);		
+	         $(".max").hide().fadeIn(1000);		
 	}
 	
 	
 	// Animate slide for create new form	
 	function display_add(){
 		//flag_refresh = true;
-		$( ".docs" ).toggleClass('blur-me');
+		$("#item_edit").hide();
+		$("#item_submit").show();
 		display_full();
 	}
 
@@ -379,7 +383,8 @@ $(function(){
 
 	// Animate slide for edit form
 	function display_edit(){
-		 $( ".docs" ).toggleClass('blur-me');
+		$("#item_edit").show();
+		$("#item_submit").hide();
 		 display_full();
 	}
 
@@ -391,12 +396,12 @@ $(function(){
 
  	$("#item_submit").click(function(){
 	        $( ".docs" ).toggleClass('blur-me');
-	        $("#edit_item").hide();
-		$("#delete_item").hide();
-	  	//$("#item_submit").attr('value', 'Append').attr('type','append');
 		display_min();
-	      
-		//refresh();
+  	});
+	
+	$("#item_edit").click(function(){
+	        $( ".docs" ).toggleClass('blur-me');
+		display_min();
   	});
 	
 	$("#item_cancel").click(function(){
