@@ -57,6 +57,7 @@ html>.container, body>.container {
     padding-right: 0;
     padding-bottom: 5px;
     padding-left: 0;
+    text-transform: capitalize;
     height: 43px;
     z-index: 1000;
 }
