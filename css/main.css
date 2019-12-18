@@ -53,11 +53,11 @@ html>.container, body>.container {
     -webkit-box-pack: justify;
     justify-content: space-between;
     background: #101112;
-    padding-top: 0px;
-    padding-right: 1rem;
-    padding-bottom: 0px;
-    padding-left: 1rem;
-    height: 54px;
+    padding-top: 5px;
+    padding-right: 0;
+    padding-bottom: 5px;
+    padding-left: 0;
+    height: 43px;
     z-index: 1000;
 }
 
