@@ -60,7 +60,7 @@ html>.container, body>.container {
     z-index: 1000;
 }
 
-@media (max-width: 350px) body>.container>.app>.sidebar
+@media (max-width: 375px) body>.container>.app>.sidebar
 {
   display: block;
   position: absolute;  //relative
