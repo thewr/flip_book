@@ -131,7 +131,7 @@ edit.addEventListener("click",function(){
 });
 
 
-			
+/*			
 function myFunc(evt)
 {
 	const id = evt.target.parentElement.getAttribute('data-id');
@@ -198,7 +198,7 @@ function myFunc(evt)
 		return;
 	}
 }
-
+*/
 	
 // create element & render cafe
 function renderDB(doc){
