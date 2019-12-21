@@ -313,7 +313,7 @@ form.addEventListener('cancel', (e) => {
 */
 
 // real-time listener
-db.collection('spells').orderBy('level').onSnapshot(snapshot => {
+db.collection('spells').orderBy('name').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
 	    if(change.type == 'added'){
