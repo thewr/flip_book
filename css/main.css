@@ -303,7 +303,7 @@ input[type=text],
 select {
   width: 50%;
   box-sizing:content-box;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   display: block;
 }
 
