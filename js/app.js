@@ -1,8 +1,8 @@
 // creates a <ol> list element and functions
 
 var itemList = document.querySelector('#item-list');
-itemList.addEventListener('click', myFunc, false);//itemList.addEventListener('click', myFunc, false);
-itemList.count = 0;
+//itemList.addEventListener('click', myFunc, false);//itemList.addEventListener('click', myFunc, false);
+//temList.count = 0;
 // create form element
 var form = document.querySelector('#item-form');
 var edit = document.querySelector('#edit_item');
