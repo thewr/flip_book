@@ -187,7 +187,7 @@ display: block;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0%;
-    padding: 0.5em 1em 1em 1.5em;
+    padding: 0.5em;
 }
 
 .sidebar > .content .label {
@@ -303,13 +303,13 @@ input[type=text],
 select {
   width: 50%;
   box-sizing:content-box;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   display: block;
 }
 
 textarea {
   width: 100%;
-  Height: 7em;
+  Height: 5em;
   box-sizing: border-box;
 }
 
