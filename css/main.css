@@ -309,7 +309,7 @@ select {
 
 textarea {
   width: 100%;
-  Height: 32px;
+  Height: 7em;
   box-sizing: border-box;
 }
 
