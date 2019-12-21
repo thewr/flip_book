@@ -389,7 +389,7 @@ body>.container>.app>.docs {
 .docs>section>header h1 {
     -webkit-box-flex: 1;
     flex: 1;
-    Position: absolute;
+    Position: fixed;
 }
 
 h1, h2 {
