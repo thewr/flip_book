@@ -310,6 +310,7 @@ select {
 
 textarea {
   width: 100%;
+  Height: 32px;
   box-sizing: border-box;
 }
 
@@ -353,12 +354,6 @@ input[type=submit]:hover {
   background-color: #3F729B;
 }
 
-@media (max-width: 480px) { 
-    body>.container>.app>.docs {
-    top: 3%;
-    left: 3%;
-    }
-}
 
 /*
 body>.container>.app>.docs {
