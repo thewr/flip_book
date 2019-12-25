@@ -11,7 +11,7 @@ html, body
     cursor: default;
     color: #f0f1f2;
     -webkit-user-select: none;
-    width: auto!important; 
+    width: auto!important;
     overflow-x: hidden!important;
 
 }
@@ -76,7 +76,7 @@ html>.container, body>.container {
   z-index = 1000;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
   select:focus,
   textarea:focus,
   input:focus {
@@ -131,7 +131,7 @@ html>.container, body>.container {
 }
 
 .container .header ul.options{
-    text-align: right;   
+    text-align: right;
 }
 
 .container .header ul{
@@ -147,7 +147,7 @@ html>.container, body>.container {
 
 .sidebar{
  -webkit-box-flex: 1;
- flex: 1 0 350px;   
+ flex: 1 0 350px;
  width: 350px;
  display: flex;
  -webkit-box-orient: vertical;
@@ -212,7 +212,7 @@ display: block;
     background: #3a3e41;
     padding: 0;
 }
-    
+
 .options {
     display: -webkit-box;
     display: flex;
@@ -321,24 +321,25 @@ input[type=edit]{
   display:inline-block;
   border: 1px solid rgba(27, 31, 35, 0.2);
   color: white;
-  float: bottom-left;
-  font-weight: 400;
-  width: 100px;
-  border-radius: 2px;
+  float: left;
+  font-weight: 200;
+  width: 70px;
+  border-radius: 6px;
   text-align: center;
   cursor: pointer;
 }
 
 
-input[type=cancel]{
-  background-color: #cbd6e9;
-  display:inline-block;
+.panel input[type=cancel]{
+  background-color: yellow;
+  display:block;
+  float: right;
   position: relative;
   border: 1px solid rgba(27, 31, 35, 0.2);
   color: red;
-  width: 100px;
-  font-weight: 400;
-  border-radius: 2px;
+  width: 70px;
+  font-weight: 600;
+  border-radius: 6px;
   text-align: center;
   cursor: pointer;
 }
@@ -360,7 +361,7 @@ body>.container>.app>.docs {
     top: 100px;
     bottom: 0;
     left: 200px;
-    //right: 0;    
+    //right: 0;
 }
 */
 
@@ -483,7 +484,7 @@ h1 {
 #item-list li:not(.selected):hover
 */
 /*
-#item-list li:not(.selected){ 
+#item-list li:not(.selected){
     background-color: #e9f3e2;
 }
 */
@@ -497,23 +498,23 @@ h1 {
 }
 
 .name_data{
-    padding: 3px 0px 3px 12px; 
-    border-bottom: 2px solid black;    
+    padding: 3px 0px 3px 12px;
+    border-bottom: 2px solid black;
 }
 
 .words_data{
-    padding: 3px 0px 6px 12px; 
+    padding: 3px 0px 6px 12px;
 }
 
 .words_data_last{
-    padding: 3px 0px 6px 12px; 
-    display: block; 
+    padding: 3px 0px 6px 12px;
+    display: block;
     border-bottom: 2px solid black
 }
 
 .subject_data{
     padding: 3px 0px 6px 12px;
-    display: block;    
+    display: block;
 }
 
 
@@ -524,9 +525,9 @@ h1 {
 }
 
 #item-list label{
-   color:black; 
-   text-align: center; 
-   display: block; 
+   color:black;
+   text-align: center;
+   display: block;
    font-weight: bold;
 }
 
@@ -539,6 +540,12 @@ h1 {
     font-size-adjust:auto;
 }
 */
+
+.panel {
+  margin-top:16px;
+  background: gray;
+  width: 100%;
+}
 
 li div{
     display: block;
