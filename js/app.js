@@ -242,14 +242,13 @@ db.collection('spells').orderBy('name').onSnapshot(snapshot => {
 
 
 var selectedListener = function(e) {
-	  //itemList.removeEventListener('click',selectListener);
+
 		const id = e.target.parentElement.getAttribute('data-id');
 
 		const ref = db.collection("spells").doc(id);
 		ref.get().then(doc=>{
-			//const spell = new Spell(doc);
-			//spell.setForm();
-			form.name.value = d;
+			const spell = new Spell(doc);
+			spell.setForm();
 		});
 
 
@@ -275,7 +274,7 @@ var selectedListener = function(e) {
 
 };
 
-//itemList.addEventListener('click',selectedListener,false);
+itemList.addEventListener('click',selectedListener,false);
 
 
 //JQUERY FUNCTIONS
