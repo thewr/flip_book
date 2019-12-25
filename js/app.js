@@ -254,7 +254,6 @@ var selectedListener = function(e) {
 
 
 		$('#item_edit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
-			itemList.removeEventListener('click',selectListener,false);
 			ref.update({
 				name: form.name.value,
 				level: form.level.value,
