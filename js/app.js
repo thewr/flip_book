@@ -207,7 +207,7 @@ class Snap {
 		if(! Snap.instance){
       this._data = [];
       Snap.instance = this;
-			alert("constructor called");
+			//alert("constructor called");
     }
 
     return Snap.instance;
@@ -324,19 +324,21 @@ $(function(){
 		//refresh();
 	});
 
-  /*
-	$("#item-list").hover('li',function(){
-	    $(this).addClass( "selected" );
-	});
-	*/
+
+//	$("#item-list").hover('li',function(){
+//	    $(this).addClass( "selected" );
+//	});
+
 
 	$("#item-list").on('click','li',function() {
-	//	let others = $(this).siblings();
-		$(this).toggleClass('selected').siblings().removeClass('selected');
-	//	others.removeClass('selected');
+		let target = $(this);
+		let others = $(this).siblings();
+
+		target.toggleClass('selected');
+		others.removeClass('selected');
 
 
-		if($(this).hasClass('selected')){
+		if(target.hasClass('selected')){
 			$("#edit_item").show();
 			$("#delete_item").show();
 		} else {
@@ -386,12 +388,47 @@ var selectedListener = function(e) {
 
 itemList.addEventListener('click',selectedListener,false);
 
+var submit = document.querySelector('input[type=submit][value=Submit]');
+//submit.addEventListener('click',)
+submit.onclick = function(){
+	db.collection('spells').add({
+			name: form.name.value,
+			level: form.level.value,
+			wordsA: form.wordsA.value,
+			wordsB: form.wordsB.value,
+			wordsC: form.wordsC.value,
+			subject: form.subject.value
+	});
+};
+
+var apply = document.querySelector('input[type=submit][value=Apply]');
+apply.onclick = function(){
+	alert("Editing...");
+	var x = document.getElementById("item-list");
+	for (let element of x.children) {
+		if(element.className == 'selected')
+		{
+			var id = element.getAttribute('data-id');
+					var ref = db.collection('spells').doc(id);
+					ref.update({
+									name: form.name.value,
+									level: form.level.value,
+									wordsA: form.wordsA.value,
+									wordsB: form.wordsB.value,
+									wordsC: form.wordsC.value,
+									subject: form.subject.value
+								});
+					}
+				}
+};
+
 //save new to db
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-		var submit = document.querySelector('input[type=submit][value=Submit]');
-		var apply = document.querySelector('input[type=submit][value=Apply]');
+		//var submit = document.querySelector('input[type=submit][value=Submit]');
+	//	var apply = document.querySelector('input[type=submit][value=Apply]');
 
+/*
 		submit.onclick = function(){
     	db.collection('spells').add({
 	        name: form.name.value,
@@ -402,7 +439,9 @@ form.addEventListener('submit', (e) => {
 	        subject: form.subject.value
     	});
 		};
+*/
 
+/*
 		apply.onclick = function(){
 			alert("Editing...");
 			var x = document.getElementById("item-list");
@@ -422,8 +461,9 @@ form.addEventListener('submit', (e) => {
 							}
 						}
 		};
+		*/
 
-	clearForm();
+//	clearForm();
 	// generate new db
-	refresh();
+//	refresh();
 });
