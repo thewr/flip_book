@@ -70,29 +70,6 @@ function clearForm()
 }
 
 
-class Spell{
-	constructor(doc){
-		let data = doc.data();
-			//date: doc.data().date,
-		this.name = data.name;
-		this.level = data.level;
-	  this.wordsA = data.wordsA;
-		this.wordsB = data.wordsB;
-		this.wordsC = data.wordsC;
-	  this.subject = data.subject;
-	}
-
-	setForm(){
-		form.name.value =  this.name;
-		form.level.value = this.level;
-		form.wordsA.value = this.wordsA;
-		form.wordsB.value = this.wordsB;
-		form.wordsC.value = this.wordsC;
-		form.subject.value = this.subject;
-	}
-
-
-};
 
 // create element & render cafe
 function renderDB(doc){
@@ -194,23 +171,8 @@ function renderDB(doc){
   itemList.appendChild(li);
 }
 
-//save new to db
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    db.collection('spells').add({
-        name: form.name.value,
-				level: form.level.value,
-        wordsA: form.wordsA.value,
-				wordsB: form.wordsB.value,
-				wordsC: form.wordsC.value,
-        subject: form.subject.value
-    });
-	clearForm();
-	// generate new db
-	refresh();
-});
 
-//edit to db
+
 
 
 // real-time listener
@@ -240,40 +202,45 @@ db.collection('spells').orderBy('name').onSnapshot(snapshot => {
     });
 });
 
+class Snap {
+	constructor(){
+		if(! Snap.instance){
+      this._data = [];
+      Snap.instance = this;
+			alert("constructor called");
+    }
 
-var selectedListener = function(e) {
+    return Snap.instance;
+	}
 
-		const id = e.target.parentElement.getAttribute('data-id');
+	setData(doc){
+		//var _data = [];
+		var	data = doc.data();
+		this.name = data.name;
+		this.level = data.level;
+		this.wordsA = data.wordsA;
+		this.wordsB = data.wordsB;
+		this.wordsC = data.wordsC;
+		this.subject = data.subject;
+	}
 
-		const ref = db.collection("spells").doc(id);
-		ref.get().then(doc=>{
-			const spell = new Spell(doc);
-			spell.setForm();
-		});
+	//get(id){
+	//	return this._data.find(d => d.id === id);
+	//}
 
+	setForm(){
+		form.name.value =  this.name;
+		form.level.value = this.level;
+		form.wordsA.value = this.wordsA;
+		form.wordsB.value = this.wordsB;
+		form.wordsC.value = this.wordsC;
+		form.subject.value = this.subject;
+	}
+}
 
+//export default instance;
 
-		$('#item_edit').click(function(){ //form.addEventListener('append', (e) => { e.preventDefault();
-			ref.update({
-				name: form.name.value,
-				level: form.level.value,
-				wordsA: form.wordsA.value,
-				wordsB: form.wordsB.value,
-				wordsC: form.wordsC.value,
-				subject: form.subject.value
-			});
-			//clearForm();
-		});
-
-
-		$('#delete_item').click(function(){
-			ref.delete();
-			refresh();
-		});//end-of-delete_item event
-
-};
-
-itemList.addEventListener('click',selectedListener,false);
+//itemList.addEventListener('click',selectedListener,false);
 
 
 //JQUERY FUNCTIONS
@@ -314,6 +281,7 @@ $(function(){
 	$("#new_item").click(function(){
 		//$("#item_submit").attr('value', 'Submit').attr('type','submit');
 		display_add();
+		clearForm();
 	});
 
 	// Animate slide for edit form
@@ -352,27 +320,110 @@ $(function(){
 
 		display_min();
 
-		//clearForm();
+		clearForm();
 		//refresh();
 	});
+
+  /*
+	$("#item-list").hover('li',function(){
+	    $(this).addClass( "selected" );
+	});
+	*/
 
 	$("#item-list").on('click','li',function() {
 	//	let others = $(this).siblings();
 		$(this).toggleClass('selected').siblings().removeClass('selected');
 	//	others.removeClass('selected');
 
+
 		if($(this).hasClass('selected')){
 			$("#edit_item").show();
 			$("#delete_item").show();
 		} else {
-
-      			$("#edit_item").hide();
-			      $("#delete_item").hide();
+			$("#edit_item").hide();
+			$("#delete_item").hide();
 		}
 
+		//const id = $(this).attr('data-id');
 
 	});
 
+});
 
 
+var selectedListener = function(e) {
+	  //itemList.removeEventListener('click',selectListener);
+		const element = e.target.parentElement;
+		const id = element.getAttribute('data-id');
+		//element.classList.add('selected');
+
+		if(!element.hasAttribute('data-id'))
+				return;
+		else{
+			const id = element.getAttribute('data-id');
+		}
+
+		var ref = db.collection("spells").doc(id);
+
+		ref.get().then(doc=>{
+		//	const spell = new Spell(doc);
+		//	spell.setForm();
+
+			const instance = new Snap();
+			instance.setData(doc);
+			instance.setForm();
+			//Object.freeze(instance);
+		});
+
+
+		$('#delete_item').click(function(){
+			if(!element.classList.contains('selected')) return;
+			ref.delete();
+		});
+
+
+};
+
+itemList.addEventListener('click',selectedListener,false);
+
+//save new to db
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+		var submit = document.querySelector('input[type=submit][value=Submit]');
+		var apply = document.querySelector('input[type=submit][value=Apply]');
+
+		submit.onclick = function(){
+    	db.collection('spells').add({
+	        name: form.name.value,
+					level: form.level.value,
+	        wordsA: form.wordsA.value,
+					wordsB: form.wordsB.value,
+					wordsC: form.wordsC.value,
+	        subject: form.subject.value
+    	});
+		};
+
+		apply.onclick = function(){
+			alert("Editing...");
+			var x = document.getElementById("item-list");
+			for (let element of x.children) {
+				if(element.className == 'selected')
+				{
+					var id = element.getAttribute('data-id');
+							var ref = db.collection('spells').doc(id);
+							ref.update({
+											name: form.name.value,
+											level: form.level.value,
+											wordsA: form.wordsA.value,
+											wordsB: form.wordsB.value,
+											wordsC: form.wordsC.value,
+											subject: form.subject.value
+										});
+							}
+						}
+		};
+
+	clearForm();
+	// generate new db
+	refresh();
 });
