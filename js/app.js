@@ -411,13 +411,13 @@ apply.onclick = function(){
 			var id = element.getAttribute('data-id');
 					var ref = db.collection('spells').doc(id);
 					ref.update({
-									name: form.name.value,
-									level: form.level.value,
-									wordsA: form.wordsA.value,
-									wordsB: form.wordsB.value,
-									wordsC: form.wordsC.value,
-									subject: form.subject.value
-								});
+						name: form.name.value,
+						level: form.level.value,
+						wordsA: form.wordsA.value,
+						wordsB: form.wordsB.value,
+						wordsC: form.wordsC.value,
+						subject: form.subject.value
+						});
 					}
 				}
 };
