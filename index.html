@@ -15,57 +15,57 @@
 		
   	</head>
 	
-	<body>	
-	<div class = "container">
-		<header class = "header">
-			<div class = "settings">
-				<span class="name">Inventory</span>
-			</div>
-		</header>
-		
-		<div class = "app">
-		<aside class="sidebar">
-			<div class = "content">
-				<form id = "item-form">
-					<label>Name</label>
-	                		<input type="text" name="name">
-					<label>Level</label>
-					<input type="text" name="level">
-					<label>Words</label>
-	                		<input type="text" name="wordsA">
-	                		<input type="text" name="wordsB">
-	                		<input type="text" name="wordsC">
-					<label for="subject">Description</label>
-	                		<textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
+		<body>
+		<div class = "container">
+			<header class = "header">
+				<!--
+				<div class = "settings">
+					<span class="name">Inventory</span>
+				</div>-->
+					<span type = "button" id = "refresh_button">REFRESH</span>
+			</header>
+
+			<div class = "app">
+			<aside class="sidebar">
+				<div class = "content">
+					<form id = "item-form">
+						<label>Name</label>
+		                		<input type="text" name="name">
+						<label>Level</label>
+						<input type="text" name="level">
+						<label>Words</label>
+		                		<input type="text" name="wordsA">
+		                		<input type="text" name="wordsB">
+		                		<input type="text" name="wordsC">
+						<label for="subject">Description</label>
+		                		<textarea id="subject" name="subject"></textarea>
 					  <div class = "panel">
 						<input type = "submit" id = "item_submit" value="Submit">
-						<input type = "edit" id = "item_edit" value = "Apply">
+						<input type = "submit" id = "item_edit" value = "Apply">
 						<input type = "cancel" id = "item_cancel" value="Cancel">
 					</div>
-	            		</form>
-			</div>
-			<div class = "min">
-					<ul class = "options">
-						<li id = "new_item">NEW</li>
-						<li id = "refresh_button">REFRESH</li>
-						<li id = "edit_item">EDIT</li>
-						<li id = "delete_item">DELETE</li>
-					</ul>
-			</div>
-		</aside>			
-			
-			<div class = "docs">
-				<div class = "blocker"></div>
-				<section class = "view">
-					<header>
-						<h1> Entries </h1>
-					</header>
-					<ul id="item-list"></ul>
-				</section>
+		            		</form>
+				</div>
+				<div class = "min">
+						<ul class = "options">
+							<li id = "new_item">NEW</li>
+							<li id = "edit_item">EDIT</li>
+							<li id = "delete_item">DELETE</li>
+						</ul>
+				</div>
+			</aside>
+
+				<div class = "docs">
+				<!--	<header class = "banner">
+						 <span class = "add"> Entries </span>
+					</header> -->
+					<section class = "view">
+						<ul id="item-list"></ul>
+					</section>
+				</div>
 			</div>
 		</div>
-	</div>
-	
+
 <script>
 // Initialize Firebase
   var config = {
@@ -77,11 +77,11 @@
     messagingSenderId: "533687143173"
   };
 firebase.initializeApp(config);
-	
+
 const db = firebase.firestore();
 </script>
-<script src="/flip_book/js/app.js"></script>	
-</body>	
+<script src="C:\Users\rthew\Documents\flip_book-master\flip_book-master\js\app.js"></script>
+</body>
 </html>
 
 
