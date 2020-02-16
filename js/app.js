@@ -18,7 +18,6 @@ document.getElementById("list").addEventListener("click",function(e) {
 
 // define buttons
 refresh_button.addEventListener('click',refreshFunc,false);
-
 function refreshFunc(evt)
 {
 	var count = itemList.count;
@@ -40,6 +39,7 @@ function refreshFunc(evt)
 	});//end of get data
 }
 
+
 var tmp;
 function refresh() {
 	db.collection('spells')
@@ -58,6 +58,7 @@ function refresh() {
 	});//end of get data
 		clearForm();
 }
+*/
 
 function clearForm()
 {
@@ -411,13 +412,13 @@ apply.onclick = function(){
 			var id = element.getAttribute('data-id');
 					var ref = db.collection('spells').doc(id);
 					ref.update({
-						name: form.name.value,
-						level: form.level.value,
-						wordsA: form.wordsA.value,
-						wordsB: form.wordsB.value,
-						wordsC: form.wordsC.value,
-						subject: form.subject.value
-						});
+									name: form.name.value,
+									level: form.level.value,
+									wordsA: form.wordsA.value,
+									wordsB: form.wordsB.value,
+									wordsC: form.wordsC.value,
+									subject: form.subject.value
+								});
 					}
 				}
 };
