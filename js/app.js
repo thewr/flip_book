@@ -58,7 +58,7 @@ function refresh() {
 	});//end of get data
 		clearForm();
 }
-*/
+
 
 function clearForm()
 {
