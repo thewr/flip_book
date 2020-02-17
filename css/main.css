@@ -53,13 +53,15 @@ html>.container, body>.container {
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-pack: justify;
-    background: #101112;
+    background: #282b2d;
     padding-top: 5px;
     padding-right: 0;
     padding-bottom: 5px;
     padding-left: 0;
-    height: 43px;
+    height: 27px;
     z-index: 1000;
+    border-bottom: 2px solid #3a3e41;
+    box-shadow: 1px 2px 8px rgba(0,0,0,0.45);
 }
 
 @media (max-width: 375px) body>.container>.app>.sidebar
@@ -86,15 +88,8 @@ html>.container, body>.container {
 
 .blur-me {
     z-index: 1;
-  filter: blur(2px);
+  filter: blur(1px);
 }
-
-/*
-.app{
-    display: block;
-    position: relative;
-}
-*/
 
 
 html>.container>.app, body>.container>.app {
@@ -115,33 +110,12 @@ html>.container, body>.container {
     flex-flow: column;
 }
 
-/*
-.container .header .settings {
-  //  color: #e9f3e2;
-    display: flex;
-    display: -webkit-box;
-    width: 50%;
-}
-
-*/
-
 .container .header .settings .name {
     text-transform: uppercase;
     display: inline-block;
     padding: 5px;
     margin-right:16px;
 }
-
-/*
-.container .header ul.options{
-    text-align: right;
-}
-
-.container .header ul{
-    padding:5px;
-    white-space: nowrap;
-}
-*/
 
 .sidebar > .content
 {
@@ -175,14 +149,8 @@ html>.container, body>.container {
     -webkit-box-flex: 0;
     flex-grow: 0;
     flex-shrink: 1;
-    flex-basis: 80px;
+    flex-basis: 120px;
 }
-
-/*
-aside{
-display: block;
-}
-*/
 
 .sidebar > .content {
     display: -webkit-box;
@@ -198,6 +166,7 @@ display: block;
 }
 
 .sidebar > .min .options{
+    margin-top: 8px;
     -webkit-box-flex: 1;
     flex: 1 1 0;
     display: -webkit-box;
@@ -205,12 +174,6 @@ display: block;
     -webkit-box-align: stretch;
     align-items: stretch;
     overflow-y: auto;
-   // background: #3a3e41;
-    border-bottom: 5px solid #3a3e41;
-}
-
-.options li:hover {
-    background: #445553;//#3a3e41;
 }
 
 .options{
@@ -223,9 +186,16 @@ display: block;
     padding: 5px;
 }
 
+.options li:hover {
+    //background: #445553;//#3a3e41;
+    color: #14ff53;
+}
+
+
 .options li
 {
- padding:5px;
+    padding:5px;
+    cursor: pointer;
 }
 
 /*
