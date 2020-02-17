@@ -17,7 +17,8 @@ document.getElementById("list").addEventListener("click",function(e) {
 */
 
 // define buttons
-refresh_button.addEventListener('click',refreshFunc,false);
+//refresh_button.addEventListener('click',refreshFunc,false);
+/*
 function refreshFunc(evt)
 {
 	var count = itemList.count;
@@ -38,7 +39,7 @@ function refreshFunc(evt)
 	    });
 	});//end of get data
 }
-
+*/
 
 var tmp;
 function refresh() {
