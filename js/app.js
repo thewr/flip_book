@@ -323,7 +323,7 @@ $(function(){
 		display_min();
 
 		clearForm();
-		//refresh();
+		refresh();
 	});
 
 
@@ -380,10 +380,11 @@ var selectedListener = function(e) {
 		});
 
 
-		//$('#delete_item').click(function(){
-		//	if(!element.classList.contains('selected')) return;
-		//	ref.delete();
-		//});
+		$('#delete_item').click(function(){
+			if(!element.classList.contains('selected')) return;
+			ref.delete();
+			refresh();
+		});
 
 
 };
