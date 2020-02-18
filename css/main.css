@@ -478,7 +478,7 @@ h1 {
 }
 
 .words_data{
-    padding: 3px 0px 6px 12px;
+    margin-left: 12px;
 }
 
 .words_data_last{
