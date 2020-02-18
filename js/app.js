@@ -196,11 +196,11 @@ db.collection('spells').orderBy('name').onSnapshot(snapshot => {
 
 	    }
 
-	    if (change.type == 'removed'){
-		    console.log("Removed item: ", change.doc.data());
-		    let li = itemList.querySelector('[data-id=' + change.doc.id + ']');
-		    itemList.removeChild(li);
-	    }
+	//    if (change.type == 'removed'){
+	//	    console.log("Removed item: ", change.doc.data());
+	//	    let li = itemList.querySelector('[data-id=' + change.doc.id + ']');
+	//	    itemList.removeChild(li);
+	//    }
     });
 });
 
@@ -362,28 +362,28 @@ var selectedListener = function(e) {
 		//element.classList.add('selected');
 
 		if(!element.hasAttribute('data-id'))
-				return;
+			return;
 		else{
 			const id = element.getAttribute('data-id');
 		}
 
 		var ref = db.collection("spells").doc(id);
-
+	
 		ref.get().then(doc=>{
 		//	const spell = new Spell(doc);
 		//	spell.setForm();
 
-			const instance = new Snap();
+			let instance = new Snap();
 			instance.setData(doc);
 			instance.setForm();
 			//Object.freeze(instance);
 		});
 
 
-		$('#delete_item').click(function(){
-			if(!element.classList.contains('selected')) return;
-			ref.delete();
-		});
+		//$('#delete_item').click(function(){
+		//	if(!element.classList.contains('selected')) return;
+		//	ref.delete();
+		//});
 
 
 };
