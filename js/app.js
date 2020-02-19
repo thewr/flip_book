@@ -1,4 +1,5 @@
 // creates a <ol> list element and functions
+/*
 import firebase from 'firebase';
 import 'firebase/<package>';
 
@@ -14,6 +15,7 @@ var app = firebase.initializeApp({
 const storage = app.storage();
 const db = firebase.firestore();
 //const ref = storage.ref('path');
+*/
 
 var itemList = document.querySelector('#item-list');
 itemList.count = 0;
