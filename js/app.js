@@ -79,60 +79,10 @@ function renderDB(doc){
   let li = document.createElement('li');
   li.setAttribute('data-id', doc.id);  //Each document gets an id.
 
-/*
-	let name = document.createElement('span');
-  name.classList.add("name_data");
-  let level = document.createElement('span');
-  level.classList.add("name_data");
-  let wordsA = document.createElement('span');
-  wordsA.classList.add("words_data");
-  let wordsB = document.createElement('span');
-  wordsB.classList.add("words_data");
-  let wordsC = document.createElement('span');
-  wordsC.classList.add("words_data_last");
-  //wordsC.style.cssText = "font-family: Arial, Helvetica, sans-serif; font-size: 16px; padding: 3px 0px 6px 12px; display: block; border-bottom: 2px solid black";
-
-  let subject = document.createElement('span');
-  subject.classList.add('subject_data');
-  //subject.style.cssText = "padding: 3px 0px 6px 12px; display: block;";
-
-
-*/
-  // create elements for labels for each data to display
-//  let label_name = document.createElement('span');
-  //label_name.textContent = "NAME"; //&nbsp;
-//  label_name.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
-/*
- // create elements for labels for each data to display
-  let label_level = document.createElement('span');
-  label_level.textContent = "LEVEL"; //&nbsp;
-  label_level.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
-
-  let label_words = document.createElement('span');
-  label_words.textContent = "WORDS";
-  label_words.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
-
-  let label_subject = document.createElement('span');
-  label_subject.textContent = "DESCRIPTION";
-  label_subject.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
-
-  // generate content for fields
-
-  name.textContent = doc.data().name;
-  level.textContent = doc.data().level;
-  wordsA.textContent = doc.data().wordsA;
-  wordsB.textContent = doc.data().wordsB;
-  wordsC.textContent = doc.data().wordsC;
-  subject.textContent = doc.data().subject;
-*/
-
-
 	var data = doc.data();
 
 	for (var key in data) {
 	  const value = data[key];
-
-		alert("key: " + key + " value: " + value);
 		if(value)
 			{
 			  //label_name.textContent = key;
@@ -152,25 +102,6 @@ function renderDB(doc){
 
   // append list
 
-
-
-//  li.appendChild(label_name);
-//  li.appendChild(name);
-/*
-  li.appendChild(label_level);
-  li.appendChild(level);
-
-  li.appendChild(label_words);
-  li.appendChild(wordsA);
-  li.appendChild(wordsB);
-  li.appendChild(wordsC);
-
-  li.appendChild(label_subject);
-  li.appendChild(subject);
-
-  // put the <tbody> in the <table>
-
-*/
   itemList.appendChild(li);
 
 }
