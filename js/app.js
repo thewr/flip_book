@@ -1,4 +1,19 @@
 // creates a <ol> list element and functions
+import firebase from 'firebase';
+import 'firebase/<package>';
+
+// Initialize Firebase
+var app = firebase.initializeApp({
+    apiKey: "AIzaSyCntSwrxBash6pXzL9yaGCnQh0gQZPclG0",
+    authDomain: "sales-91e4c.firebaseapp.com",
+    databaseURL: "https://sales-91e4c.firebaseio.com",
+    projectId: "sales-91e4c",
+    storageBucket: "sales-91e4c.appspot.com",
+    messagingSenderId: "533687143173"
+  });
+const storage = app.storage();
+const db = firebase.firestore();
+//const ref = storage.ref('path');
 
 var itemList = document.querySelector('#item-list');
 itemList.count = 0;
