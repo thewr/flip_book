@@ -78,7 +78,9 @@ function renderDB(doc){
   // create list document elements
   let li = document.createElement('li');
   li.setAttribute('data-id', doc.id);  //Each document gets an id.
-  let name = document.createElement('span');
+
+/*
+	let name = document.createElement('span');
   name.classList.add("name_data");
   let level = document.createElement('span');
   level.classList.add("name_data");
@@ -94,16 +96,13 @@ function renderDB(doc){
   subject.classList.add('subject_data');
   //subject.style.cssText = "padding: 3px 0px 6px 12px; display: block;";
 
- // let cross = document.createElement('div');
- // cross.textContent = 'x';
 
-
-
+*/
   // create elements for labels for each data to display
-  let label_name = document.createElement('span');
-  label_name.textContent = "NAME"; //&nbsp;
-  label_name.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
-
+//  let label_name = document.createElement('span');
+  //label_name.textContent = "NAME"; //&nbsp;
+//  label_name.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"; //border: 1px solid black";
+/*
  // create elements for labels for each data to display
   let label_level = document.createElement('span');
   label_level.textContent = "LEVEL"; //&nbsp;
@@ -125,38 +124,39 @@ function renderDB(doc){
   wordsB.textContent = doc.data().wordsB;
   wordsC.textContent = doc.data().wordsC;
   subject.textContent = doc.data().subject;
+*/
 
-/*
-	const data = doc.data();
-	for (const key in data) {
-	    const value = data[key];
 
-			//alert("key: " + key + " value: " + value);
+	var data = doc.data();
+
+	for (var key in data) {
+	  const value = data[key];
+
+		alert("key: " + key + " value: " + value);
 		if(value)
 			{
-			  label_name.textContent = key;
-				//alert(key);
-				var newDiv = document.createElement('span');
-				newDiv.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"
-				var newContent = document.createTextNode(key);
-				var newDiv1 = document.createElement('span');
+			  //label_name.textContent = key;
+				let div = document.createElement('span');
+				div.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"
+				let text = document.createTextNode(key);
+				let div1 = document.createElement('span');
 				newDiv1.classList.add("name_data");
-				var newContent1 = document.createTextNode(value);
-				newDiv.appendChild(newContent);
-				newDiv1.appendChild(newContent1);
-				li.appendChild(newDiv);
-				li.appendChild(newDiv1);
+				let text1 = document.createTextNode(value);
+				div.appendChild(text);
+				div1.appendChild(text1);
+				li.appendChild(div);
+				li.appendChild(div1);
 			}
 	   // // now key and value are the property name and value
 	}
-	*/
 
   // append list
-  //li.appendChild(cross);
 
-  li.appendChild(label_name);
-  li.appendChild(name);
 
+
+//  li.appendChild(label_name);
+//  li.appendChild(name);
+/*
   li.appendChild(label_level);
   li.appendChild(level);
 
@@ -170,7 +170,9 @@ function renderDB(doc){
 
   // put the <tbody> in the <table>
 
+*/
   itemList.appendChild(li);
+
 }
 
 
