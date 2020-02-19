@@ -140,7 +140,7 @@ function renderDB(doc){
 				div.style.cssText = "padding: 3px 0px 0px 6px; display: inline-block; font-weight: bold; width: 50%;"
 				let text = document.createTextNode(key);
 				let div1 = document.createElement('span');
-				newDiv1.classList.add("name_data");
+				div1.classList.add("name_data");
 				let text1 = document.createTextNode(value);
 				div.appendChild(text);
 				div1.appendChild(text1);
