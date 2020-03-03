@@ -435,7 +435,8 @@ h1 {
     display: -webkit-flex;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-around; 
+    align-items: flex-start:
 }
 
 #item-list li{
